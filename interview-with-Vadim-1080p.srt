@@ -1,0 +1,1506 @@
+﻿1
+00:00:00,000 --> 00:00:02,460
+Hi, Vadim, nice to talk with you.
+
+2
+00:00:02,460 --> 00:00:06,840
+I’m teaching C and C++ in my university.
+
+3
+00:00:06,840 --> 00:00:12,440
+I took the source code in OpenCV as an example to the students.
+
+4
+00:00:12,440 --> 00:00:19,160
+And I also suggested my students to learn C++ from OpenCV.
+
+5
+00:00:19,160 --> 00:00:24,120
+I found the class cv::Mat is an excellent example.
+
+6
+00:00:25,080 --> 00:00:28,000
+And, I know you designed the class.
+
+7
+00:00:28,100 --> 00:00:28,800
+So
+
+8
+00:00:29,040 --> 00:00:33,440
+Could you tell me some history of the Mat class?
+
+9
+00:00:33,500 --> 00:00:36,960
+And why to design a new C++ class?
+
+10
+00:00:36,960 --> 00:00:41,000
+I remember at the beginning,
+
+11
+00:00:41,000 --> 00:00:49,000
+OpenCV used the IplImage and CvMat structure for images.
+
+12
+00:00:49,000 --> 00:00:51,160
+So, why you designed it?
+
+13
+00:00:51,160 --> 00:00:53,760
+Can you introduce a little bit to us?
+
+14
+00:00:54,500 --> 00:00:55,760
+Yes, sure.
+
+15
+00:00:56,500 --> 00:00:58,760
+I'd like to talk to you again, Shiqi.
+
+16
+00:00:59,360 --> 00:01:09,500
+First of all, I'm very pleased that, OpenCV is now taught in universities including your university,
+
+17
+00:01:09,700 --> 00:01:13,480
+and you chose CV::Mat as am example of C++ design.
+
+18
+00:01:13,480 --> 00:01:20,840
+Actually it's a big pleasure for me and for the whole OpenCV team that
+
+19
+00:01:20,840 --> 00:01:25,480
+our pieces of OpenCV design are used in such a way.
+
+20
+00:01:25,480 --> 00:01:35,720
+Indeed, it took several years for OpenCV team to come up with this C++ class.
+
+21
+00:01:35,720 --> 00:01:36,920
+In the very beginning,
+
+22
+00:01:36,920 --> 00:01:41,200
+the very first structure in OpenCV
+
+23
+00:01:41,200 --> 00:01:43,880
+as you correctly pointed out was IplImage.
+
+24
+00:01:43,880 --> 00:01:51,600
+This is because OpenCV was started at Intel in 1998
+
+25
+00:01:51,600 --> 00:01:56,000
+as a close source library, and then released as open source.
+
+26
+00:01:56,000 --> 00:02:02,360
+At that time, at Intel, the family of performance libraries,
+
+27
+00:02:02,360 --> 00:02:06,760
+like for signal processing acceleration, for image processing acceleration,
+
+28
+00:02:06,760 --> 00:02:12,040
+and like one of the libraries was IPL,
+
+29
+00:02:12,040 --> 00:02:14,800
+Image Processing Library by Intel.
+
+30
+00:02:14,800 --> 00:02:19,000
+And it uses IplImage as the main data structure.
+
+31
+00:02:19,000 --> 00:02:24,320
+The original OpenCV was planned as addition to IPL
+
+32
+00:02:24,320 --> 00:02:28,520
+or IPL concentrates on image processing,
+
+33
+00:02:28,520 --> 00:02:32,320
+and OpenCV will concentrate on computer vision.
+
+34
+00:02:32,320 --> 00:02:35,800
+In the begin, OpenCV was called CVL,
+
+35
+00:02:35,800 --> 00:02:36,750
+Computer Vision Library.
+
+36
+00:02:36,800 --> 00:02:41,070
+So it even use the same name pattern as IPL.
+
+37
+00:02:41,070 --> 00:02:47,520
+just a set of computer algorithms of image processing, computer vision.
+
+38
+00:02:47,520 --> 00:02:52,520
+Soon, we realized the IplImage was not enough,
+
+39
+00:02:52,520 --> 00:02:55,040
+because in computer vision, if you do, for example,
+
+40
+00:02:55,040 --> 00:03:01,800
+camera preparations, some 3D vision, whatever you need, general matrix class.
+
+41
+00:03:01,800 --> 00:03:04,800
+And sometimes, for example,
+
+42
+00:03:04,800 --> 00:03:06,840
+you need more than two dimensional arrays,
+
+43
+00:03:06,840 --> 00:03:08,120
+like 3 dimensional arrays.
+
+44
+00:03:08,120 --> 00:03:11,940
+Sometimes you need sparse multi-dimensional arrays.
+
+45
+00:03:12,020 --> 00:03:14,260
+So in addition to IplImage,
+
+46
+00:03:14,260 --> 00:03:18,960
+we also create CvMat, CvMatND indeed and CvSparseMat
+
+47
+00:03:18,960 --> 00:03:23,460
+to like other those use cases.
+
+48
+00:03:25,280 --> 00:03:32,910
+Then a time later, Intel abandoned IPL in favor of like library of low level primitives.
+
+49
+00:03:33,020 --> 00:03:37,550
+It is called IPP and it is still used in OpenCV for acceleration.
+
+50
+00:03:44,570 --> 00:03:50,260
+We have to maintain compatibility with IPL since then.
+
+51
+00:03:50,260 --> 00:03:54,480
+Because like uh, the library was gone and replaced with IPP.
+
+
+52
+00:03:54,930 --> 00:04:03,640
+So we mostly used CvMat C structure for most of use cases
+
+
+53
+00:04:04,170 --> 00:04:06,880
+for point clouds, for mathesis, for images.
+
+54
+00:04:09,080 --> 00:04:13,950
+But we constantly got requests from users
+
+
+55
+00:04:13,950 --> 00:04:17,820
+to introduce C++ API
+
+56
+00:04:17,820 --> 00:04:25,370
+because C++ was much more convenient to use, instead of C.
+
+
+57
+00:04:26,840 --> 00:04:34,880
+In the year 2008, when Willow Garage company started to found OpenCV,
+
+
+58
+00:04:34,880 --> 00:04:39,820
+by the way Willow Garage company also created ROS, Robot Operating System 
+
+
+59
+00:04:40,400 --> 00:04:43,770
+It was a quite big startup at a certain point.
+
+
+60
+00:04:43,770 --> 00:04:46,440
+It founded OpenCV development.
+
+61
+00:04:46,930 --> 00:04:50,400
+They gave us resources and we started to think
+
+
+62
+00:04:50,400 --> 00:04:54,750
+how to redesign OpenCV to use C++ API.
+
+63
+00:04:54,750 --> 00:04:57,860
+and definitely we need C++ data structure.
+
+64
+00:04:57,860 --> 00:05:02,880
+instead of CvMat and IplImage C structures.
+
+
+65
+00:05:04,260 --> 00:05:05,770
+So we looked around,
+
+66
+00:05:05,770 --> 00:05:09,110
+and for the source of inspiration,
+
+67
+00:05:09,110 --> 00:05:14,260
+and we found that Matlab is a very good example of good design.
+
+
+68
+00:05:14,260 --> 00:05:21,510
+That is Matlab is not an as flexible language as C or C++.
+
+
+69
+00:05:22,000 --> 00:05:24,350
+But it is super convenient.
+
+70
+00:05:24,350 --> 00:05:34,750
+It has this matrix, or array data type. And all the toolboxes in Matlab, use this data type.
+
+
+71
+00:05:34,750 --> 00:05:38,620
+Therefore, there is no absolutely not compatibility issues
+
+
+72
+00:05:38,620 --> 00:05:42,310
+If you want to use those toolboxes.
+
+
+73
+00:05:42,310 --> 00:05:45,050
+You just download them and use together
+
+74
+00:05:45,050 --> 00:05:51,730
+without any convert stage, structures from one type to another.
+
+
+75
+00:05:51,730 --> 00:05:54,130
+You just use those toolboxes together.
+
+
+76
+00:05:54,130 --> 00:06:01,910
+And they, MathWorks, even use those arrayed data types for images.
+
+
+77
+00:06:01,910 --> 00:06:04,350
+In matlab, there is image processing toolbox,
+
+78
+00:06:04,350 --> 00:06:07,680
+and it also uses matrix data type.
+
+79
+00:06:07,680 --> 00:06:10,040
+I really like this idea that
+
+80
+00:06:10,040 --> 00:06:13,860
+one data type is used for any kind of array.
+
+81
+00:06:14,260 --> 00:06:22,040
+So we just tried to replicate Matlab API
+
+
+82
+00:06:22,040 --> 00:06:24,170
+as goal as we could.
+
+
+83
+00:06:24,170 --> 00:06:29,200
+we wanted convenient element access operations, etc.
+
+
+84
+00:06:29,200 --> 00:06:35,770
+we wanted like convenient element, //TODO access separations, etc.
+
+85
+00:06:35,770 --> 00:06:39,770
+So we created this class, C++ structure, cv::Mat.
+
+
+86
+00:06:39,770 --> 00:06:43,330
+They replaced all of the structures,
+
+
+87
+00:06:43,330 --> 00:06:46,820
+IplImage, CvMat, CvMatND
+
+
+88
+00:06:46,820 --> 00:06:50,570
+Sparse model was a seperate structure
+
+
+89
+00:06:50,820 --> 00:06:53,100
+But all the dense arrays were replaced with just a single structure.
+
+
+90
+00:06:53,980 --> 00:07:02,770
+We know different Mat objects may share the same memory for matrix data to avoid memory leak.
+
+
+91
+00:07:02,770 --> 00:07:07,200
+There is a complex mechanism in Mat class.
+
+92
+00:07:07,200 --> 00:07:17,860
+If you redesign Mat class now, will you use smart pointers in the new C++ standards?
+
+93
+00:07:22,780 --> 00:07:26,910
+We did have a shared pointer
+
+
+94
+00:07:27,330 --> 00:07:30,350
+appeared in C++11 if I'm not mistaken.
+
+
+95
+00:07:30,350 --> 00:07:33,060
+In C++20,
+
+
+96
+00:07:33,060 --> 00:07:38,530
+it was special version of this shared pointer that can use atomic operations.
+
+
+97
+00:07:39,600 --> 00:07:43,820
+And we create cv::Mat in 2009,
+
+
+98
+00:07:43,820 --> 00:07:46,840
+so even 2 years before C++11,
+
+
+99
+00:07:47,420 --> 00:07:52,220
+so we couldn't wait for the new C++ standard to come out.
+
+
+100
+00:07:52,220 --> 00:07:56,040
+So we used our own implementation of shared pointer.
+
+
+101
+00:07:56,040 --> 00:07:58,040
+Of course it's not a new idea.
+
+102
+00:07:58,480 --> 00:08:01,330
+It was well known for decades.
+
+
+103
+00:08:02,420 --> 00:08:06,440
+Even Python created in 90s.
+
+
+104
+00:08:07,280 --> 00:08:14,480
+It used shared pointers with a reference counter to manage memory.
+
+
+105
+00:08:14,480 --> 00:08:16,880
+And it still uses this technique.
+
+106
+00:08:17,240 --> 00:08:22,660
+So we wanted memory to be managed automatically.
+
+107
+00:08:22,660 --> 00:08:30,800
+And we want memory to be managed in the thread safe manner.
+
+108
+00:08:30,970 --> 00:08:35,400
+So we wanted to use atomic operations from the very beginning.
+
+
+109
+00:08:35,860 --> 00:08:39,200
+We implemented this mechanism in cv::Mat.
+
+
+110
+00:08:39,770 --> 00:08:44,440
+And I would say that overall cv::Mat implementation
+
+
+111
+00:08:44,440 --> 00:08:48,400
+and architecture are quite complex.
+
+
+112
+00:08:48,400 --> 00:08:51,420
+If you look inside, you would notice that
+
+113
+00:08:51,420 --> 00:08:58,770
+for example, there is not a signal reference counter but instead there are two reference counters in each matrix.
+
+114
+00:08:59,200 --> 00:09:02,660
+So overall,
+
+
+115
+00:09:02,660 --> 00:09:03,640
+I would say,
+
+116
+00:09:03,640 --> 00:09:12,040
+if we use this modern C++ standard to implement
+
+117
+00:09:12,040 --> 00:09:16,660
+those reference counting, shared memory,
+
+
+118
+00:09:16,660 --> 00:09:22,800
+I would say overall implementation would not become noticeable simple
+
+
+119
+00:09:22,800 --> 00:09:24,570
+In another words,
+
+
+120
+00:09:24,570 --> 00:09:27,910
+if we create cv::Mat now
+
+
+121
+00:09:27,910 --> 00:09:34,530
+I would say the implementation will be almost the same as it was like many years ago.
+
+122
+00:09:34,540 --> 00:09:40,660
+Even though, C++ standard going in the right direction.
+
+
+123
+00:09:40,660 --> 00:09:46,250
+For CV Ptr class [TODO:vp] OpenCV, we used shared pointer for matrix 
+
+
+124
+00:09:47,420 --> 00:09:52,650
+I would say we would use the same implementation as before.
+
+
+125
+00:09:52,650 --> 00:09:56,050
+Mat class is not a template class.
+
+126
+00:09:56,600 --> 00:09:58,370
+In my class,
+
+127
+00:09:58,370 --> 00:10:02,480
+I ask my student to implement a matrix class
+
+128
+00:10:02,480 --> 00:10:06,650
+to improve their programming skills.
+
+129
+00:10:08,740 --> 00:10:16,310
+I asked them that the matrix class they designed should support many different data types,
+
+130
+00:10:16,310 --> 00:10:25,770
+including 8-bit integers, 16-bit integers and floating point, like that.
+
+
+131
+00:10:25,770 --> 00:10:30,200
+Most student used class template.
+
+132
+00:10:30,200 --> 00:10:36,420
+So I think it's a very straightforward idea to use a template for that.
+
+133
+00:10:36,420 --> 00:10:41,050
+Could you tell us why the Mat class you designed
+
+134
+00:10:41,420 --> 00:10:43,480
+is not a template class?
+
+135
+00:10:44,770 --> 00:10:51,280
+In OpenCV team, we had some discussions like how to implement the thing
+
+
+136
+00:10:51,850 --> 00:11:02,340
+and at some point, at Intel, we had another project that implemented biasing networks [TODO:VP biasing?]
+
+
+137
+00:11:05,850 --> 00:11:07,710
+That was quite complex library
+
+138
+00:11:07,710 --> 00:11:11,680
+they chose to go completely into that way.
+
+
+139
+00:11:11,680 --> 00:11:15,310
+So they created everything in templates.
+
+
+140
+00:11:16,880 --> 00:11:26,250
+And I know that currently you heavy use of template is one of the trends in C++.
+
+
+141
+00:11:26,250 --> 00:11:28,850
+Many people prefer to use templates.
+
+142
+00:11:28,850 --> 00:11:31,050
+to get the best efficiency.
+
+143
+00:11:31,050 --> 00:11:39,740
+In our case, we deliberately chose not to go completely to that way
+
+
+144
+00:11:40,450 --> 00:11:46,770
+Because we saw bad example, a library becomes unusable
+
+
+145
+00:11:46,770 --> 00:11:49,740
+because of its completely template
+
+146
+00:11:49,740 --> 00:11:55,850
+so we can take very long time to compile code that uses those libraries.
+
+
+147
+00:11:55,850 --> 00:12:02,140
+So when we speak about like generic library of algorithms
+
+
+148
+00:12:02,200 --> 00:12:11,310
+STL library with containers, basic algorithms like sort()
+
+
+149
+00:12:14,880 --> 00:12:22,080
+It's not that much complex, but there is still some, but it's not that much. In the case of computer vision.
+
+
+150
+00:12:22,080 --> 00:12:27,970
+Algorithms are quite, may become quite complex
+
+
+151
+00:12:28,420 --> 00:12:36,970
+And so if you make a matrix class as template,
+
+
+152
+00:12:36,970 --> 00:12:46,850
+It is a strong motivation to put a lot of code into header files
+
+
+153
+00:12:46,850 --> 00:12:48,850
+to make everything templates.
+
+
+154
+00:12:52,250 --> 00:12:55,880
+And for developers, it may become a simpler solution.
+
+
+155
+00:12:55,880 --> 00:13:03,200
+But for users, normally most of OpenCV users they use just a tiny part of OpenCV
+
+
+156
+00:13:04,310 --> 00:13:12,710
+But for them, to wait those long minutes or even hours for their code to be compiled
+
+
+157
+00:13:12,710 --> 00:13:14,710
+it is a big problem.
+
+158
+00:13:15,220 --> 00:13:22,080
+Unfortunately, together with templates and C++, they didn't introduce modules.
+
+159
+00:13:22,080 --> 00:13:25,400
+Modules are common to C++ only now,
+
+160
+00:13:25,400 --> 00:13:29,340
+and even now, the support for modules is immature.
+
+
+161
+00:13:29,340 --> 00:13:33,940
+Maybe several years later, when modules become widespread,
+
+162
+00:13:33,940 --> 00:13:38,650
+when compiling complete code becomes much more efficient,
+
+163
+00:13:38,800 --> 00:13:43,140
+then maybe more libraries will come out and will use template.
+
+
+164
+00:13:43,620 --> 00:13:49,450
+Now, it's like not a good idea.
+
+
+165
+00:13:49,450 --> 00:13:55,420
+So the first reason is we want to avoid long compile time.
+
+
+166
+00:13:57,110 --> 00:13:59,680
+The second reason is Python.
+
+167
+00:14:00,420 --> 00:14:08,510
+So even 10 years ago, we understood Python has a good, has a great potential. It is an excellent language.
+
+
+168
+00:14:09,540 --> 00:14:15,680
+Besides that has been Java that we also wanted to support
+
+
+169
+00:14:16,080 --> 00:14:20,140
+and also languages like Java has some support for templates.
+
+
+170
+00:14:20,140 --> 00:14:24,600
+But it's not completely compatible with C++.
+
+
+171
+00:14:24,600 --> 00:14:27,020
+Python, it doesn't have any template.
+
+
+172
+00:14:27,110 --> 00:14:30,020
+And we wanted OpenCV supported by Python [TODO:VP] as well.
+
+
+173
+00:14:31,800 --> 00:14:35,080
+So if you have template library,
+
+174
+00:14:36,170 --> 00:14:40,710
+creating code for Python is quite complex tasks.
+
+
+175
+00:14:40,710 --> 00:14:46,880
+Basically you need to implement [TODO:VP] all those functions in Python wrapper.
+
+
+176
+00:14:46,880 --> 00:14:56,000
+and see what is the actual data type that the user called or particular instance of template implementation.
+
+
+177
+00:14:56,340 --> 00:14:58,570
+So it is not quite convenient.
+
+178
+00:14:58,570 --> 00:15:03,220
+So I think we did it the right way
+
+
+179
+00:15:03,220 --> 00:15:10,540
+and we make right decision not to implement multiple OpenCV templates [TODO:VP].
+
+
+180
+00:15:11,910 --> 00:15:13,710
+OK, thank you.
+
+181
+00:15:13,800 --> 00:15:20,480
+Yeah, I also learned a lot from it.
+
+182
+00:15:20,480 --> 00:15:25,220
+Because we always balance between many factors.
+
+183
+00:15:25,250 --> 00:15:29,850
+So you introduced the factors in designing OpenCV,
+
+
+184
+00:15:29,850 --> 00:15:38,770
+but I also found there is a class template which is very similar to Mat in OpenCV, its name is Mat_.
+
+
+185
+00:15:39,820 --> 00:15:46,600
+Since we have Mat class, why to design Mat_, the template.
+
+
+186
+00:15:47,770 --> 00:15:54,680
+You just explain the template maybe have some shortcomings,
+
+187
+00:15:54,940 --> 00:15:58,400
+but we find there's a template for Mat.
+
+
+188
+00:15:59,110 --> 00:16:01,110
+Yes, yes.
+
+189
+00:16:03,110 --> 00:16:08,620
+Indeed there's another class that is
+
+
+190
+00:16:08,620 --> 00:16:12,970
+has this underline in the end of the name
+
+
+191
+00:16:13,080 --> 00:16:17,540
+and it doesn't introducing new members.
+
+192
+00:16:17,540 --> 00:16:22,370
+So it's finally compatible with normal cv::Mat in both ways.
+
+
+193
+00:16:22,370 --> 00:16:27,910
+So if we use, and it derives from Mat,
+
+
+194
+00:16:27,910 --> 00:16:32,910
+you can basically use it instead of Mat.
+
+195
+00:16:33,540 --> 00:16:38,740
+The only reason was to provide convenient element access operations.
+
+196
+00:16:39,510 --> 00:16:42,740
+If you have, for example,
+
+
+197
+00:16:43,250 --> 00:16:47,080
+some matrix algorithm that appears [TODO:VP] floats
+
+
+198
+00:16:49,080 --> 00:16:53,850
+First option to access the elment, you use to play at<>() method
+
+
+199
+00:16:54,110 --> 00:16:58,710
+with angle brackets<>, you just say that
+
+
+200
+00:16:58,850 --> 00:17:02,800
+myMatrix.add<float>(10, 20), in angle brackets<>,
+
+
+201
+00:17:02,800 --> 00:17:07,770
+you put data type like float, then you put indices in the parenthesis.
+
+
+202
+00:17:08,680 --> 00:17:14,200
+And with Mat_, you just use parentheses myMatrix(10,20)
+
+
+203
+00:17:14,200 --> 00:17:17,820
+You don't need add<>() with angle brackets. So it's another notation.
+
+
+204
+00:17:18,200 --> 00:17:25,480
+But I would say that the number of algorithms that access elements directly in this way [not many].
+
+
+205
+00:17:28,140 --> 00:17:34,770
+Some, savings that you type less symbols
+
+
+206
+00:17:34,770 --> 00:17:42,570
+it is so small, I could say that if we design matrix class today again,
+
+
+207
+00:17:42,880 --> 00:17:45,800
+I would not create this extra template class
+
+
+208
+00:17:45,800 --> 00:17:49,820
+because most people just use normal cv::Mat.
+
+
+209
+00:17:50,420 --> 00:17:51,820
+Yeah, yeah.
+
+210
+00:17:52,600 --> 00:17:56,400
+OK, I have another question.
+
+211
+00:17:56,680 --> 00:18:08,000
+The question, it's about hardware, because currently there are many kinds of hardware than in the past
+
+212
+00:18:08,080 --> 00:18:15,570
+in the past, maybe only CPU? Or mostly CPU. Currently we have GPU, NPU or VPU
+
+213
+00:18:15,570 --> 00:18:21,540
+Most of them have separate memory,
+
+214
+00:18:21,820 --> 00:18:28,880
+Is it possible to design an universal Mat class which can handle different kind of memory?
+
+
+215
+00:18:30,880 --> 00:18:34,600
+So, indeed nowadays
+
+216
+00:18:36,600 --> 00:18:43,940
+Using GPU, or specialized accelerators to speed up computer vision is a very popular trend.
+
+
+217
+00:18:44,450 --> 00:18:49,200
+Everybody goes in this direction,
+
+
+218
+00:18:49,620 --> 00:18:56,880
+For example, Nvidia Xavier used in cars, it's indeed very popular.
+
+
+219
+00:18:59,480 --> 00:19:04,480
+Unfortunately, from software site, there is no good standard
+
+220
+00:19:05,600 --> 00:19:10,220
+to program those hardware in an universal way.
+
+
+221
+00:19:11,370 --> 00:19:19,740
+About 10 years ago, when we had a project with AMD and Intel,
+
+
+222
+00:19:19,740 --> 00:19:23,620
+to bring OpenCL support into OpenCV,
+
+
+223
+00:19:23,620 --> 00:19:29,170
+I thought that OpenCL would soon become such a new universal standard.
+
+
+224
+00:19:29,170 --> 00:19:32,450
+that everybody would use OpenCL to program that hardware.
+
+
+225
+00:19:32,450 --> 00:19:38,970
+Hardware like GPU or specialized computer vision accelerators.
+
+
+226
+00:19:41,340 --> 00:19:54,850
+So, for OpenCL in OpenCV we created special class called cv::UMat that people can use to access OpenCL functionality.
+
+
+227
+00:19:55,450 --> 00:20:05,420
+And also OpenCV included several hundreds of OpenCL kernels to accelerate various algorithms from image processing to machine learning and so on.
+
+
+228
+00:20:06,570 --> 00:20:12,910
+Unfortunately, now OpenCL is sort of semi-abandoned standard.
+
+
+229
+00:20:13,020 --> 00:20:23,940
+It's still in the development, but it looks most manufacturers try to use something else.
+
+
+230
+00:20:23,940 --> 00:20:34,910
+Like Apple uses Metal standard, then on Android, Vulkan is more popular for game, for example.
+
+
+231
+00:20:39,220 --> 00:20:44,680
+Also there are some immature standards, for example,
+
+
+232
+00:20:44,680 --> 00:20:49,910
+the standard called OACC (OpenACC), open accelerator.
+
+
+233
+00:20:50,880 --> 00:20:58,880
+It aims at to bring some extensions to C++ standard to upload some loops to GPU.
+
+
+234
+00:21:00,910 --> 00:21:11,970
+But it is not quite mature, so I would say we're still waiting for such a standard come out to conveniently program various hardware.
+
+
+235
+00:21:15,020 --> 00:21:23,080
+Currently there are some positive trends for example,
+
+
+236
+00:21:23,170 --> 00:21:31,970
+like Vulkan group in Khronos community and OpenCL group, they work together
+
+
+237
+00:21:31,970 --> 00:21:38,480
+to provide OpenCL compatibility for Vulkan based hardware and such.
+
+
+238
+00:21:38,480 --> 00:21:43,420
+So maybe OpenCL is not completely dead and it will maybe revised at some point.
+
+
+239
+00:21:45,000 --> 00:21:46,650
+Yes, we are still waiting.
+
+
+240
+00:21:46,780 --> 00:21:52,970
+Without the standard it is difficult to come up with such a universal class
+
+241
+00:21:52,970 --> 00:21:58,850
+because you do not know which should be added, because everybody uses the different API.
+
+242
+00:22:01,170 --> 00:22:04,340
+I still have another question.
+
+243
+00:22:04,850 --> 00:22:07,200
+Actually it's two questions.
+
+
+244
+00:22:07,200 --> 00:22:16,510
+The first question is does OpenCV have any plan to update Mat class to a newer one?
+
+245
+00:22:16,510 --> 00:22:19,880
+Or we will continue to use the current one?
+
+246
+00:22:22,170 --> 00:22:26,110
+Yes, so OpenCV is quite large library with many users,
+
+247
+00:22:26,940 --> 00:22:35,170
+and so there are no plans to completely replace the cv::Mat with something else.
+
+
+248
+00:22:35,510 --> 00:22:39,370
+And cv::Mat is quite flexible for example
+
+
+249
+00:22:39,370 --> 00:22:45,280
+for Python bindings, users do not see this cv::Mat class.
+
+
+250
+00:22:45,510 --> 00:22:50,710
+They operate on common ...
+
+
+251
+00:22:50,710 --> 00:22:56,620
+on very popular in Python world, NumPy arrays.
+
+
+252
+00:22:56,620 --> 00:23:04,650
+And internally, those Python arrays are converted to cv::Mat, usually it happens without copying any data.
+
+
+253
+00:23:04,650 --> 00:23:06,650
+So it's very efficient.
+
+254
+00:23:06,650 --> 00:23:11,740
+We try to use this zero copy techniques.
+
+
+255
+00:23:12,770 --> 00:23:22,200
+Internally, as I said, we do not plan to completely replace cv::Mat with something completely new.
+
+
+256
+00:23:22,540 --> 00:23:27,280
+But we want to make some upgrades to cv::Mat.
+
+
+257
+00:23:27,650 --> 00:23:34,020
+First of all, we plan to extend the number of data types supported.
+
+258
+00:23:34,480 --> 00:23:41,940
+So maybe it will be some new integer data types, also we plan to add BFloat16.
+
+
+259
+00:23:42,220 --> 00:23:48,910
+Brain Floating 16, it's the relatively new 16 point format developed by Google. 
+
+
+260
+00:23:49,740 --> 00:23:57,110
+and use in their TPU accelerators, and also it is now supported by Intel hardware
+
+
+261
+00:23:57,600 --> 00:24:04,250
+Upcoming ARM v9 and some other architectures.
+
+
+262
+00:24:04,940 --> 00:24:08,420
+So it's quite popular and we want to add support for it.
+
+263
+00:24:09,310 --> 00:24:13,310
+Another new feature is
+
+
+264
+00:24:14,370 --> 00:24:19,310
+to support one dimensional arrays.
+
+
+265
+00:24:21,050 --> 00:24:30,450
+As I said, we borrowed this cv::Mat class idea from Matlab,
+
+
+266
+00:24:30,450 --> 00:24:35,820
+and in Matlab, there is no one dimensional array, as far as I know.
+
+
+267
+00:24:37,080 --> 00:24:43,020
+One dimensional array is represented as two dimensional 1xN and Nx1 array.
+
+
+268
+00:24:43,020 --> 00:24:53,280
+And in OpenCV we took the same convention, but it appears to be not quite convenient for Python bindings
+
+
+269
+00:24:53,280 --> 00:24:56,540
+and for some deep learning areas that
+
+270
+00:24:56,540 --> 00:25:01,910
+we are trying to add to OpenCV currently like speech recognition
+
+
+271
+00:25:01,910 --> 00:25:05,000
+or whatever some areas on dimensional arrays are important
+
+
+272
+00:25:05,000 --> 00:25:10,680
+We want to support for real one dimensional arrays to OpenCV.
+
+
+273
+00:25:11,910 --> 00:25:14,400
+The third feature, we are still thinking of it.
+
+
+274
+00:25:14,400 --> 00:25:27,510
+But, maybe we will add some tag into cv::Mat that will indicate, that will provide some indication to what is the data, that marks the source.
+
+
+275
+00:25:27,510 --> 00:25:33,770
+For example, the tag can be RGB or BGR to indicate what is the order of channels.
+
+
+276
+00:25:33,770 --> 00:25:40,510
+Maybe it will solve some old problems, when people just put,
+
+
+277
+00:25:41,420 --> 00:25:49,370
+use some matrix with incorrect data channels, and sometimes they get wrong visualization.
+
+
+278
+00:25:49,600 --> 00:25:55,310
+Instead of a red face, you will get blue faces. In some cases,
+
+
+279
+00:25:55,510 --> 00:26:03,540
+You just get maybe slightly worse performance from some deep nets, object detection networks.
+
+
+280
+00:26:03,540 --> 00:26:08,800
+so it still detects objects, but not as good as with proper order channels.
+
+
+281
+00:26:08,800 --> 00:26:12,220
+So it's a very subtle bug to detect.
+
+
+282
+00:26:12,220 --> 00:26:19,140
+And maybe with this tags, this problem will disappear.
+
+
+283
+00:26:19,140 --> 00:26:21,420
+So we are still thinking of..
+
+284
+00:26:21,450 --> 00:26:31,540
+Yeah, sure, yeah because in my course, the final project is to do some CNN
+
+285
+00:26:31,540 --> 00:26:34,510
+They should implement CNN by themselves.
+
+
+286
+00:26:35,420 --> 00:26:48,970
+So in the data reading from the image, the default channel is BGR, a lot of students were confused by that and made some errors.
+
+
+287
+00:26:50,250 --> 00:27:00,200
+I know there will be some students from my class and also from maybe all over the world will watch this video.
+
+
+288
+00:27:00,310 --> 00:27:07,850
+Do you have any suggestions for the students in computer science, especially the students who are learning C++
+
+289
+00:27:12,340 --> 00:27:13,540
+Yeah, so
+
+290
+00:27:18,740 --> 00:27:23,200
+I think that currently there are many sources of information,
+
+
+291
+00:27:23,310 --> 00:27:27,400
+there are many good online courses on computer vision.
+
+292
+00:27:27,400 --> 00:27:38,110
+I'm glad that you are teaching the C++ class, I saw some bits of it and I think it's very professional.
+
+293
+00:27:38,510 --> 00:27:43,370
+I'm sure that students will learn a lot from it.
+
+294
+00:27:44,170 --> 00:27:49,880
+So maybe I have just a few common words,
+
+295
+00:27:50,710 --> 00:28:00,050
+feel free to ignore them completely, just from my experience of developing software quite a few years.
+
+
+296
+00:28:01,200 --> 00:28:10,080
+I would suggest students to pay more attention to algorithms, concepts, technologies,
+
+
+297
+00:28:10,570 --> 00:28:14,200
+rather than particular features, particular programming language.
+
+298
+00:28:18,220 --> 00:28:24,140
+Many years ago, Fortran was the most language for computing,
+
+
+299
+00:28:24,970 --> 00:28:29,740
+then C became the dominant language, then C++.
+
+
+300
+00:28:30,280 --> 00:28:37,910
+I would say currently maybe Python is used more especially with special acceleration extensions, like NumPy [TODO:VP] whatever or Siphon[TODO:VP].
+
+
+301
+00:28:37,910 --> 00:28:42,600
+Maybe Python is used more actively for computing than everything else.
+
+302
+00:28:42,600 --> 00:28:51,880
+So do not pay too much attention to the particular feature, particular language,
+
+
+303
+00:28:52,080 --> 00:28:58,110
+and do not try to use all those fancy features of the language that you just learned in your project
+
+
+304
+00:28:58,480 --> 00:29:06,820
+Because those features just exist and you want to make your code look cool by using all those features
+
+
+305
+00:29:06,820 --> 00:29:14,250
+because this's a good change that a couple of months later you won't be able to read your own code because it's too complex.
+
+
+306
+00:29:15,680 --> 00:29:20,740
+I think this suggestion is especially for C++, right?
+
+307
+00:29:21,170 --> 00:29:24,310
+Because there are too many features in C++.
+
+308
+00:29:24,310 --> 00:29:36,420
+Yes, C++, I would say, in the recent standards, they made some small convenient to you like modules.
+
+309
+00:29:36,420 --> 00:29:38,420
+It's important feature I believe.
+
+310
+00:29:38,420 --> 00:29:42,680
+But on the other hands, languages becoming quite more and more complex.
+
+311
+00:29:43,570 --> 00:29:52,450
+And so you need to develop proper style of using C++, not to shoot yourself on the foot.
+
+
+312
+00:29:52,450 --> 00:29:57,570
+And try not to use manual memory allocation,
+
+
+313
+00:29:57,570 --> 00:30:04,000
+To use exisiting containers like std::vector, or if you use OpenCV, use cv::Mat, etc.
+
+
+314
+00:30:05,600 --> 00:30:12,880
+Like try to put some regression test before you do any refactoring or optimization.
+
+
+315
+00:30:12,880 --> 00:30:16,220
+There should be some tests, of course.
+
+316
+00:30:16,770 --> 00:30:23,970
+As I said, develop some methodology, a proper methodology how to
+
+
+317
+00:30:23,970 --> 00:30:31,420
+create robust software that is easy to debug or doesn't need to be debugged at all, it works out of the box.
+
+
+318
+00:30:32,110 --> 00:30:40,080
+Instead of just using very complex language constructions that you may not fully understand.
+
+319
+00:30:41,200 --> 00:30:49,140
+Yeah, sure. I also found a lot of students, they spend a lot of time on debugging.
+
+320
+00:30:49,140 --> 00:30:59,080
+It takes them a lot of time to find a very tiny bug, it's very difficult in C and C++,
+
+321
+00:30:59,420 --> 00:31:09,340
+because there are memory leaks and maybe some pointers have invalid values,
+
+
+322
+00:31:09,850 --> 00:31:11,340
+it's quite common, yeah.
+
+
+323
+00:31:11,910 --> 00:31:19,080
+Yes, so like automatic class you mentioned, for example, shared pointers, it is another very good tool
+
+
+324
+00:31:19,080 --> 00:31:28,820
+when people avoid using raw pointers in C++.
+
+
+325
+00:31:28,820 --> 00:31:34,710
+But instead use containers like cv::Vec or cv::Mat or shared pointers.
+
+
+326
+00:31:35,940 --> 00:31:43,110
+The number of memory leaks problems go almost to zero.
+
+
+327
+00:31:43,480 --> 00:31:45,910
+Yeah, thank you, thank you for the suggestions!
+
+328
+00:31:46,370 --> 00:31:47,910
+Yeah, you are welcome!
+
+329
+00:31:48,370 --> 00:31:56,540
+I believe the students will be benefited from your suggestions and also your introduction to OpenCV, thank you!
+
+330
+00:31:56,540 --> 00:31:58,540
+You are welcome!
+
