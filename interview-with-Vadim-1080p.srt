@@ -1,1506 +1,1800 @@
 ﻿1
 00:00:00,000 --> 00:00:02,460
 Hi, Vadim, nice to talk with you.
+你好，Vadim，很高兴能和你聊天.
 
 2
 00:00:02,460 --> 00:00:06,840
 I’m teaching C and C++ in my university.
+我现在在我所在的大学教授C和C++课程。
 
 3
 00:00:06,840 --> 00:00:12,440
 I took the source code in OpenCV as an example to the students.
+我把OpenCV的源码作为例子展示给学生。
 
 4
 00:00:12,440 --> 00:00:19,160
 And I also suggested my students to learn C++ from OpenCV.
+并且我建议我的学生们也利用OpenCV学习C++。
 
 5
 00:00:19,160 --> 00:00:24,120
 I found the class cv::Mat is an excellent example.
+我发现cv::Mat类是一个非常好的范例。
 
 6
 00:00:25,080 --> 00:00:28,000
 And, I know you designed the class.
+我知道这个类是你设计的。
 
 7
 00:00:28,100 --> 00:00:28,800
-So
+So,
+所以，
 
 8
 00:00:29,040 --> 00:00:33,440
 Could you tell me some history of the Mat class?
+能否告诉我一些有关Mat类的历史？
 
 9
 00:00:33,500 --> 00:00:36,960
 And why to design a new C++ class?
+包括为什么要设计一个新的C++类？
 
 10
 00:00:36,960 --> 00:00:41,000
 I remember at the beginning,
+因为我记得在最开始，
 
 11
 00:00:41,000 --> 00:00:49,000
 OpenCV used the IplImage and CvMat structure for images.
+IplImage和CvMat被用作OpenCV中图像的数据结构。
 
 12
 00:00:49,000 --> 00:00:51,160
 So, why you designed it?
+所以你为什么要设计它呢？
 
 13
 00:00:51,160 --> 00:00:53,760
 Can you introduce a little bit to us?
+你能给我们稍微介绍一下吗？
 
 14
 00:00:54,500 --> 00:00:55,760
 Yes, sure.
+好的。
 
 15
-00:00:56,500 --> 00:00:58,760
+00:00:56,120 --> 00:00:58,760
 I'd like to talk to you again, Shiqi.
+我非常乐意和你分享这些，shiqi。
 
 16
 00:00:59,360 --> 00:01:09,500
-First of all, I'm very pleased that, OpenCV is now taught in universities including your university,
+First of all, I'm very pleased that, OpenCV is now taught in universities including your university
+首先，我非常高兴能看到OpenCV在包括你的大学在内的学校里被教授
 
 17
 00:01:09,700 --> 00:01:13,480
-and you chose CV::Mat as am example of C++ design.
+and you chose cv::Mat as an example of C++ design.
+并且你把cv::Mat作为学习C++的一个例子。
 
 18
 00:01:13,480 --> 00:01:20,840
 Actually it's a big pleasure for me and for the whole OpenCV team that
+事实上对于我和整个OpenCV团队来说我们的设计被这样使用
 
 19
 00:01:20,840 --> 00:01:25,480
 our pieces of OpenCV design are used in such a way.
+是非常值得高兴的。
 
 20
 00:01:25,480 --> 00:01:35,720
 Indeed, it took several years for OpenCV team to come up with this C++ class.
+事实上，我们花了好几年时间设计出这个C++类。
 
 21
 00:01:35,720 --> 00:01:36,920
 In the very beginning,
+在最开始的时候，
 
 22
 00:01:36,920 --> 00:01:41,200
 the very first structure in OpenCV
+OpenCV的第一个数据结构
 
 23
 00:01:41,200 --> 00:01:43,880
 as you correctly pointed out was IplImage.
+正如你所说的，是IplImage。
 
 24
 00:01:43,880 --> 00:01:51,600
 This is because OpenCV was started at Intel in 1998
+这是因为在1998，OpenCV最开始是作为一个闭源代码库被设计出来，\\TODO
 
 25
 00:01:51,600 --> 00:01:56,000
 as a close source library, and then released as open source.
+然后作为开源代码发布。
 
 26
 00:01:56,000 --> 00:02:02,360
 At that time, at Intel, the family of performance libraries,
+在那时的Intel，(高)性能库，\\TODO
 
 27
 00:02:02,360 --> 00:02:06,760
 like for signal processing acceleration, for image processing acceleration,
+包括信号处理加速（库），图像处理加速（库）等，
 
 28
 00:02:06,760 --> 00:02:12,040
 and like one of the libraries was IPL,
+其中之一就是IPL，
 
 29
 00:02:12,040 --> 00:02:14,800
 Image Processing Library by Intel.
+也就是Intel的图像处理库。
 
 30
 00:02:14,800 --> 00:02:19,000
 And it uses IplImage as the main data structure.
+正是它使用IplImage作为主要的数据结构。
 
 31
 00:02:19,000 --> 00:02:24,320
 The original OpenCV was planned as addition to IPL
+最初的OpenCV被计划作为IPL的补充
 
 32
 00:02:24,320 --> 00:02:28,520
 or IPL concentrates on image processing,
+或者说是IPL负责图像处理，
 
 33
 00:02:28,520 --> 00:02:32,320
 and OpenCV will concentrate on computer vision.
+OpenCV负责计算机视觉。
 
 34
 00:02:32,320 --> 00:02:35,800
 In the begin, OpenCV was called CVL,
+在最开始，OpenCV被叫做CVL，
 
 35
 00:02:35,800 --> 00:02:36,750
 Computer Vision Library.
+也就是计算机视觉库。
 
 36
 00:02:36,800 --> 00:02:41,070
 So it even use the same name pattern as IPL.
+所以它甚至使用和IPL一样的命名规范\\TODO。
 
 37
 00:02:41,070 --> 00:02:47,520
-just a set of computer algorithms of image processing, computer vision.
+It is\\TODO just a set of computer algorithms of image processing, computer vision.
+（在最开始），他只是用于图像处理和计算机视觉的一套算法。
 
 38
 00:02:47,520 --> 00:02:52,520
 Soon, we realized the IplImage was not enough,
+但很快我们意识到IplImage是不够的，
 
 39
 00:02:52,520 --> 00:02:55,040
 because in computer vision, if you do, for example,
+因为在计算机视觉中，
 
 40
 00:02:55,040 --> 00:03:01,800
 camera preparations, some 3D vision, whatever you need, general matrix class.
+你做任何工作都需要通用的矩阵类，包括相机准备，3D视觉。\\TODO
 
 41
 00:03:01,800 --> 00:03:04,800
 And sometimes, for example,
+并且有时，
 
 42
 00:03:04,800 --> 00:03:06,840
 you need more than two dimensional arrays,
+你需要不止二维的数组，
 
 43
 00:03:06,840 --> 00:03:08,120
 like 3 dimensional arrays.
+像三维数组。
 
 44
 00:03:08,120 --> 00:03:11,940
 Sometimes you need sparse multi-dimensional arrays.
+有时你需要稀疏的多维数组。
 
 45
 00:03:12,020 --> 00:03:14,260
 So in addition to IplImage,
+所以作为IplImage的补充，
 
 46
 00:03:14,260 --> 00:03:18,960
 we also create CvMat, CvMatND indeed and CvSparseMat
+我们创建了CvMat，CvMatND和CvSparseMat。
 
 47
 00:03:18,960 --> 00:03:23,460
 to like other those use cases.
+用以其他的用例。
 
 48
 00:03:25,280 --> 00:03:32,910
 Then a time later, Intel abandoned IPL in favor of like library of low level primitives.
+一段时间后，Intel放弃了IPL转而使用类似的低级原语库，\\TODO
 
 49
 00:03:33,020 --> 00:03:37,550
 It is called IPP and it is still used in OpenCV for acceleration.
+它被称为IPP，并且仍然在OpenCV中提供加速功能。
 
 50
 00:03:44,570 --> 00:03:50,260
-We have to maintain compatibility with IPL since then.
+We didn't have to maintain compatibility with IPL since then.
+从那时起，我们就不必维护和IPL的兼容性。
 
 51
 00:03:50,260 --> 00:03:54,480
 Because like uh, the library was gone and replaced with IPP.
-
+因为这个库被IPP取而代之。
 
 52
 00:03:54,930 --> 00:04:03,640
 So we mostly used CvMat C structure for most of use cases
-
+所以我们在绝大多数用例中使用CvMat作为C的数据结构，
 
 53
 00:04:04,170 --> 00:04:06,880
 for point clouds, for mathesis, for images.
+用于点云，数学分析\\TODO，图像。
 
 54
 00:04:09,080 --> 00:04:13,950
 But we constantly got requests from users
-
+但我们最近不断收到用户的请求
 
 55
 00:04:13,950 --> 00:04:17,820
-to introduce C++ API
+to introduce C++ API.
+来引入C++的API。
 
 56
 00:04:17,820 --> 00:04:25,370
-because C++ was much more convenient to use, instead of C.
-
+Because C++ was much more convenient to use, instead of C.
+因为相对于C来说C++使用起来更加方便。
 
 57
 00:04:26,840 --> 00:04:34,880
 In the year 2008, when Willow Garage company started to found OpenCV,
-
+在2008年，Willow Garage公司开始建立OpenCV，
 
 58
 00:04:34,880 --> 00:04:39,820
-by the way Willow Garage company also created ROS, Robot Operating System 
-
+by the way Willow Garage is the company also created ROS, Robot Operating System.
+顺便说一下，Willow Garage还创造了ROS，也就是机器人操作系统。
 
 59
 00:04:40,400 --> 00:04:43,770
-It was a quite big startup at a certain point.
-
+So it was a quite big startup at \\TODO the certain point.
+所以在那时这是个相当大的初创公司。\\TODO
 
 60
 00:04:43,770 --> 00:04:46,440
 It founded OpenCV development.
+它创造了OpenCV。
 
 61
 00:04:46,930 --> 00:04:50,400
 They gave us resources and we started to think
-
+他们给我们提供资源，
 
 62
 00:04:50,400 --> 00:04:54,750
 how to redesign OpenCV to use C++ API.
+我们开始思考如何重新设计OpenCV来使用C++的API。
 
 63
 00:04:54,750 --> 00:04:57,860
-and definitely we need C++ data structure.
+And definitely we need C++ data structure
+所以我们当然需要使用C++的数据结构
 
 64
 00:04:57,860 --> 00:05:02,880
 instead of CvMat and IplImage C structures.
-
+而不是CvMat和IplImage这类C的数据结构。
 
 65
 00:05:04,260 --> 00:05:05,770
 So we looked around,
+所以我们环顾四周，
 
 66
-00:05:05,770 --> 00:05:09,110
-and for the source of inspiration,
+00:05:07,600 --> 00:05:09,110
+look for the source of inspiration,
+寻找灵感的源泉，
 
 67
 00:05:09,110 --> 00:05:14,260
 and we found that Matlab is a very good example of good design.
-
+然后我们发现Matlab是一个很好的设计范例。
 
 68
 00:05:14,260 --> 00:05:21,510
-That is Matlab is not an as flexible language as C or C++.
-
+That is Matlab is not an as flexible language as C or C++,
+（虽然）Matlab不像C或C++那样灵活，
 
 69
 00:05:22,000 --> 00:05:24,350
-But it is super convenient.
+but it is super convenient.
+但它非常方便。
 
 70
-00:05:24,350 --> 00:05:34,750
-It has this matrix, or array data type. And all the toolboxes in Matlab, use this data type.
-
+00:05:24,350 --> 00:05:28,840
+It has this matrix, or array data type. 
+它使用矩阵，也就是数组的数据结构。
 
 71
-00:05:34,750 --> 00:05:38,620
-Therefore, there is no absolutely not compatibility issues
-
+00:05:28,840 --> 00:05:34,750
+And all the toolboxes in Matlab use this data type.
+并且Matlab中所有的工具箱都使用这种数据类型。
 
 72
-00:05:38,620 --> 00:05:42,310
-If you want to use those toolboxes.
-
+00:05:34,750 --> 00:05:38,620
+Therefore, there is no, absolutely not compatibility issues.
+所以兼容性问题当然不会存在。
 
 73
-00:05:42,310 --> 00:05:45,050
-You just download them and use together
+00:05:40,400 --> 00:05:42,310
+If you want to use those toolboxes,
+如果你需要使用这些工具箱，
 
 74
-00:05:45,050 --> 00:05:51,730
-without any convert stage, structures from one type to another.
-
+00:05:42,310 --> 00:05:45,050
+you just download them and use together
+你只需要下载并使用
 
 75
-00:05:51,730 --> 00:05:54,130
-You just use those toolboxes together.
-
+00:05:45,050 --> 00:05:51,730
+without any convert stage, structures from one type to another.
+而不需要任何的数据类型转换。
 
 76
-00:05:54,130 --> 00:06:01,910
-And they, MathWorks, even use those arrayed data types for images.
-
+00:05:51,730 --> 00:05:54,130
+You just use those toolboxes together.
+你只需要关心如何去用。
 
 77
-00:06:01,910 --> 00:06:04,350
-In matlab, there is image processing toolbox,
+00:05:54,130 --> 00:06:01,910
+And they, MathWorks, even use those arrayed data types for images.
+MathWorks甚至将这些数组用于图像。
 
 78
-00:06:04,350 --> 00:06:07,680
-and it also uses matrix data type.
+00:06:01,910 --> 00:06:04,350
+In Matlab, there is image processing toolbox,
+在Matlab中有图像处理工具箱，
 
 79
-00:06:07,680 --> 00:06:10,040
-I really like this idea that
+00:06:04,350 --> 00:06:07,680
+and it also uses matrix data type.
+它也使用矩阵的数据类型。
 
 80
-00:06:10,040 --> 00:06:13,860
-one data type is used for any kind of array.
+00:06:07,680 --> 00:06:10,040
+I really like this idea that
+我非常喜欢这种
 
 81
-00:06:14,260 --> 00:06:22,040
-So we just tried to replicate Matlab API
-
+00:06:10,040 --> 00:06:13,860
+one data type is used for any kind of array.
+将一种数据类型用于任何类型数组的主意。
 
 82
-00:06:22,040 --> 00:06:24,170
-as goal as we could.
-
+00:06:14,260 --> 00:06:22,040
+So we just tried to replicate Matlab API
+所以我们开始尽可能
 
 83
-00:06:24,170 --> 00:06:29,200
-we wanted convenient element access operations, etc.
-
+00:06:22,040 --> 00:06:24,170
+as goal as we could.
+尝试模仿Matlab的API。
 
 84
-00:06:29,200 --> 00:06:35,770
-we wanted like convenient element, //TODO access separations, etc.
+00:06:24,170 --> 00:06:29,200
+That is we wanted memory to be managed automatically,
+我们需要自动的内存管理机制，
 
 85
-00:06:35,770 --> 00:06:39,770
-So we created this class, C++ structure, cv::Mat.
-
+00:06:29,200 --> 00:06:35,770
+we wanted convenient element access operations, etc.
+和方便的元素访问操作等等。
 
 86
-00:06:39,770 --> 00:06:43,330
-They replaced all of the structures,
-
+00:06:35,770 --> 00:06:39,770
+So we created this class, C++ structure, cv::Mat.
+所以我们创造了这个C++数据结构，cv::Mat。
 
 87
-00:06:43,330 --> 00:06:46,820
-IplImage, CvMat, CvMatND
-
+00:06:39,770 --> 00:06:43,330
+They replaced all of the structures,
+它替代了所有的数据结构，
 
 88
-00:06:46,820 --> 00:06:50,570
-Sparse model was a seperate structure
-
+00:06:43,330 --> 00:06:46,820
+IplImage, CvMat, CvMatND
+包括IplImage，CvMat，CvMatND。
 
 89
-00:06:50,820 --> 00:06:53,100
-But all the dense arrays were replaced with just a single structure.
-
+00:06:46,820 --> 00:06:50,570
+Sparse model was a separate structure,
+稀疏模型\\TODO是一种独立的数据类型，
 
 90
-00:06:53,980 --> 00:07:02,770
-We know different Mat objects may share the same memory for matrix data to avoid memory leak.
-
+00:06:50,820 --> 00:06:53,100
+but all the dense arrays were replaced with just a single structure.
+但是所有的稠密矩阵都被一种数据结构代替了。
 
 91
-00:07:02,770 --> 00:07:07,200
-There is a complex mechanism in Mat class.
+00:06:53,980 --> 00:07:02,770
+We know different Mat objects may share the same memory for matrix data to avoid memory leak.
+我们知道不同的Mat对象可能会共享内存来避免内存泄露。
 
 92
-00:07:07,200 --> 00:07:17,860
-If you redesign Mat class now, will you use smart pointers in the new C++ standards?
+00:07:02,770 --> 00:07:07,200
+There is a complex mechanism in Mat class.
+在Mat类中有一种复杂的机制。
 
 93
-00:07:22,780 --> 00:07:26,910
-We did have a shared pointer
-
+00:07:07,200 --> 00:07:17,860
+If you redesign Mat class now, will you use smart pointers in the new C++ standards?
+如果现在你重新设计Mat类，你会在新的C++标准中使用智能指针吗？
 
 94
-00:07:27,330 --> 00:07:30,350
-appeared in C++11 if I'm not mistaken.
-
+00:07:22,780 --> 00:07:26,910
+We did have a shared pointer
+我们确实在C++11中使用了智能指针，
 
 95
-00:07:30,350 --> 00:07:33,060
-In C++20,
-
+00:07:27,330 --> 00:07:30,350
+appeared in C++11 if I'm not mistaken.
+如果我没记错的话。
 
 96
-00:07:33,060 --> 00:07:38,530
-it was special version of this shared pointer that can use atomic operations.
-
+00:07:30,350 --> 00:07:33,060
+In C++20,
+在C++20中，
 
 97
-00:07:39,600 --> 00:07:43,820
-And we create cv::Mat in 2009,
-
+00:07:33,060 --> 00:07:38,530
+it was special version of this shared pointer that can use atomic operations.
+它是这个智能指针的特殊版本，可以使用原子操作。
 
 98
-00:07:43,820 --> 00:07:46,840
-so even 2 years before C++11,
-
+00:07:39,600 --> 00:07:43,820
+And we create cv::Mat in 2009,
+我们在2009年开发了cv::Mat，
 
 99
-00:07:47,420 --> 00:07:52,220
-so we couldn't wait for the new C++ standard to come out.
-
+00:07:43,820 --> 00:07:46,840
+so even 2 years before C++11,
+甚至比C++11标准早了两年。
 
 100
-00:07:52,220 --> 00:07:56,040
-So we used our own implementation of shared pointer.
-
+00:07:47,420 --> 00:07:52,220
+so we couldn't wait for the new C++ standard to come out,
+所以我们等不及使用新的C++标准，
 
 101
-00:07:56,040 --> 00:07:58,040
-Of course it's not a new idea.
+00:07:52,220 --> 00:07:56,040
+so we used our own implementation of shared pointer.
+转而使用我们自己实现的智能指针。
 
 102
-00:07:58,480 --> 00:08:01,330
-It was well known for decades.
-
+00:07:56,040 --> 00:07:58,040
+Of course it's not a new idea.
+这当然不是个新点子。
 
 103
-00:08:02,420 --> 00:08:06,440
-Even Python created in 90s.
-
+00:07:58,480 --> 00:08:01,330
+It was well known for decades.
+几十年来它广为人知。
 
 104
-00:08:07,280 --> 00:08:14,480
-It used shared pointers with a reference counter to manage memory.
-
+00:08:02,420 --> 00:08:06,440
+Even Python created in 90s.
+甚至Python也在90年代开发了。
 
 105
-00:08:14,480 --> 00:08:16,880
-And it still uses this technique.
+00:08:07,280 --> 00:08:14,480
+It used shared pointers with a reference counter to manage memory.
+它使用带有引用计数器的智能指针来管理内存。
 
 106
-00:08:17,240 --> 00:08:22,660
-So we wanted memory to be managed automatically.
+00:08:14,480 --> 00:08:16,880
+And it still uses this technique.
+并且到现在还在使用这个技术。
 
 107
-00:08:22,660 --> 00:08:30,800
-And we want memory to be managed in the thread safe manner.
+00:08:17,240 --> 00:08:22,660
+So we wanted memory to be managed automatically,
+所以我们希望自动管理内存，
 
 108
-00:08:30,970 --> 00:08:35,400
-So we wanted to use atomic operations from the very beginning.
-
+00:08:22,660 --> 00:08:30,800
+and we want memory to be managed in the thread safe manner.
+我们希望以线程安全的方式来管理内存。
 
 109
-00:08:35,860 --> 00:08:39,200
-We implemented this mechanism in cv::Mat.
-
+00:08:30,970 --> 00:08:35,400
+So we wanted to use atomic operations from the very beginning.
+所以我们希望在一开始就使用原子操作。
 
 110
-00:08:39,770 --> 00:08:44,440
-And I would say that overall cv::Mat implementation
-
+00:08:35,860 --> 00:08:39,200
+We implemented this mechanism in cv::Mat.
+我们在cv::Mat中实现了这个机制。
 
 111
-00:08:44,440 --> 00:08:48,400
-and architecture are quite complex.
-
+00:08:39,770 --> 00:08:44,440
+And I would say that overall cv::Mat implementation
+我会说，
 
 112
-00:08:48,400 --> 00:08:51,420
-If you look inside, you would notice that
+00:08:44,440 --> 00:08:48,400
+and architecture are quite complex.
+cv::Mat的实现和架构相当复杂。
 
 113
-00:08:51,420 --> 00:08:58,770
-for example, there is not a signal reference counter but instead there are two reference counters in each matrix.
+00:08:48,400 --> 00:08:51,420
+If you look inside, you would notice that
+如果你仔细观察，你会注意到
 
 114
-00:08:59,200 --> 00:09:02,660
-So overall,
-
+00:08:51,420 --> 00:08:54,480
+for example, there is not a signal reference counter
+每个矩阵中不是单独的引用计数器
 
 115
-00:09:02,660 --> 00:09:03,640
-I would say,
+00:08:54,480 --> 00:08:59,200
+but instead there are two reference counters in each matrix.
+而是两个。
 
 116
-00:09:03,640 --> 00:09:12,040
-if we use this modern C++ standard to implement
+00:08:59,200 --> 00:09:02,660
+So overall,
+所以总的来说，
 
 117
-00:09:12,040 --> 00:09:16,660
-those reference counting, shared memory,
-
+00:09:02,660 --> 00:09:03,640
+I would say,
+我会说，
 
 118
-00:09:16,660 --> 00:09:22,800
-I would say overall implementation would not become noticeable simple
-
+00:09:03,640 --> 00:09:12,040
+if we use this modern C++ standard to implement,
+如果我们以现代的C++标准来实现，
 
 119
-00:09:22,800 --> 00:09:24,570
-In another words,
-
+00:09:12,040 --> 00:09:16,660
+those reference counter, shared memory,
+那些引用计数器，共享内存，
 
 120
-00:09:24,570 --> 00:09:27,910
-if we create cv::Mat now
-
+00:09:16,660 --> 00:09:22,800
+I would say overall implementation would not become noticeable simple.
+在实现上不会更简单。
 
 121
-00:09:27,910 --> 00:09:34,530
-I would say the implementation will be almost the same as it was like many years ago.
+00:09:22,800 --> 00:09:24,570
+In another words,
+换句话说，
 
 122
-00:09:34,540 --> 00:09:40,660
-Even though, C++ standard going in the right direction.
-
+00:09:24,570 --> 00:09:27,910
+if we create cv::Mat now
+如果我们现在设计cv::Mat类，
 
 123
-00:09:40,660 --> 00:09:46,250
-For CV Ptr class [TODO:vp] OpenCV, we used shared pointer for matrix 
-
+00:09:27,910 --> 00:09:34,530
+I would say the implementation will be almost the same as it was like many years ago.
+它的实现恐怕会和多年前几乎相同。
 
 124
-00:09:47,420 --> 00:09:52,650
-I would say we would use the same implementation as before.
-
+00:09:34,540 --> 00:09:40,660
+Even though, C++ standard going in the right direction.
+尽管如此，C++标准是在朝着正确的方向发展。
 
 125
-00:09:52,650 --> 00:09:56,050
-Mat class is not a template class.
+00:09:40,660 --> 00:09:46,250
+For CV Ptr class [TODO:vp] OpenCV, we used shared pointer.
+对于OpenCV中的CV Ptr类，我们使用智能指针。
 
 126
-00:09:56,600 --> 00:09:58,370
-In my class,
+00:09:47,420 --> 00:09:52,650
+For matrix, I would say we would use the same implementation as before.
+对于矩阵，我们恐怕会使用和之前相同的实现。
 
 127
-00:09:58,370 --> 00:10:02,480
-I ask my student to implement a matrix class
+00:09:52,650 --> 00:09:56,050
+Mat class is not a template class.
+Mat类不是一个模板类。
 
 128
-00:10:02,480 --> 00:10:06,650
-to improve their programming skills.
+00:09:56,600 --> 00:09:58,370
+In my class,
+在我的课上，
 
 129
-00:10:08,740 --> 00:10:16,310
-I asked them that the matrix class they designed should support many different data types,
+00:09:58,370 --> 00:10:02,480
+I ask my student to implement a matrix class
+我要求同学们实现一个矩阵类
 
 130
-00:10:16,310 --> 00:10:25,770
-including 8-bit integers, 16-bit integers and floating point, like that.
-
+00:10:02,480 --> 00:10:06,650
+to improve their programming skills.
+来提升他们的编程能力。
 
 131
-00:10:25,770 --> 00:10:30,200
-Most student used class template.
+00:10:08,740 --> 00:10:13,120
+I asked them that the matrix class they designed
+我要求他们设计的矩阵类
 
 132
-00:10:30,200 --> 00:10:36,420
-So I think it's a very straightforward idea to use a template for that.
+00:10:13,120 --> 00:10:16,000
+should support many different data types,
+应提供多种数据类型的支持，
 
 133
-00:10:36,420 --> 00:10:41,050
-Could you tell us why the Mat class you designed
+00:10:16,500 --> 00:10:19,440
+including 8-bit integers,
+包括8位整数，
 
 134
-00:10:41,420 --> 00:10:43,480
-is not a template class?
+00:10:20,700 --> 00:10:22,800
+16-bit integers
+16位整数
 
 135
-00:10:44,770 --> 00:10:51,280
-In OpenCV team, we had some discussions like how to implement the thing
-
+00:10:23,000 --> 00:10:25,000
+and floating point, like that.
+和浮点数等等。
 
 136
-00:10:51,850 --> 00:11:02,340
-and at some point, at Intel, we had another project that implemented biasing networks [TODO:VP biasing?]
-
+00:10:26,200 --> 00:10:30,200
+Most student used class template.
+大多数学生都使用模板类。
 
 137
-00:11:05,850 --> 00:11:07,710
-That was quite complex library
+00:10:30,200 --> 00:10:36,420
+So I think it's a very straightforward idea to use a template for that.
+所以我认为使用模板类是一个非常直接的想法。
 
 138
-00:11:07,710 --> 00:11:11,680
-they chose to go completely into that way.
-
+00:10:36,420 --> 00:10:41,050
+Could you tell us why the Mat class you designed
+可以请你告诉我
 
 139
-00:11:11,680 --> 00:11:15,310
-So they created everything in templates.
-
+00:10:41,420 --> 00:10:43,480
+is not a template class?
+为什么你们的设计不是模板类吗？
 
 140
-00:11:16,880 --> 00:11:26,250
-And I know that currently you heavy use of template is one of the trends in C++.
-
+00:10:44,770 --> 00:10:51,280
+In OpenCV team, we had some discussions like how to implement the thing.
+在OpenCV团队中，我们有过如何实现的讨论。
 
 141
-00:11:26,250 --> 00:11:28,850
-Many people prefer to use templates.
+00:10:51,850 --> 00:10:55,120
+At some\\TODO same? point,
+并且某时\\TODO，
 
 142
-00:11:28,850 --> 00:11:31,050
-to get the best efficiency.
+00:10:56,520 --> 00:10:57,200
+at Intel,
+在Intel
 
 143
-00:11:31,050 --> 00:11:39,740
-In our case, we deliberately chose not to go completely to that way
-
+00:10:58,400 --> 00:11:02,440
+we had another project that implemented biasing networks [TODO:VP biasing?]
+我们有另一个关于边缘网络的项目。\\TODO
 
 144
-00:11:40,450 --> 00:11:46,770
-Because we saw bad example, a library becomes unusable
-
+00:11:05,850 --> 00:11:07,710
+That was quite a complex library,
+那是个相当复杂的库，
 
 145
-00:11:46,770 --> 00:11:49,740
-because of its completely template
+00:11:07,710 --> 00:11:11,680
+they chose to go completely into that way.
+他们选择完全使用模板类的方法。\\TODO
 
 146
-00:11:49,740 --> 00:11:55,850
-so we can take very long time to compile code that uses those libraries.
-
+00:11:11,680 --> 00:11:15,310
+So they created everything in templates.
+所以他们在模板类中构建了所有东西。
 
 147
-00:11:55,850 --> 00:12:02,140
-So when we speak about like generic library of algorithms
-
+00:11:16,880 --> 00:11:19,800
+And I know that currently
+而且我知道
 
 148
-00:12:02,200 --> 00:12:11,310
-STL library with containers, basic algorithms like sort()
-
+00:11:20,840 --> 00:11:25,880
+heavy use of template is one of the trends in C++.
+大量使用模板类是现在C++的趋势之一。
 
 149
-00:12:14,880 --> 00:12:22,080
-It's not that much complex, but there is still some, but it's not that much. In the case of computer vision.
-
+00:11:26,250 --> 00:11:28,850
+Many people prefer to use templates
+许多人喜欢使用模板类
 
 150
-00:12:22,080 --> 00:12:27,970
-Algorithms are quite, may become quite complex
-
+00:11:28,850 --> 00:11:31,050
+to get the best efficiency.
+来获得最佳的效率。
 
 151
-00:12:28,420 --> 00:12:36,970
-And so if you make a matrix class as template,
-
+00:11:32,400 --> 00:11:34,960
+In our case, we deliberately chose
+在我们的案例中，
 
 152
-00:12:36,970 --> 00:12:46,850
-It is a strong motivation to put a lot of code into header files
-
+00:11:35,500 --> 00:11:39,640
+not to go completely in template way,
+我们故意不完全使用模板的方式，
 
 153
-00:12:46,850 --> 00:12:48,850
-to make everything templates.
-
+00:11:40,450 --> 00:11:43,720
+because we saw bad examples,
+因为我们见识过反例，
 
 154
-00:12:52,250 --> 00:12:55,880
-And for developers, it may become a simpler solution.
-
+00:11:44,800 --> 00:11:46,770
+a library becomes unusable
+整个库变得完全不可用
 
 155
-00:12:55,880 --> 00:13:03,200
-But for users, normally most of OpenCV users they use just a tiny part of OpenCV
-
+00:11:46,770 --> 00:11:49,740
+because of its completely template
+原因正是它完全使用模板类，
 
 156
-00:13:04,310 --> 00:13:12,710
-But for them, to wait those long minutes or even hours for their code to be compiled
-
+00:11:49,740 --> 00:11:55,850
+so we can take very long time to compile code that uses those libraries.
+所以我们可能需要很长时间来编译使用那些库的代码。
 
 157
-00:13:12,710 --> 00:13:14,710
-it is a big problem.
+00:11:55,850 --> 00:12:02,140
+So when we speak about like generic library of algorithms,
+所以当我们讨论通用算法库时，
 
 158
-00:13:15,220 --> 00:13:22,080
-Unfortunately, together with templates and C++, they didn't introduce modules.
+00:12:02,200 --> 00:12:11,310
+STL library with containers, basic algorithms like sort(),
+包括带有容器的STL库，像sort()的基础算法，
 
 159
-00:13:22,080 --> 00:13:25,400
-Modules are common to C++ only now,
+00:12:14,880 --> 00:12:18,960
+it's not that much complex, but there is still some,
+它们并没有那么复杂，有一些，
 
 160
-00:13:25,400 --> 00:13:29,340
-and even now, the support for modules is immature.
-
+00:12:18,960 --> 00:12:20,400
+but it's not that much.
+但没有那么复杂。
 
 161
-00:13:29,340 --> 00:13:33,940
-Maybe several years later, when modules become widespread,
+00:12:20,440 --> 00:12:22,080
+In the case of computer vision,
+在计算机视觉中，
 
 162
-00:13:33,940 --> 00:13:38,650
-when compiling complete code becomes much more efficient,
+00:12:22,080 --> 00:12:27,970
+algorithms are quite, may become quite complex
+如果你使用模板类的话，
 
 163
-00:13:38,800 --> 00:13:43,140
-then maybe more libraries will come out and will use template.
-
+00:12:28,420 --> 00:12:36,970
+and so if you make a matrix class as template.
+（有些）算法（则）可能会变得相当复杂。
 
 164
-00:13:43,620 --> 00:13:49,450
-Now, it's like not a good idea.
-
+00:12:37,990 --> 00:12:46,850
+There is a strong motivation to put a lot of code into header files
+有很大的可能性你需要在头文件中放入大段代码
 
 165
-00:13:49,450 --> 00:13:55,420
-So the first reason is we want to avoid long compile time.
-
+00:12:46,850 --> 00:12:48,850
+to make everything templates.
+来保证所有类都是模板类。
 
 166
-00:13:57,110 --> 00:13:59,680
-The second reason is Python.
+00:12:52,250 --> 00:12:55,880
+And for developers, it may become a simpler solution.
+对于开发者来说，这可能是一个更简单的解决方案。
 
 167
-00:14:00,420 --> 00:14:08,510
-So even 10 years ago, we understood Python has a good, has a great potential. It is an excellent language.
-
+00:12:55,880 --> 00:13:00,800
+But for users, normally most of OpenCV users
+但对于用户来说，通常他们
 
 168
-00:14:09,540 --> 00:14:15,680
-Besides that has been Java that we also wanted to support
-
+00:13:00,800 --> 00:13:03,320
+ they use just a tiny part of OpenCV.
+只会使用OpenCV的一小部分。
 
 169
-00:14:16,080 --> 00:14:20,140
-and also languages like Java has some support for templates.
-
+00:13:04,310 --> 00:13:12,710
+But for them, to wait those long minutes or even hours for their code to be compiled.
+但（使用模板类的话），他们可能需要几十分钟甚至几个小时等待他们的代码编译。
 
 170
-00:14:20,140 --> 00:14:24,600
-But it's not completely compatible with C++.
-
+00:13:12,710 --> 00:13:14,710
+It is a big problem.
+这是个大问题。
 
 171
-00:14:24,600 --> 00:14:27,020
-Python, it doesn't have any template.
-
+00:13:15,220 --> 00:13:22,080
+Unfortunately, together with templates in C++, they didn't introduce modules.
+不幸的是，正如C++中的模板类一样，他们也没有引入模块。
 
 172
-00:14:27,110 --> 00:14:30,020
-And we wanted OpenCV supported by Python [TODO:VP] as well.
-
+00:13:22,080 --> 00:13:25,400
+Modules are common to C++ only now,
+模块现在才对C++通用，
 
 173
-00:14:31,800 --> 00:14:35,080
-So if you have template library,
+00:13:25,400 --> 00:13:29,340
+and even now, the support for modules is immature.
+即使在现在，对于模块的支持也不甚成熟。
 
 174
-00:14:36,170 --> 00:14:40,710
-creating code for Python is quite complex tasks.
-
+00:13:29,340 --> 00:13:33,940
+Maybe several years later, when modules become widespread,
+也许几年后，当模块更普及时，
 
 175
-00:14:40,710 --> 00:14:46,880
-Basically you need to implement [TODO:VP] all those functions in Python wrapper.
-
+00:13:33,940 --> 00:13:38,650
+when compiling complete code becomes much more efficient,
+当编译完整代码更有效率时，
 
 176
-00:14:46,880 --> 00:14:56,000
-and see what is the actual data type that the user called or particular instance of template implementation.
-
+00:13:38,800 --> 00:13:43,140
+then maybe more libraries will come out and will use template.
+那时可能会出现更多使用模板类的库。
 
 177
-00:14:56,340 --> 00:14:58,570
-So it is not quite convenient.
+00:13:43,620 --> 00:13:49,450
+Now, it's like not a good idea.
+现在，这似乎不是个好主意。
 
 178
-00:14:58,570 --> 00:15:03,220
-So I think we did it the right way
-
+00:13:49,450 --> 00:13:55,420
+So the first reason is we want to avoid long compile time.
+所以，（不使用模板类的）第一个原因是我们要避免编译时间过长。
 
 179
-00:15:03,220 --> 00:15:10,540
-and we make right decision not to implement multiple OpenCV templates [TODO:VP].
-
+00:13:57,110 --> 00:13:59,680
+The second reason is Python.
+第二个原因来自Python。
 
 180
-00:15:11,910 --> 00:15:13,710
-OK, thank you.
+00:14:00,420 --> 00:14:08,510
+So even 10 years ago, we understood Python has a good, has a great potential. It is an excellent language.
+在十年前我们就发现Python是一门有很大潜力的优秀语言。
 
 181
-00:15:13,800 --> 00:15:20,480
-Yeah, I also learned a lot from it.
+00:14:09,540 --> 00:14:15,680
+Besides that has been Java that we also wanted to support
+除此之外我们还想支持Java，
 
 182
-00:15:20,480 --> 00:15:25,220
-Because we always balance between many factors.
+00:14:16,080 --> 00:14:20,140
+and also languages like Java has some support for templates.
+像Java这样的语言对模板也有一些支持。
 
 183
-00:15:25,250 --> 00:15:29,850
-So you introduced the factors in designing OpenCV,
-
+00:14:20,140 --> 00:14:24,600
+But it's not completely compatible with C++.
+但它与C++不完全兼容。
 
 184
-00:15:29,850 --> 00:15:38,770
-but I also found there is a class template which is very similar to Mat in OpenCV, its name is Mat_.
-
+00:14:24,600 --> 00:14:27,020
+Python, it doesn't have any template.
+Python则完全不支持模板。
 
 185
-00:15:39,820 --> 00:15:46,600
-Since we have Mat class, why to design Mat_, the template.
-
+00:14:27,110 --> 00:14:30,020
+And we wanted OpenCV supported by Python [TODO:VP] as well.
+我们希望OpenCV也支持Python。
 
 186
-00:15:47,770 --> 00:15:54,680
-You just explain the template maybe have some shortcomings,
+00:14:33,300 --> 00:14:35,080
+So if you have template library,
+所以，
 
 187
-00:15:54,940 --> 00:15:58,400
-but we find there's a template for Mat.
-
+00:14:36,170 --> 00:14:40,710
+creating code for Python is quite complex tasks.
+基于已有的模板库为Python创建代码是相当复杂的任务。
 
 188
-00:15:59,110 --> 00:16:01,110
-Yes, yes.
+00:14:40,710 --> 00:14:46,880
+Basically you need to implement [TODO:VP] all those functions in Python wrapper.
+基本上你需要在Python包装器中实现所有这些函数。
 
 189
-00:16:03,110 --> 00:16:08,620
-Indeed there's another class that is
-
+00:14:48,720 --> 00:14:52,400
+And see what is the actual data type that the user called
+并查看用户在模板的实例中
 
 190
-00:16:08,620 --> 00:16:12,970
-has this underline in the end of the name
-
+00:14:52,400 --> 00:14:55,800
+particular instance of template implementation.
+实际上使用了哪些数据类型。
 
 191
-00:16:13,080 --> 00:16:17,540
-and it doesn't introducing new members.
+00:14:56,340 --> 00:14:58,570
+So it is not quite convenient.
+这并不非常方便。
 
 192
-00:16:17,540 --> 00:16:22,370
-So it's finally compatible with normal cv::Mat in both ways.
-
+00:14:58,570 --> 00:15:03,220
+So I think we did it the right way
+所以我认为我们（不使用模板类）是对的，
 
 193
-00:16:22,370 --> 00:16:27,910
-So if we use, and it derives from Mat,
-
+00:15:03,220 --> 00:15:10,540
+and we make right decision not to implement multiple OpenCV templates [TODO:VP].
+不在OpenCV的实现中使用多个\\TODO（很多）模板是明智的决定。
 
 194
-00:16:27,910 --> 00:16:32,910
-you can basically use it instead of Mat.
+00:15:11,910 --> 00:15:13,710
+OK, thank you.
+好的，谢谢。
 
 195
-00:16:33,540 --> 00:16:38,740
-The only reason was to provide convenient element access operations.
+00:15:13,800 --> 00:15:20,480
+Yeah, I also learned a lot from it.
+我也从中学到了很多。
 
 196
-00:16:39,510 --> 00:16:42,740
-If you have, for example,
-
+00:15:20,480 --> 00:15:25,220
+Because we always balance between many factors.
+因为我们总是需要平衡很多因素。
 
 197
-00:16:43,250 --> 00:16:47,080
-some matrix algorithm that appears [TODO:VP] floats
-
+00:15:25,250 --> 00:15:29,850
+So you introduced the factors in designing OpenCV,
+你介绍了那些在设计OpenCV时需要考虑的因素,
 
 198
-00:16:49,080 --> 00:16:53,850
-First option to access the elment, you use to play at<>() method
-
+00:15:29,850 --> 00:15:38,770
+but I also found there is a class template which is very similar to Mat in OpenCV, its name is Mat_.
+但我发现了OpenCV中有一个类似Mat的模板类Mat_。
 
 199
-00:16:54,110 --> 00:16:58,710
-with angle brackets<>, you just say that
-
+00:15:39,820 --> 00:15:46,600
+Since we have Mat class, why to design Mat_, the template.
+既然我们已经有了Mat类，为什么还要设计Mat_模板类。
 
 200
-00:16:58,850 --> 00:17:02,800
-myMatrix.add<float>(10, 20), in angle brackets<>,
-
+00:15:47,770 --> 00:15:54,680
+You just explain the template maybe have some shortcomings,
+你刚刚解释了模板类的潜在缺点，
 
 201
-00:17:02,800 --> 00:17:07,770
-you put data type like float, then you put indices in the parenthesis.
-
+00:15:54,940 --> 00:15:58,400
+but we find there's a template for Mat.
+我们却发现有个Mat的模板类。
 
 202
-00:17:08,680 --> 00:17:14,200
-And with Mat_, you just use parentheses myMatrix(10,20)
-
+00:15:59,110 --> 00:16:01,110
+Yes, yes.
+对对对。
 
 203
-00:17:14,200 --> 00:17:17,820
-You don't need add<>() with angle brackets. So it's another notation.
-
+00:16:03,110 --> 00:16:08,620
+Indeed there's another class that is
+确实有这么一个
 
 204
-00:17:18,200 --> 00:17:25,480
-But I would say that the number of algorithms that access elements directly in this way [not many].
-
+00:16:08,620 --> 00:16:12,970
+has this underline in the end of the name
+名字后带下划线的类。
 
 205
-00:17:28,140 --> 00:17:34,770
-Some, savings that you type less symbols
-
+00:16:13,080 --> 00:16:17,540
+and it doesn't introducing new members.
+而且它不会引入新的成员（变量）。\\TODO
 
 206
-00:17:34,770 --> 00:17:42,570
-it is so small, I could say that if we design matrix class today again,
-
+00:16:17,540 --> 00:16:22,370
+So it's finally compatible with normal cv::Mat in both ways.
+所以它最终在两种方式上都与普通的cv::Mat兼容。
 
 207
-00:17:42,880 --> 00:17:45,800
-I would not create this extra template class
-
+00:16:22,370 --> 00:16:27,910
+So if we use, and it derives from Mat,
+如果我们使用这个源自Mat的类，
 
 208
-00:17:45,800 --> 00:17:49,820
-because most people just use normal cv::Mat.
-
+00:16:27,910 --> 00:16:32,910
+you can basically use it instead of Mat.
+基本上可以代替Mat。
 
 209
-00:17:50,420 --> 00:17:51,820
-Yeah, yeah.
+00:16:33,540 --> 00:16:38,740
+The only reason was to provide convenient element access operations.
+唯一的原因是提供方便的元素访问操作。
 
 210
-00:17:52,600 --> 00:17:56,400
-OK, I have another question.
+00:16:39,510 --> 00:16:42,740
+If you have, for example,
+举个例子，
 
 211
-00:17:56,680 --> 00:18:08,000
-The question, it's about hardware, because currently there are many kinds of hardware than in the past
+00:16:43,250 --> 00:16:47,080
+some matrix algorithm that appears [TODO:VP] floats,
+如果你有一些出现浮点数的矩阵算法，
 
 212
-00:18:08,080 --> 00:18:15,570
-in the past, maybe only CPU? Or mostly CPU. Currently we have GPU, NPU or VPU
+00:16:49,080 --> 00:16:53,850
+first option to access the element, you use to play at<>() method
+你需要使用<>()的方法来访问元素
 
 213
-00:18:15,570 --> 00:18:21,540
-Most of them have separate memory,
+00:16:54,110 --> 00:16:58,710
+with angle brackets<>, you just say that
+带尖括号<>，比如
 
 214
-00:18:21,820 --> 00:18:28,880
-Is it possible to design an universal Mat class which can handle different kind of memory?
-
+00:16:58,850 --> 00:17:02,800
+myMatrix.add<float>(10, 20), in angle brackets<>,
+myMatrix.add<float>(10, 20)，在尖括号<>中，
 
 215
-00:18:30,880 --> 00:18:34,600
-So, indeed nowadays
+00:17:02,800 --> 00:17:07,770
+you put data type like float, then you put indices in the parenthesis.
+你需要输入浮点数之类的数据类型，然后把索引放在括号中。
 
 216
-00:18:36,600 --> 00:18:43,940
-Using GPU, or specialized accelerators to speed up computer vision is a very popular trend.
-
+00:17:08,680 --> 00:17:14,200
+And with Mat_, you just use parentheses myMatrix(10,20)
+但有了Mat_，你只需要圆括号myMatrix(10,20)。
 
 217
-00:18:44,450 --> 00:18:49,200
-Everybody goes in this direction,
-
+00:17:14,200 --> 00:17:17,820
+You don't need add<>() with angle brackets. So it's another notation.
+你不需要带尖括号的<>() ，所以这是另一种表示方法。
 
 218
-00:18:49,620 --> 00:18:56,880
-For example, Nvidia Xavier used in cars, it's indeed very popular.
-
+00:17:18,200 --> 00:17:25,480
+But I would say that the number of such algorithms that access elements directly in this way [not many].
+但我会说以这种方式直接访问元素的算法的数量不多。
 
 219
-00:18:59,480 --> 00:19:04,480
-Unfortunately, from software site, there is no good standard
+00:17:28,140 --> 00:17:34,770
+Some, savings that you type less symbols
+（只是）\\TODO让你少键入一些符号。
 
 220
-00:19:05,600 --> 00:19:10,220
-to program those hardware in an universal way.
-
+00:17:34,770 --> 00:17:42,570
+it is so small, I could say that if we design matrix class today again,
+（这个改进）太小了，如果今天让我们再次设计矩阵类，
 
 221
-00:19:11,370 --> 00:19:19,740
-About 10 years ago, when we had a project with AMD and Intel,
-
+00:17:42,880 --> 00:17:45,800
+I would not create this extra template class
+我不会再创建这个额外的模板类了。
 
 222
-00:19:19,740 --> 00:19:23,620
-to bring OpenCL support into OpenCV,
-
+00:17:45,800 --> 00:17:49,820
+Because most people just use normal cv::Mat.
+因为大多数人只是使用普通的cv::Mat。
 
 223
-00:19:23,620 --> 00:19:29,170
-I thought that OpenCL would soon become such a new universal standard.
-
+00:17:50,420 --> 00:17:51,820
+Yeah, yeah.
+是的。
 
 224
-00:19:29,170 --> 00:19:32,450
-that everybody would use OpenCL to program that hardware.
-
+00:17:52,600 --> 00:17:56,400
+OK, I have another question.
+我还有一个问题。
 
 225
-00:19:32,450 --> 00:19:38,970
-Hardware like GPU or specialized computer vision accelerators.
-
+00:17:56,680 --> 00:18:00,000
+The question, it's about hardware, 
+这个问题是关于硬件的，
 
 226
-00:19:41,340 --> 00:19:54,850
-So, for OpenCL in OpenCV we created special class called cv::UMat that people can use to access OpenCL functionality.
-
+00:18:01,000 --> 00:18:08,080
+because currently there are many kinds of hardware than in the past, 
+因为比起过去，现在有更多种类的硬件，
 
 227
-00:19:55,450 --> 00:20:05,420
-And also OpenCV included several hundreds of OpenCL kernels to accelerate various algorithms from image processing to machine learning and so on.
-
+00:18:08,080 --> 00:18:12,000
+in the past, maybe only CPU? Or mostly CPU. 
+过去我们只有CPU？或者说大部分都是CPU。
 
 228
-00:20:06,570 --> 00:20:12,910
-Unfortunately, now OpenCL is sort of semi-abandoned standard.
-
+00:18:12,000 --> 00:18:15,200
+Currently we have GPU, NPU or VPU,
+现在我们有GPU，NPU和VPU，
 
 229
-00:20:13,020 --> 00:20:23,940
-It's still in the development, but it looks most manufacturers try to use something else.
-
+00:18:18,200 --> 00:18:21,540
+Most of them have separate memory,
+它们中的大部分都有单独的内存。
 
 230
-00:20:23,940 --> 00:20:34,910
-Like Apple uses Metal standard, then on Android, Vulkan is more popular for game, for example.
-
+00:18:21,820 --> 00:18:28,880
+Is it possible to design an universal Mat class which can handle different kind of memory?
+是否可能可以设计一个处理不同类型内存的通用Mat类？
 
 231
-00:20:39,220 --> 00:20:44,680
-Also there are some immature standards, for example,
-
+00:18:32,200 --> 00:18:34,600
+So, indeed nowadays
+确实，在如今，
 
 232
-00:20:44,680 --> 00:20:49,910
-the standard called OACC (OpenACC), open accelerator.
-
+00:18:36,600 --> 00:18:43,940
+Using GPU, or specialized accelerators to speed up computer vision is a very popular trend.
+使用GPU或者其他的专用加速器来加速计算机视觉（算法）是一种趋势。
 
 233
-00:20:50,880 --> 00:20:58,880
-It aims at to bring some extensions to C++ standard to upload some loops to GPU.
-
+00:18:44,450 --> 00:18:49,200
+Everybody goes in this direction.
+大家都在朝这个方向前进。
 
 234
-00:21:00,910 --> 00:21:11,970
-But it is not quite mature, so I would say we're still waiting for such a standard come out to conveniently program various hardware.
-
+00:18:49,620 --> 00:18:56,880
+For example, Nvidia Xavier used in cars, it's indeed very popular.
+比如汽车用的Nvidia Xavier，确实非常受欢迎。
 
 235
-00:21:15,020 --> 00:21:23,080
-Currently there are some positive trends for example,
-
+00:19:00,100 --> 00:19:04,480
+Unfortunately, from software site, there is no good standard
+但不幸的是，从软件的层面看，没有很好的标准
 
 236
-00:21:23,170 --> 00:21:31,970
-like Vulkan group in Khronos community and OpenCL group, they work together
-
+00:19:05,600 --> 00:19:10,220
+to program those hardware in an universal way.
+来以通用的方式对硬件进行编程。
 
 237
-00:21:31,970 --> 00:21:38,480
-to provide OpenCL compatibility for Vulkan based hardware and such.
-
+00:19:11,370 --> 00:19:13,120
+About 10 years ago,
+大约十年前，
 
 238
-00:21:38,480 --> 00:21:43,420
-So maybe OpenCL is not completely dead and it will maybe revised at some point.
-
+00:19:14,200 --> 00:19:19,600
+when we had a project with AMD and Intel,
+我们与AMD和Intel有一个项目，
 
 239
-00:21:45,000 --> 00:21:46,650
-Yes, we are still waiting.
-
+00:19:19,740 --> 00:19:23,620
+to bring OpenCL support into OpenCV.
+是关于将OpenCL支持引入OpenCV。
 
 240
-00:21:46,780 --> 00:21:52,970
-Without the standard it is difficult to come up with such a universal class
+00:19:23,620 --> 00:19:29,170
+I thought that OpenCL will soon become such a new universal standard.
+我原以为OpenCL很快就会成为一个通用标准，
 
 241
-00:21:52,970 --> 00:21:58,850
-because you do not know which should be added, because everybody uses the different API.
+00:19:29,170 --> 00:19:32,450
+that everybody would use OpenCL to program that hardware,
+这样每个人都会使用OpenCL来对硬件进行编程，
 
 242
-00:22:01,170 --> 00:22:04,340
-I still have another question.
+00:19:32,450 --> 00:19:38,970
+such hardware like GPU or specialized computer vision accelerators.
+比如像GPU或专用计算机视觉加速器等硬件。
 
 243
-00:22:04,850 --> 00:22:07,200
-Actually it's two questions.
-
+00:19:41,340 --> 00:19:47,630
+So, for OpenCL in OpenCV we created special class called cv::UMat
+所以在OpenCV中我们为OpenCL创建了名为cv::UMat的特殊类，
 
 244
-00:22:07,200 --> 00:22:16,510
-The first question is does OpenCV have any plan to update Mat class to a newer one?
+00:19:47,630 --> 00:19:54,900
+that people can use to access OpenCL functionality.
+这样人们可以通过它来使用OpenCL的功能。
 
 245
-00:22:16,510 --> 00:22:19,880
-Or we will continue to use the current one?
+00:19:55,450 --> 00:19:59,840
+And also OpenCV included several hundreds of OpenCL kernels
+并且OpenCV还包含数百种OpenCL内核
 
 246
-00:22:22,170 --> 00:22:26,110
-Yes, so OpenCV is quite large library with many users,
+00:19:59,840 --> 00:20:06,400
+to accelerate various algorithms from image processing to machine learning and so on.
+来加速从图像处理到机器学习等各种算法。
 
 247
-00:22:26,940 --> 00:22:35,170
-and so there are no plans to completely replace the cv::Mat with something else.
-
+00:20:06,570 --> 00:20:12,910
+Unfortunately, now OpenCL is sort of semi-abandoned standard.
+不幸的是，现在OpenCL是一种半废弃的标准。
 
 248
-00:22:35,510 --> 00:22:39,370
-And cv::Mat is quite flexible for example
-
+00:20:13,020 --> 00:20:16,560
+It's still in the development,
+它仍在开发中，
 
 249
-00:22:39,370 --> 00:22:45,280
-for Python bindings, users do not see this cv::Mat class.
-
+00:20:17,000 --> 00:20:24,080
+but it looks most manufacturers try to use something else.
+但看起来大多数厂家都在尝试其他东西。
 
 250
-00:22:45,510 --> 00:22:50,710
-They operate on common ...
-
+00:20:24,100 --> 00:20:34,910
+Like Apple uses Metal standard, then on Android, Vulkan is more popular for game, for example.
+比如Apple使用Metal标准，在Android上，Vulkan在游戏中更受欢迎。
 
 251
-00:22:50,710 --> 00:22:56,620
-on very popular in Python world, NumPy arrays.
-
+00:20:39,220 --> 00:20:44,680
+Also there are some immature standards, for example,
+还有一些不成熟的标准，比如，
 
 252
-00:22:56,620 --> 00:23:04,650
-And internally, those Python arrays are converted to cv::Mat, usually it happens without copying any data.
-
+00:20:44,680 --> 00:20:49,910
+the standard called OACC (OpenACC), open accelerator.
+被称为OACC（OpenACC）的标准，也就是"开源加速器"。
 
 253
-00:23:04,650 --> 00:23:06,650
-So it's very efficient.
+00:20:50,880 --> 00:20:58,880
+It aims at to bring some extensions to C++ standard to upload some loops to GPU.
+它旨在为C++标准带来一些扩展，以及将一些loop指令传给GPU。\\TODO
 
 254
-00:23:06,650 --> 00:23:11,740
-We try to use this zero copy techniques.
-
+00:21:00,910 --> 00:21:03,600
+But it is not quite mature,
+但它还不是非常成熟，
 
 255
-00:23:12,770 --> 00:23:22,200
-Internally, as I said, we do not plan to completely replace cv::Mat with something completely new.
-
+00:21:05,000 --> 00:21:15,020
+so I would say we're still waiting for such a standard come out to conveniently program various hardware.
+所以恐怕我们还需要等待类似的标准来对不同的而硬件进行方便的编程。
 
 256
-00:23:22,540 --> 00:23:27,280
-But we want to make some upgrades to cv::Mat.
-
+00:21:15,020 --> 00:21:23,080
+Currently there are some positive trends for example,
+目前有一些积极的趋势，比如
 
 257
-00:23:27,650 --> 00:23:34,020
-First of all, we plan to extend the number of data types supported.
+00:21:23,170 --> 00:21:31,970
+like Vulkan group in Khronos community and OpenCL group, they work together
+像Khronos社区的Vulkan小组和OpenCL小组，他们一起工作，
 
 258
-00:23:34,480 --> 00:23:41,940
-So maybe it will be some new integer data types, also we plan to add BFloat16.
-
+00:21:31,970 --> 00:21:38,480
+to provide OpenCL compatibility for Vulkan based hardware and such.
+来为基于Vulkan的硬件提供OpenCL兼容性。
 
 259
-00:23:42,220 --> 00:23:48,910
-Brain Floating 16, it's the relatively new 16 point format developed by Google. 
-
+00:21:38,480 --> 00:21:43,420
+So maybe OpenCL is not completely dead and it will maybe revive at some point.
+所以也许OpenCL没有完全死掉，它可能会在某天复苏。
 
 260
-00:23:49,740 --> 00:23:57,110
-and use in their TPU accelerators, and also it is now supported by Intel hardware
-
+00:21:45,000 --> 00:21:46,650
+Yes, we are still waiting.
+是的，我们还在等待。
 
 261
-00:23:57,600 --> 00:24:04,250
-Upcoming ARM v9 and some other architectures.
-
+00:21:46,780 --> 00:21:52,970
+Without that standard it is difficult to come up with such a universal class,
+没有这样的标准，很难设计出一个通用的类，
 
 262
-00:24:04,940 --> 00:24:08,420
-So it's quite popular and we want to add support for it.
+00:21:52,970 --> 00:21:58,850
+because you do not know which API should be added [TODO:VP], because everybody uses the different API.
+因为你不知道该添加哪个，每个人都在用不同的API
 
 263
-00:24:09,310 --> 00:24:13,310
-Another new feature is
-
+00:22:02,500 --> 00:22:04,340
+I still have another question.
+我还有一个问题。
 
 264
-00:24:14,370 --> 00:24:19,310
-to support one dimensional arrays.
-
+00:22:04,850 --> 00:22:07,200
+Actually it's two questions.
+其实是两个问题。
 
 265
-00:24:21,050 --> 00:24:30,450
-As I said, we borrowed this cv::Mat class idea from Matlab,
-
+00:22:07,200 --> 00:22:16,510
+The first question is does OpenCV have any plan to update Mat class to a newer one?
+第一个问题是OpenCV是否有更新Mat类的计划？
 
 266
-00:24:30,450 --> 00:24:35,820
-and in Matlab, there is no one dimensional array, as far as I know.
-
+00:22:16,510 --> 00:22:19,880
+Or we will continue to use the current one?
+还是会继续使用已有的类？
 
 267
-00:24:37,080 --> 00:24:43,020
-One dimensional array is represented as two dimensional 1xN and Nx1 array.
-
+00:22:22,170 --> 00:22:26,110
+Yes, so OpenCV is quite large library with many users,
+嗯，OpenCV是一个很大的库，拥有很多用户，
 
 268
-00:24:43,020 --> 00:24:53,280
-And in OpenCV we took the same convention, but it appears to be not quite convenient for Python bindings
-
+00:22:26,940 --> 00:22:35,170
+and so there are no plans to completely replace the cv::Mat with something else.
+所以没有用其他东西完全替代cv::Mat的计划。
 
 269
-00:24:53,280 --> 00:24:56,540
-and for some deep learning areas that
+00:22:35,510 --> 00:22:39,370
+And cv::Mat is quite flexible for example
+并且cv::Mat非常灵活，
 
 270
-00:24:56,540 --> 00:25:01,910
-we are trying to add to OpenCV currently like speech recognition
-
+00:22:39,370 --> 00:22:45,280
+for Python bindings, users do not see this cv::Mat class.
+比如对于从Python调用C/C++\\TODO，用户看不到cv::Mat类。
 
 271
-00:25:01,910 --> 00:25:05,000
-or whatever some areas on dimensional arrays are important
-
+00:22:45,510 --> 00:22:50,710
+They operate on common ...
+他们使用常见的...
 
 272
-00:25:05,000 --> 00:25:10,680
-We want to support for real one dimensional arrays to OpenCV.
-
+00:22:50,710 --> 00:22:56,620
+on very popular in Python world, NumPy arrays.
+在Python中非常流行的NumPy数组。
 
 273
-00:25:11,910 --> 00:25:14,400
-The third feature, we are still thinking of it.
-
+00:22:56,620 --> 00:23:04,650
+And internally, those Python arrays are converted to cv::Mat, usually it happens without copying any data.
+在内部，这些Python数组被转换为cv::Mat而不进行任何数据拷贝。
 
 274
-00:25:14,400 --> 00:25:27,510
-But, maybe we will add some tag into cv::Mat that will indicate, that will provide some indication to what is the data, that marks the source.
-
+00:23:04,650 --> 00:23:06,650
+So it's very efficient.
+所以非常高效。
 
 275
-00:25:27,510 --> 00:25:33,770
-For example, the tag can be RGB or BGR to indicate what is the order of channels.
-
+00:23:06,650 --> 00:23:11,740
+We try to use this zero copy techniques.
+我们尝试使用这种零拷贝技术。
 
 276
-00:25:33,770 --> 00:25:40,510
-Maybe it will solve some old problems, when people just put,
-
+00:23:12,770 --> 00:23:22,200
+Internally, as I said, we do not plan to completely replace cv::Mat with something completely new.
+正如我所说的，我们不打算在内部用某些东西完全替换cv::Mat。
 
 277
-00:25:41,420 --> 00:25:49,370
-use some matrix with incorrect data channels, and sometimes they get wrong visualization.
-
+00:23:22,540 --> 00:23:27,280
+But we want to make some upgrades to cv::Mat.
+但我们想对cv::Mat做一些改进。
 
 278
-00:25:49,600 --> 00:25:55,310
-Instead of a red face, you will get blue faces. In some cases,
-
+00:23:27,650 --> 00:23:34,020
+First of all, we plan to extend the number of data types supported.
+首先我们计划扩展支持的数据类型的数量。
 
 279
-00:25:55,510 --> 00:26:03,540
-You just get maybe slightly worse performance from some deep nets, object detection networks.
-
+00:23:34,480 --> 00:23:41,940
+So maybe it will be some new integer data types, also we plan to add BFloat16.
+所以会有一些新的整数数据类型，我们还计划加入BFloat16。
 
 280
-00:26:03,540 --> 00:26:08,800
-so it still detects objects, but not as good as with proper order channels.
-
+00:23:42,220 --> 00:23:48,910
+Brain Floating 16, it's the relatively new 16 point format developed by Google. 
+Brain Float 16是Google开发的一种比较新的16位格式。
 
 281
-00:26:08,800 --> 00:26:12,220
-So it's a very subtle bug to detect.
-
+00:23:49,740 --> 00:23:57,110
+and use in their TPU accelerators, and also it is now supported by Intel hardware
+被用在他们的TPU加速器中，现在Intel的硬件也支持它。
 
 282
-00:26:12,220 --> 00:26:19,140
-And maybe with this tags, this problem will disappear.
-
+00:23:57,600 --> 00:24:04,250
+Upcoming ARM v9 and some other architectures.
+还有即将推出的ARM v9和其他的一些架构。
 
 283
-00:26:19,140 --> 00:26:21,420
-So we are still thinking of..
+00:24:04,940 --> 00:24:08,420
+So it's quite popular and we want to add support for it.
+它非常受欢迎，我们希望增加对它的支持。
 
 284
-00:26:21,450 --> 00:26:31,540
-Yeah, sure, yeah because in my course, the final project is to do some CNN
+00:24:09,310 --> 00:24:13,310
+Another new feature is
+另一个新特性是
 
 285
-00:26:31,540 --> 00:26:34,510
-They should implement CNN by themselves.
-
+00:24:14,370 --> 00:24:19,310
+to support one dimensional arrays.
+支持一维数组。
 
 286
-00:26:35,420 --> 00:26:48,970
-So in the data reading from the image, the default channel is BGR, a lot of students were confused by that and made some errors.
-
+00:24:21,050 --> 00:24:30,450
+As I said, we borrowed this cv::Mat class idea from Matlab,
+正如我所说的，我们从Matlab借鉴了cv::Mat类的想法。
 
 287
-00:26:50,250 --> 00:27:00,200
-I know there will be some students from my class and also from maybe all over the world will watch this video.
-
+00:24:30,450 --> 00:24:35,820
+and in Matlab, there is no one dimensional array, as far as I know.
+据我所知，在Matlab中没有一维数组。
 
 288
-00:27:00,310 --> 00:27:07,850
-Do you have any suggestions for the students in computer science, especially the students who are learning C++
+00:24:37,080 --> 00:24:43,020
+One dimensional array is represented as two dimensional array.
+一维数组被表示为二维的1xN和Nx1的数组。
 
 289
-00:27:12,340 --> 00:27:13,540
-Yeah, so
+00:24:43,020 --> 00:24:47,400
+And in OpenCV we took the same convention,
+在OpenCV中我们使用了相同的约定，
 
 290
-00:27:18,740 --> 00:27:23,200
-I think that currently there are many sources of information,
-
+00:24:47,400 --> 00:24:53,200
+but it appears to be not quite convenient for Python bindings.
+但对于从Python调用C/C++似乎不太方便。
 
 291
-00:27:23,310 --> 00:27:27,400
-there are many good online courses on computer vision.
+00:24:53,280 --> 00:24:56,540
+And for some deep learning areas that
+对于一些深度学习领域
 
 292
-00:27:27,400 --> 00:27:38,110
-I'm glad that you are teaching the C++ class, I saw some bits of it and I think it's very professional.
+00:24:56,540 --> 00:25:01,910
+we are trying to add to OpenCV currently like speech recognition
+我们尝试把语音识别加入到OpenCV
 
 293
-00:27:38,510 --> 00:27:43,370
-I'm sure that students will learn a lot from it.
+00:25:01,910 --> 00:25:05,000
+or whatever some areas on dimensional arrays are important
+或者是其他非常需要一维数组的领域。
 
 294
-00:27:44,170 --> 00:27:49,880
-So maybe I have just a few common words,
+00:25:05,000 --> 00:25:10,680
+We want to support for real one dimensional arrays to OpenCV.
+我们希望在OpenCV中支持真正的一维数组。
 
 295
-00:27:50,710 --> 00:28:00,050
-feel free to ignore them completely, just from my experience of developing software quite a few years.
-
+00:25:11,910 --> 00:25:14,400
+The third feature, we are still thinking of it.
+第三个特性我们还在考虑。
 
 296
-00:28:01,200 --> 00:28:10,080
-I would suggest students to pay more attention to algorithms, concepts, technologies,
-
+00:25:14,400 --> 00:25:21,600
+But, maybe we will add some tag into cv::Mat that will indicate,
+我们可能会在cv::Mat中加入一些标签
 
 297
-00:28:10,570 --> 00:28:14,200
-rather than particular features, particular programming language.
+00:25:21,600 --> 00:25:27,360
+that will provide some indication to what is the data, that marks the source.
+用以指示什么是数据，标记来源。
 
 298
-00:28:18,220 --> 00:28:24,140
-Many years ago, Fortran was the most language for computing,
-
+00:25:27,510 --> 00:25:33,770
+For example, the tag can be RGB or BGR to indicate what is the order of channels.
+例如标签可以是RGB或BGR来指示通道的顺序。
 
 299
-00:28:24,970 --> 00:28:29,740
-then C became the dominant language, then C++.
-
+00:25:33,770 --> 00:25:40,510
+Maybe it will solve some old problems, when people just put,
+也许它可以解决一些老问题，
 
 300
-00:28:30,280 --> 00:28:37,910
-I would say currently maybe Python is used more especially with special acceleration extensions, like NumPy [TODO:VP] whatever or Siphon[TODO:VP].
-
+00:25:41,420 --> 00:25:49,370
+use some matrix with incorrect data channels, and sometimes they get wrong visualization.
+当人们使用具有不正确的数据通道的矩阵时，会得到错误的可视化结果。
 
 301
-00:28:37,910 --> 00:28:42,600
-Maybe Python is used more actively for computing than everything else.
+00:25:49,600 --> 00:25:55,310
+Instead of a red face, you will get blue faces. In some cases,
+在某些情况下你会得到一张蓝色的脸而不是红色的。
 
 302
-00:28:42,600 --> 00:28:51,880
-So do not pay too much attention to the particular feature, particular language,
-
+00:25:55,510 --> 00:26:03,540
+You just get maybe slightly worse performance from some deep nets, object detection networks.
+你可能会从一些目标检测网络，深度神经网络\\TODO中获得稍差的性能。
 
 303
-00:28:52,080 --> 00:28:58,110
-and do not try to use all those fancy features of the language that you just learned in your project
-
+00:26:03,540 --> 00:26:08,800
+It still detects objects, but not as good as with proper order channels.
+它依然可以检测到目标，但是结果不如正确的通道好。
 
 304
-00:28:58,480 --> 00:29:06,820
-Because those features just exist and you want to make your code look cool by using all those features
-
+00:26:08,800 --> 00:26:12,220
+So it's a very subtle bug to detect.
+所以这是一个潜在的\\TODO（微妙？）的问题。
 
 305
-00:29:06,820 --> 00:29:14,250
-because this's a good change that a couple of months later you won't be able to read your own code because it's too complex.
-
+00:26:12,220 --> 00:26:19,140
+And maybe with this tags, this problem will disappear.
+但是有了这些标签，这个问题就得到了解决。
 
 306
-00:29:15,680 --> 00:29:20,740
-I think this suggestion is especially for C++, right?
+00:26:19,140 --> 00:26:21,420
+So we are still thinking of..
+所以我们还在考虑...
 
 307
-00:29:21,170 --> 00:29:24,310
-Because there are too many features in C++.
+00:26:21,450 --> 00:26:31,540
+Yeah, sure, yeah because in my course, the final project is to do some CNN.
+对对对，因为在我的课堂中，最后一个项目是做一些CNN。
 
 308
-00:29:24,310 --> 00:29:36,420
-Yes, C++, I would say, in the recent standards, they made some small convenient to you like modules.
+00:26:31,540 --> 00:26:34,510
+They should implement CNN by themselves.
+他们要自己实现CNN。
 
 309
-00:29:36,420 --> 00:29:38,420
-It's important feature I believe.
+00:26:35,420 --> 00:26:40,040
+So in the data reading from the image,
+所以从图像中读取数据时，
 
 310
-00:29:38,420 --> 00:29:42,680
-But on the other hands, languages becoming quite more and more complex.
+00:26:40,040 --> 00:26:42,520
+the default channel is BGR, 
+默认的通道顺序是BGR，
 
 311
-00:29:43,570 --> 00:29:52,450
-And so you need to develop proper style of using C++, not to shoot yourself on the foot.
-
+00:26:44,000 --> 00:26:49,200
+a lot of students were confused by that and made some errors.
+迷惑了很多同学并让他们犯了错误。
 
 312
-00:29:52,450 --> 00:29:57,570
-And try not to use manual memory allocation,
-
+00:26:50,250 --> 00:26:55,320
+I know there will be some students from my class
+我知道可能我的班上的
 
 313
-00:29:57,570 --> 00:30:04,000
-To use exisiting containers like std::vector, or if you use OpenCV, use cv::Mat, etc.
-
+00:26:55,320 --> 00:27:00,120
+and also from maybe all over the world will watch this video.
+甚至全世界各地的学生会看这个视频。
 
 314
-00:30:05,600 --> 00:30:12,880
-Like try to put some regression test before you do any refactoring or optimization.
-
+00:27:00,310 --> 00:27:04,360
+Do you have any suggestions for the students in computer science,
+你对计算机专业
 
 315
-00:30:12,880 --> 00:30:16,220
-There should be some tests, of course.
+00:27:04,360 --> 00:27:07,920
+especially the students who are learning C++?
+特别是那些在学习C++的学生有什么建议吗？
 
 316
-00:30:16,770 --> 00:30:23,970
-As I said, develop some methodology, a proper methodology how to
-
+00:27:12,340 --> 00:27:13,540
+Yeah, so
+当然
 
 317
-00:30:23,970 --> 00:30:31,420
-create robust software that is easy to debug or doesn't need to be debugged at all, it works out of the box.
-
+00:27:18,740 --> 00:27:23,200
+I think that currently there are many sources of information,
+我认为现在信息的来源非常多，
 
 318
-00:30:32,110 --> 00:30:40,080
-Instead of just using very complex language constructions that you may not fully understand.
+00:27:23,310 --> 00:27:27,400
+there are many good online courses on computer vision.
+现在有很多优秀的计算机视觉的在线课程。
 
 319
-00:30:41,200 --> 00:30:49,140
-Yeah, sure. I also found a lot of students, they spend a lot of time on debugging.
+00:27:27,400 --> 00:27:38,110
+I'm glad that you are teaching the C++ class, I saw some bits of it and I think it's very professional.
+我很开心看到你在教C++，我看过一点，我认为它们非常专业。
 
 320
-00:30:49,140 --> 00:30:59,080
-It takes them a lot of time to find a very tiny bug, it's very difficult in C and C++,
+00:27:38,510 --> 00:27:43,370
+I'm sure that students will learn a lot from it.
+我相信学生们可以从中学到很多。
 
 321
-00:30:59,420 --> 00:31:09,340
-because there are memory leaks and maybe some pointers have invalid values,
-
+00:27:44,170 --> 00:27:49,880
+So maybe I have just a few common words,
+我可能是在老调重弹，
 
 322
-00:31:09,850 --> 00:31:11,340
-it's quite common, yeah.
-
+00:27:50,710 --> 00:27:53,840
+feel free to ignore them completely,
+大可以无视它们，
 
 323
-00:31:11,910 --> 00:31:19,080
-Yes, so like automatic class you mentioned, for example, shared pointers, it is another very good tool
-
+00:27:53,840 --> 00:27:59,840
+just from my experience of developing software quite a few years.
+只是出于我多年的软件开发经验。
 
 324
-00:31:19,080 --> 00:31:28,820
-when people avoid using raw pointers in C++.
-
+00:28:01,200 --> 00:28:10,080
+I would suggest students to pay more attention to algorithms, concepts, technologies,
+我会建议同学们多关注算法，概念，技术，
 
 325
-00:31:28,820 --> 00:31:34,710
-But instead use containers like cv::Vec or cv::Mat or shared pointers.
-
+00:28:10,570 --> 00:28:14,200
+rather than particular features, particular programming language.
+而不是特定的特性或者编程语言。
 
 326
-00:31:35,940 --> 00:31:43,110
-The number of memory leaks problems go almost to zero.
-
+00:28:18,220 --> 00:28:24,140
+Many years ago, Fortran was the most language for computing,
+许多年前，Fortran曾是最流行的计算机语言，
 
 327
-00:31:43,480 --> 00:31:45,910
-Yeah, thank you, thank you for the suggestions!
+00:28:24,970 --> 00:28:29,740
+then C became the dominant language, then C++.
+然后是C，然后是C++。
 
 328
-00:31:46,370 --> 00:31:47,910
-Yeah, you are welcome!
+00:28:30,280 --> 00:28:37,910
+I would say currently maybe Python is used more especially with special acceleration extensions, like NumPy [TODO:VP] whatever or Siphon[TODO:VP].
+我想说的是，现在Python可能更多的用于特殊的加速扩展，比如NumPy或Siphon。
 
 329
-00:31:48,370 --> 00:31:56,540
-I believe the students will be benefited from your suggestions and also your introduction to OpenCV, thank you!
+00:28:37,910 --> 00:28:42,600
+Maybe Python is used more actively for computing than everything else.
+或许Python比其他所有都更适合用于计算。
 
 330
+00:28:42,600 --> 00:28:51,880
+So do not pay too much attention to the particular feature, particular language,
+所以不要过多关注特定的特性，语言，
+
+331
+00:28:52,280 --> 00:28:59,360
+and do not try to use all those fancy features of the language that you just learned in your project
+不要尝试把你学到的花哨的功能全用上
+
+332
+00:28:59,360 --> 00:29:06,820
+because those features just exist and you want to make your code look cool by using all those features
+因为你只是希望用这些功能让你的代码看起来很酷。
+
+333
+00:29:06,820 --> 00:29:15,560
+because this's a good change that a couple of months later you won't be able to read your own code because it's too complex.
+因为有可能几个月之后你可能会读不懂你的代码，因为它太复杂了。
+
+334
+00:29:15,680 --> 00:29:20,740
+I think this suggestion is especially for C++, right?
+对于C++来说更是这样，对吧？
+
+335
+00:29:21,170 --> 00:29:24,310
+Because there are too many features in C++.
+因为C++中的特性太多。
+
+336
+00:29:24,310 --> 00:29:36,420
+Yes, C++, I would say, in the recent standards, they made some small convenient to you like modules.
+是的，在C++最新的标准中为你提供了一些方便，比如模块。
+
+337
+00:29:36,420 --> 00:29:38,420
+It's important feature I believe.
+我相信这是重要的一个特性。
+
+338
+00:29:38,420 --> 00:29:42,680
+But on the other hands, languages' becoming quite more and more complex.
+但另一方面，语言变得越来越复杂。
+
+339
+00:29:43,570 --> 00:29:52,450
+And so you need to develop proper style of using C++, not to shoot yourself on the foot.
+所以你需要培养正确的使用C++的习惯\\TODO（风格），而不是自找麻烦。
+
+340
+00:29:52,450 --> 00:29:57,570
+And try not to use manual memory allocation,
+并且尽量不要手动分配内存，
+
+341
+00:29:57,570 --> 00:30:00,400
+use exisiting containers like std::vector,
+使用已有的容器，比如std::vector，
+
+342
+00:30:00,400 --> 00:30:05,600
+or if you use OpenCV, use cv::Mat, etc.
+或者如果你使用OpenCV，要使用cv::Mat等等。
+
+343
+00:30:05,600 --> 00:30:12,880
+Try to put some regression test before you do any refactoring or optimization.
+在重构和优化前要进行回归测试。
+
+344
+00:30:12,880 --> 00:30:16,220
+There should be some tests, of course.
+对，当然应该有一些测试。
+
+345
+00:30:18,000 --> 00:30:21,000
+As I said, develop some methodology,
+正如我所说的，形成一些方法论，
+
+346
+00:30:21,100 --> 00:30:25,480
+a proper methodology how to create robust software
+一些有关如何构建高鲁棒性的软件的方法论
+
+347
+00:30:25,800 --> 00:30:32,110
+that is easy to debug or doesn't need to be debugged at all, it works out of the box.
+让它更易于debug甚至不需要debug，？？？\\TODO
+
+348
+00:30:32,110 --> 00:30:40,080
+Instead of just using very complex language constructions that you may not fully understand.
+而不是去用那些你可能没有完全搞明白的复杂的语言结构。
+
+349
+00:30:41,200 --> 00:30:49,140
+Yeah, sure. I also found a lot of students, they spend a lot of time on debugging.
+是的，是的。我有一些学生，他们把大量时间花在了debug上。
+
+350
+00:30:49,140 --> 00:30:59,080
+It takes them a lot of time to find a very tiny bug, it's very difficult in C and C++,
+他们花了很多时间来找一个非常小的bug，这在C和C++中非常困难。
+
+351
+00:30:59,420 --> 00:31:09,340
+because there are memory leaks and maybe some pointers have invalid values,
+因为有内存泄露并且可能某些指针具有无效的值。
+
+352
+00:31:09,850 --> 00:31:11,340
+it's quite common, yeah.
+是的，这很常见。
+
+353
+00:31:11,910 --> 00:31:19,080
+Yes, so like automatic class you mentioned, for example, shared pointers, it is another very good tool
+就像你提到的智能指针，它是另一个非常好的工具。
+
+354
+00:31:19,080 --> 00:31:28,820
+When people avoid using raw pointers in C++,
+当人们避免使用C++中原始的指针，
+
+355
+00:31:28,820 --> 00:31:34,710
+but instead use containers like cv::Vec or cv::Mat or shared pointers
+而是用cv::Vec，cv::Mat或者智能指针时
+
+356
+00:31:35,940 --> 00:31:43,110
+the number of memory leaks problems go almost to zero.
+内存泄露的问题就降到几乎为零。
+
+357
+00:31:43,480 --> 00:31:45,910
+Yeah, thank you, thank you for the suggestions!
+对的，谢谢你的建议！
+
+358
+00:31:46,370 --> 00:31:47,910
+Yeah, you are welcome!
+不客气！
+
+359
+00:31:48,370 --> 00:31:56,540
+I believe the students will be benefited from your suggestions and also your introduction to OpenCV, thank you!
+我相信学生们会从你的建议和介绍中学到很多，谢谢你！
+
+360
 00:31:56,540 --> 00:31:58,540
 You are welcome!
+不客气！
 

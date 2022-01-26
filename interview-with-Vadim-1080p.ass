@@ -15,344 +15,374 @@ Audio File: interview-with-Vadim-1080p.mp4
 Video File: interview-with-Vadim-1080p.mp4
 Video AR Mode: 4
 Video AR Value: 1.777778
-Video Zoom Percent: 0.125000
-Scroll Position: 207
-Active Line: 240
-Video Position: 32825
+Video Zoom Percent: 0.500000
+Scroll Position: 339
+Active Line: 344
+Video Position: 45458
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
+Style: Default,Arial,40,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.00,0:00:02.46,Default,,0,0,0,,Hi, Vadim, nice to talk with you.
-Dialogue: 0,0:00:02.46,0:00:06.84,Default,,0,0,0,,I’m teaching C and C++ in my university.
-Dialogue: 0,0:00:06.84,0:00:12.44,Default,,0,0,0,,I took the source code in OpenCV as an example to the students.
-Dialogue: 0,0:00:12.44,0:00:19.16,Default,,0,0,0,,And I also suggested my students to learn C++ from OpenCV.
-Dialogue: 0,0:00:19.16,0:00:24.12,Default,,0,0,0,,I found the class cv::Mat is an excellent example.
-Dialogue: 0,0:00:25.08,0:00:28.00,Default,,0,0,0,,And, I know you designed the class.
-Dialogue: 0,0:00:28.10,0:00:28.80,Default,,0,0,0,,So
-Dialogue: 0,0:00:29.04,0:00:33.44,Default,,0,0,0,,Could you tell me some history of the Mat class?
-Dialogue: 0,0:00:33.50,0:00:36.96,Default,,0,0,0,,And why to design a new C++ class?
-Dialogue: 0,0:00:36.96,0:00:41.00,Default,,0,0,0,,I remember at the beginning,
-Dialogue: 0,0:00:41.00,0:00:49.00,Default,,0,0,0,,OpenCV used the IplImage and CvMat structure for images.
-Dialogue: 0,0:00:49.00,0:00:51.16,Default,,0,0,0,,So, why you designed it?
-Dialogue: 0,0:00:51.16,0:00:53.76,Default,,0,0,0,,Can you introduce a little bit to us?
-Dialogue: 0,0:00:54.50,0:00:55.76,Default,,0,0,0,,Yes, sure.
-Dialogue: 0,0:00:56.50,0:00:58.76,Default,,0,0,0,,I'd like to talk to you again, Shiqi.
-Dialogue: 0,0:00:59.36,0:01:09.50,Default,,0,0,0,,First of all, I'm very pleased that, OpenCV is now taught in universities including your university,
-Dialogue: 0,0:01:09.70,0:01:13.48,Default,,0,0,0,,and you chose CV::Mat as am example of C++ design.
-Dialogue: 0,0:01:13.48,0:01:20.84,Default,,0,0,0,,Actually it's a big pleasure for me and for the whole OpenCV team that
-Dialogue: 0,0:01:20.84,0:01:25.48,Default,,0,0,0,,our pieces of OpenCV design are used in such a way.
-Dialogue: 0,0:01:25.48,0:01:35.72,Default,,0,0,0,,Indeed, it took several years for OpenCV team to come up with this C++ class.
-Dialogue: 0,0:01:35.72,0:01:36.92,Default,,0,0,0,,In the very beginning,
-Dialogue: 0,0:01:36.92,0:01:41.20,Default,,0,0,0,,the very first structure in OpenCV
-Dialogue: 0,0:01:41.20,0:01:43.88,Default,,0,0,0,,as you correctly pointed out was IplImage.
-Dialogue: 0,0:01:43.88,0:01:51.60,Default,,0,0,0,,This is because OpenCV was started at Intel in 1998
-Dialogue: 0,0:01:51.60,0:01:56.00,Default,,0,0,0,,as a close source library, and then released as open source.
-Dialogue: 0,0:01:56.00,0:02:02.36,Default,,0,0,0,,At that time, at Intel, the family of performance libraries,
-Dialogue: 0,0:02:02.36,0:02:06.76,Default,,0,0,0,,like for signal processing acceleration, for image processing acceleration,
-Dialogue: 0,0:02:06.76,0:02:12.04,Default,,0,0,0,,and like one of the libraries was IPL,
-Dialogue: 0,0:02:12.04,0:02:14.80,Default,,0,0,0,,Image Processing Library by Intel.
-Dialogue: 0,0:02:14.80,0:02:19.00,Default,,0,0,0,,And it uses IplImage as the main data structure.
-Dialogue: 0,0:02:19.00,0:02:24.32,Default,,0,0,0,,The original OpenCV was planned as addition to IPL
-Dialogue: 0,0:02:24.32,0:02:28.52,Default,,0,0,0,,or IPL concentrates on image processing,
-Dialogue: 0,0:02:28.52,0:02:32.32,Default,,0,0,0,,and OpenCV will concentrate on computer vision.
-Dialogue: 0,0:02:32.32,0:02:35.80,Default,,0,0,0,,In the begin, OpenCV was called CVL,
-Dialogue: 0,0:02:35.80,0:02:36.75,Default,,0,0,0,,Computer Vision Library.
-Dialogue: 0,0:02:36.80,0:02:41.07,Default,,0,0,0,,So it even use the same name pattern as IPL.
-Dialogue: 0,0:02:41.07,0:02:47.52,Default,,0,0,0,,just a set of computer algorithms of image processing, computer vision.
-Dialogue: 0,0:02:47.52,0:02:52.52,Default,,0,0,0,,Soon, we realized the IplImage was not enough,
-Dialogue: 0,0:02:52.52,0:02:55.04,Default,,0,0,0,,because in computer vision, if you do, for example,
-Dialogue: 0,0:02:55.04,0:03:01.80,Default,,0,0,0,,camera preparations, some 3D vision, whatever you need, general matrix class.
-Dialogue: 0,0:03:01.80,0:03:04.80,Default,,0,0,0,,And sometimes, for example,
-Dialogue: 0,0:03:04.80,0:03:06.84,Default,,0,0,0,,you need more than two dimensional arrays,
-Dialogue: 0,0:03:06.84,0:03:08.12,Default,,0,0,0,,like 3 dimensional arrays.
-Dialogue: 0,0:03:08.12,0:03:11.94,Default,,0,0,0,,Sometimes you need sparse multi-dimensional arrays.
-Dialogue: 0,0:03:12.02,0:03:14.26,Default,,0,0,0,,So in addition to IplImage,
-Dialogue: 0,0:03:14.26,0:03:18.96,Default,,0,0,0,,we also create CvMat, CvMatND indeed and CvSparseMat
-Dialogue: 0,0:03:18.96,0:03:23.46,Default,,0,0,0,,to like other those use cases.
-Dialogue: 0,0:03:25.28,0:03:32.91,Default,,0,0,0,,Then a time later, Intel abandoned IPL in favor of like library of low level primitives.
-Dialogue: 0,0:03:33.02,0:03:37.55,Default,,0,0,0,,It is called IPP and it is still used in OpenCV for acceleration.
-Dialogue: 0,0:03:44.57,0:03:50.26,Default,,0,0,0,,We have to maintain compatibility with IPL since then.
-Dialogue: 0,0:03:50.26,0:03:54.48,Default,,0,0,0,,Because like uh, the library was gone and replaced with IPP.\N
-Dialogue: 0,0:03:54.93,0:04:03.64,Default,,0,0,0,,So we mostly used CvMat C structure for most of use cases\N
-Dialogue: 0,0:04:04.17,0:04:06.88,Default,,0,0,0,,for point clouds, for mathesis, for images.
-Dialogue: 0,0:04:09.08,0:04:13.95,Default,,0,0,0,,But we constantly got requests from users\N
-Dialogue: 0,0:04:13.95,0:04:17.82,Default,,0,0,0,,to introduce C++ API
-Dialogue: 0,0:04:17.82,0:04:25.37,Default,,0,0,0,,because C++ was much more convenient to use, instead of C.\N
-Dialogue: 0,0:04:26.84,0:04:34.88,Default,,0,0,0,,In the year 2008, when Willow Garage company started to found OpenCV,\N
-Dialogue: 0,0:04:34.88,0:04:39.82,Default,,0,0,0,,by the way Willow Garage company also created ROS, Robot Operating System \N
-Dialogue: 0,0:04:40.40,0:04:43.77,Default,,0,0,0,,It was a quite big startup at a certain point.\N
-Dialogue: 0,0:04:43.77,0:04:46.44,Default,,0,0,0,,It founded OpenCV development.
-Dialogue: 0,0:04:46.93,0:04:50.40,Default,,0,0,0,,They gave us resources and we started to think\N
-Dialogue: 0,0:04:50.40,0:04:54.75,Default,,0,0,0,,how to redesign OpenCV to use C++ API.
-Dialogue: 0,0:04:54.75,0:04:57.86,Default,,0,0,0,,and definitely we need C++ data structure.
-Dialogue: 0,0:04:57.86,0:05:02.88,Default,,0,0,0,,instead of CvMat and IplImage C structures.\N
-Dialogue: 0,0:05:04.26,0:05:05.77,Default,,0,0,0,,So we looked around,
-Dialogue: 0,0:05:05.77,0:05:09.11,Default,,0,0,0,,and for the source of inspiration,
-Dialogue: 0,0:05:09.11,0:05:14.26,Default,,0,0,0,,and we found that Matlab is a very good example of good design.\N
-Dialogue: 0,0:05:14.26,0:05:21.51,Default,,0,0,0,,That is Matlab is not an as flexible language as C or C++.\N
-Dialogue: 0,0:05:22.00,0:05:24.35,Default,,0,0,0,,But it is super convenient.
-Dialogue: 0,0:05:24.35,0:05:34.75,Default,,0,0,0,,It has this matrix, or array data type. And all the toolboxes in Matlab, use this data type.\N
-Dialogue: 0,0:05:34.75,0:05:38.62,Default,,0,0,0,,Therefore, there is no absolutely not compatibility issues\N
-Dialogue: 0,0:05:38.62,0:05:42.31,Default,,0,0,0,,If you want to use those toolboxes.\N
-Dialogue: 0,0:05:42.31,0:05:45.05,Default,,0,0,0,,You just download them and use together
-Dialogue: 0,0:05:45.05,0:05:51.73,Default,,0,0,0,,without any convert stage, structures from one type to another.\N
-Dialogue: 0,0:05:51.73,0:05:54.13,Default,,0,0,0,,You just use those toolboxes together.\N
-Dialogue: 0,0:05:54.13,0:06:01.91,Default,,0,0,0,,And they, MathWorks, even use those arrayed data types for images.\N
-Dialogue: 0,0:06:01.91,0:06:04.35,Default,,0,0,0,,In matlab, there is image processing toolbox,
-Dialogue: 0,0:06:04.35,0:06:07.68,Default,,0,0,0,,and it also uses matrix data type.
-Dialogue: 0,0:06:07.68,0:06:10.04,Default,,0,0,0,,I really like this idea that
-Dialogue: 0,0:06:10.04,0:06:13.86,Default,,0,0,0,,one data type is used for any kind of array.
-Dialogue: 0,0:06:14.26,0:06:22.04,Default,,0,0,0,,So we just tried to replicate Matlab API\N
-Dialogue: 0,0:06:22.04,0:06:24.17,Default,,0,0,0,,as goal as we could.\N
-Dialogue: 0,0:06:24.17,0:06:29.20,Default,,0,0,0,,that is we wanted memory to be managed automatically,\N
-Dialogue: 0,0:06:29.20,0:06:35.77,Default,,0,0,0,,we wanted convenient element access operations, etc.\N
-Dialogue: 0,0:06:35.77,0:06:39.77,Default,,0,0,0,,So we created this class, C++ structure, cv::Mat.\N
-Dialogue: 0,0:06:39.77,0:06:43.33,Default,,0,0,0,,They replaced all of the structures,\N
-Dialogue: 0,0:06:43.33,0:06:46.82,Default,,0,0,0,,IplImage, CvMat, CvMatND\N
-Dialogue: 0,0:06:46.82,0:06:50.57,Default,,0,0,0,,Sparse model was a seperate structure\N
-Dialogue: 0,0:06:50.82,0:06:53.10,Default,,0,0,0,,But all the dense arrays were replaced with just a single structure.\N
-Dialogue: 0,0:06:53.98,0:07:02.77,Default,,0,0,0,,We know different Mat objects may share the same memory for matrix data to avoid memory leak.\N
-Dialogue: 0,0:07:02.77,0:07:07.20,Default,,0,0,0,,There is a complex mechanism in Mat class.
-Dialogue: 0,0:07:07.20,0:07:17.86,Default,,0,0,0,,If you redesign Mat class now, will you use smart pointers in the new C++ standards?
-Dialogue: 0,0:07:22.78,0:07:26.91,Default,,0,0,0,,We did have a shared pointer\N
-Dialogue: 0,0:07:27.33,0:07:30.35,Default,,0,0,0,,appeared in C++11 if I'm not mistaken.\N
-Dialogue: 0,0:07:30.35,0:07:33.06,Default,,0,0,0,,In C++20,\N
-Dialogue: 0,0:07:33.06,0:07:38.53,Default,,0,0,0,,it was special version of this shared pointer that can use atomic operations.\N
-Dialogue: 0,0:07:39.60,0:07:43.82,Default,,0,0,0,,And we create cv::Mat in 2009,\N
-Dialogue: 0,0:07:43.82,0:07:46.84,Default,,0,0,0,,so even 2 years before C++11,\N
-Dialogue: 0,0:07:47.42,0:07:52.22,Default,,0,0,0,,so we couldn't wait for the new C++ standard to come out.\N
-Dialogue: 0,0:07:52.22,0:07:56.04,Default,,0,0,0,,So we used our own implementation of shared pointer.\N
-Dialogue: 0,0:07:56.04,0:07:58.04,Default,,0,0,0,,Of course it's not a new idea.
-Dialogue: 0,0:07:58.48,0:08:01.33,Default,,0,0,0,,It was well known for decades.\N
-Dialogue: 0,0:08:02.42,0:08:06.44,Default,,0,0,0,,Even Python created in 90s.\N
-Dialogue: 0,0:08:07.28,0:08:14.48,Default,,0,0,0,,It used shared pointers with a reference counter to manage memory.\N
-Dialogue: 0,0:08:14.48,0:08:16.88,Default,,0,0,0,,And it still uses this technique.
-Dialogue: 0,0:08:17.24,0:08:22.66,Default,,0,0,0,,So we wanted memory to be managed automatically.
-Dialogue: 0,0:08:22.66,0:08:30.80,Default,,0,0,0,,And we want memory to be managed in the thread safe manner.
-Dialogue: 0,0:08:30.97,0:08:35.40,Default,,0,0,0,,So we wanted to use atomic operations from the very beginning.\N
-Dialogue: 0,0:08:35.86,0:08:39.20,Default,,0,0,0,,We implemented this mechanism in cv::Mat.\N
-Dialogue: 0,0:08:39.77,0:08:44.44,Default,,0,0,0,,And I would say that overall cv::Mat implementation\N
-Dialogue: 0,0:08:44.44,0:08:48.40,Default,,0,0,0,,and architecture are quite complex.\N
-Dialogue: 0,0:08:48.40,0:08:51.42,Default,,0,0,0,,If you look inside, you would notice that
-Dialogue: 0,0:08:51.42,0:08:58.77,Default,,0,0,0,,for example, there is not a signal reference counter but instead there are two reference counters in each matrix.
-Dialogue: 0,0:08:59.20,0:09:02.66,Default,,0,0,0,,So overall,\N
-Dialogue: 0,0:09:02.66,0:09:03.64,Default,,0,0,0,,I would say,
-Dialogue: 0,0:09:03.64,0:09:12.04,Default,,0,0,0,,if we use this modern C++ standard to implement
-Dialogue: 0,0:09:12.04,0:09:16.66,Default,,0,0,0,,those reference counting, shared memory,\N
-Dialogue: 0,0:09:16.66,0:09:22.80,Default,,0,0,0,,I would say overall implementation would not become noticeable simple\N
-Dialogue: 0,0:09:22.80,0:09:24.57,Default,,0,0,0,,In another words,\N
-Dialogue: 0,0:09:24.57,0:09:27.91,Default,,0,0,0,,if we create cv::Mat now\N
-Dialogue: 0,0:09:27.91,0:09:34.53,Default,,0,0,0,,I would say the implementation will be almost the same as it was like many years ago.
-Dialogue: 0,0:09:34.54,0:09:40.66,Default,,0,0,0,,Even though, C++ standard going in the right direction.\N
-Dialogue: 0,0:09:40.66,0:09:46.25,Default,,0,0,0,,For CV Ptr class [TODO:vp] OpenCV, we used shared pointer for matrix \N
-Dialogue: 0,0:09:47.42,0:09:52.65,Default,,0,0,0,,I would say we would use the same implementation as before.\N
-Dialogue: 0,0:09:52.65,0:09:56.05,Default,,0,0,0,,Mat class is not a template class.
-Dialogue: 0,0:09:56.60,0:09:58.37,Default,,0,0,0,,In my class,
-Dialogue: 0,0:09:58.37,0:10:02.48,Default,,0,0,0,,I ask my student to implement a matrix class
-Dialogue: 0,0:10:02.48,0:10:06.65,Default,,0,0,0,,to improve their programming skills.
-Dialogue: 0,0:10:08.74,0:10:16.31,Default,,0,0,0,,I asked them that the matrix class they designed should support many different data types,
-Dialogue: 0,0:10:16.31,0:10:25.77,Default,,0,0,0,,including 8-bit integers, 16-bit integers and floating point, like that.\N
-Dialogue: 0,0:10:25.77,0:10:30.20,Default,,0,0,0,,Most student used class template.
-Dialogue: 0,0:10:30.20,0:10:36.42,Default,,0,0,0,,So I think it's a very straightforward idea to use a template for that.
-Dialogue: 0,0:10:36.42,0:10:41.05,Default,,0,0,0,,Could you tell us why the Mat class you designed
-Dialogue: 0,0:10:41.42,0:10:43.48,Default,,0,0,0,,is not a template class?
-Dialogue: 0,0:10:44.77,0:10:51.28,Default,,0,0,0,,In OpenCV team, we had some discussions like how to implement the thing\N
-Dialogue: 0,0:10:51.85,0:11:02.34,Default,,0,0,0,,and at some point, at Intel, we had another project that implemented biasing networks [TODO:VP biasing?]\N
-Dialogue: 0,0:11:05.85,0:11:07.71,Default,,0,0,0,,That was quite complex library
-Dialogue: 0,0:11:07.71,0:11:11.68,Default,,0,0,0,,they chose to go completely into that way.\N
-Dialogue: 0,0:11:11.68,0:11:15.31,Default,,0,0,0,,So they created everything in templates.\N
-Dialogue: 0,0:11:16.88,0:11:26.25,Default,,0,0,0,,And I know that currently you heavy use of template is one of the trends in C++.\N
-Dialogue: 0,0:11:26.25,0:11:28.85,Default,,0,0,0,,Many people prefer to use templates.
-Dialogue: 0,0:11:28.85,0:11:31.05,Default,,0,0,0,,to get the best efficiency.
-Dialogue: 0,0:11:31.05,0:11:39.74,Default,,0,0,0,,In our case, we deliberately chose not to go completely to that way\N
-Dialogue: 0,0:11:40.45,0:11:46.77,Default,,0,0,0,,Because we saw bad example, a library becomes unusable\N
-Dialogue: 0,0:11:46.77,0:11:49.74,Default,,0,0,0,,because of its completely template
-Dialogue: 0,0:11:49.74,0:11:55.85,Default,,0,0,0,,so we can take very long time to compile code that uses those libraries.\N
-Dialogue: 0,0:11:55.85,0:12:02.14,Default,,0,0,0,,So when we speak about like generic library of algorithms\N
-Dialogue: 0,0:12:02.20,0:12:11.31,Default,,0,0,0,,STL library with containers, basic algorithms like sort()\N
-Dialogue: 0,0:12:14.88,0:12:22.08,Default,,0,0,0,,It's not that much complex, but there is still some, but it's not that much. In the case of computer vision.\N
-Dialogue: 0,0:12:22.08,0:12:27.97,Default,,0,0,0,,Algorithms are quite, may become quite complex\N
-Dialogue: 0,0:12:28.42,0:12:36.97,Default,,0,0,0,,And so if you make a matrix class as template,\N
-Dialogue: 0,0:12:36.97,0:12:46.85,Default,,0,0,0,,It is a strong motivation to put a lot of code into header files\N
-Dialogue: 0,0:12:46.85,0:12:48.85,Default,,0,0,0,,to make everything templates.\N
-Dialogue: 0,0:12:52.25,0:12:55.88,Default,,0,0,0,,And for developers, it may become a simpler solution.\N
-Dialogue: 0,0:12:55.88,0:13:03.20,Default,,0,0,0,,But for users, normally most of OpenCV users they use just a tiny part of OpenCV\N
-Dialogue: 0,0:13:04.31,0:13:12.71,Default,,0,0,0,,But for them, to wait those long minutes or even hours for their code to be compiled\N
-Dialogue: 0,0:13:12.71,0:13:14.71,Default,,0,0,0,,it is a big problem.
-Dialogue: 0,0:13:15.22,0:13:22.08,Default,,0,0,0,,Unfortunately, together with templates and C++, they didn't introduce modules.
-Dialogue: 0,0:13:22.08,0:13:25.40,Default,,0,0,0,,Modules are common to C++ only now,
-Dialogue: 0,0:13:25.40,0:13:29.34,Default,,0,0,0,,and even now, the support for modules is immature.\N
-Dialogue: 0,0:13:29.34,0:13:33.94,Default,,0,0,0,,Maybe several years later, when modules become widespread,
-Dialogue: 0,0:13:33.94,0:13:38.65,Default,,0,0,0,,when compiling complete code becomes much more efficient,
-Dialogue: 0,0:13:38.80,0:13:43.14,Default,,0,0,0,,then maybe more libraries will come out and will use template.\N
-Dialogue: 0,0:13:43.62,0:13:49.45,Default,,0,0,0,,Now, it's like not a good idea.\N
-Dialogue: 0,0:13:49.45,0:13:55.42,Default,,0,0,0,,So the first reason is we want to avoid long compile time.\N
-Dialogue: 0,0:13:57.11,0:13:59.68,Default,,0,0,0,,The second reason is Python.
-Dialogue: 0,0:14:00.42,0:14:08.51,Default,,0,0,0,,So even 10 years ago, we understood Python has a good, has a great potential. It is an excellent language.\N
-Dialogue: 0,0:14:09.54,0:14:15.68,Default,,0,0,0,,Besides that has been Java that we also wanted to support\N
-Dialogue: 0,0:14:16.08,0:14:20.14,Default,,0,0,0,,and also languages like Java has some support for templates.\N
-Dialogue: 0,0:14:20.14,0:14:24.60,Default,,0,0,0,,But it's not completely compatible with C++.\N
-Dialogue: 0,0:14:24.60,0:14:27.02,Default,,0,0,0,,Python, it doesn't have any template.\N
-Dialogue: 0,0:14:27.11,0:14:30.02,Default,,0,0,0,,And we wanted OpenCV supported by Python [TODO:VP] as well.\N
-Dialogue: 0,0:14:31.80,0:14:35.08,Default,,0,0,0,,So if you have template library,
-Dialogue: 0,0:14:36.17,0:14:40.71,Default,,0,0,0,,creating code for Python is quite complex tasks.\N
-Dialogue: 0,0:14:40.71,0:14:46.88,Default,,0,0,0,,Basically you need to implement [TODO:VP] all those functions in Python wrapper.\N
-Dialogue: 0,0:14:46.88,0:14:56.00,Default,,0,0,0,,and see what is the actual data type that the user called or particular instance of template implementation.\N
-Dialogue: 0,0:14:56.34,0:14:58.57,Default,,0,0,0,,So it is not quite convenient.
-Dialogue: 0,0:14:58.57,0:15:03.22,Default,,0,0,0,,So I think we did it the right way\N
-Dialogue: 0,0:15:03.22,0:15:10.54,Default,,0,0,0,,and we make right decision not to implement multiple OpenCV templates [TODO:VP].\N
-Dialogue: 0,0:15:11.91,0:15:13.71,Default,,0,0,0,,OK, thank you.
-Dialogue: 0,0:15:13.80,0:15:20.48,Default,,0,0,0,,Yeah, I also learned a lot from it.
-Dialogue: 0,0:15:20.48,0:15:25.22,Default,,0,0,0,,Because we always balance between many factors.
-Dialogue: 0,0:15:25.25,0:15:29.85,Default,,0,0,0,,So you introduced the factors in designing OpenCV,\N
-Dialogue: 0,0:15:29.85,0:15:38.77,Default,,0,0,0,,but I also found there is a class template which is very similar to Mat in OpenCV, its name is Mat_.\N
-Dialogue: 0,0:15:39.82,0:15:46.60,Default,,0,0,0,,Since we have Mat class, why to design Mat_, the template.\N
-Dialogue: 0,0:15:47.77,0:15:54.68,Default,,0,0,0,,You just explain the template maybe have some shortcomings,
-Dialogue: 0,0:15:54.94,0:15:58.40,Default,,0,0,0,,but we find there's a template for Mat.\N
-Dialogue: 0,0:15:59.11,0:16:01.11,Default,,0,0,0,,Yes, yes.
-Dialogue: 0,0:16:03.11,0:16:08.62,Default,,0,0,0,,Indeed there's another class that is\N
-Dialogue: 0,0:16:08.62,0:16:12.97,Default,,0,0,0,,has this underline in the end of the name\N
-Dialogue: 0,0:16:13.08,0:16:17.54,Default,,0,0,0,,and it doesn't introducing new members.
-Dialogue: 0,0:16:17.54,0:16:22.37,Default,,0,0,0,,So it's finally compatible with normal cv::Mat in both ways.\N
-Dialogue: 0,0:16:22.37,0:16:27.91,Default,,0,0,0,,So if we use, and it derives from Mat,\N
-Dialogue: 0,0:16:27.91,0:16:32.91,Default,,0,0,0,,you can basically use it instead of Mat.
-Dialogue: 0,0:16:33.54,0:16:38.74,Default,,0,0,0,,The only reason was to provide convenient element access operations.
-Dialogue: 0,0:16:39.51,0:16:42.74,Default,,0,0,0,,If you have, for example,\N
-Dialogue: 0,0:16:43.25,0:16:47.08,Default,,0,0,0,,some matrix algorithm that appears [TODO:VP] floats\N
-Dialogue: 0,0:16:49.08,0:16:53.85,Default,,0,0,0,,First option to access the elment, you use to play at<>() method\N
-Dialogue: 0,0:16:54.11,0:16:58.71,Default,,0,0,0,,with angle brackets<>, you just say that\N
-Dialogue: 0,0:16:58.85,0:17:02.80,Default,,0,0,0,,myMatrix.add<float>(10, 20), in angle brackets<>,\N
-Dialogue: 0,0:17:02.80,0:17:07.77,Default,,0,0,0,,you put data type like float, then you put indices in the parenthesis.\N
-Dialogue: 0,0:17:08.68,0:17:14.20,Default,,0,0,0,,And with Mat_, you just use parentheses myMatrix(10,20)\N
-Dialogue: 0,0:17:14.20,0:17:17.82,Default,,0,0,0,,You don't need add<>() with angle brackets. So it's another notation.\N
-Dialogue: 0,0:17:18.20,0:17:25.48,Default,,0,0,0,,But I would say that the number of algorithms that access elements directly in this way [not many].\N
-Dialogue: 0,0:17:28.14,0:17:34.77,Default,,0,0,0,,Some, savings that you type less symbols\N
-Dialogue: 0,0:17:34.77,0:17:42.57,Default,,0,0,0,,it is so small, I could say that if we design matrix class today again,\N
-Dialogue: 0,0:17:42.88,0:17:45.80,Default,,0,0,0,,I would not create this extra template class\N
-Dialogue: 0,0:17:45.80,0:17:49.82,Default,,0,0,0,,because most people just use normal cv::Mat.\N
-Dialogue: 0,0:17:50.42,0:17:51.82,Default,,0,0,0,,Yeah, yeah.
-Dialogue: 0,0:17:52.60,0:17:56.40,Default,,0,0,0,,OK, I have another question.
-Dialogue: 0,0:17:56.68,0:18:08.00,Default,,0,0,0,,The question, it's about hardware, because currently there are many kinds of hardware than in the past
-Dialogue: 0,0:18:08.08,0:18:15.57,Default,,0,0,0,,in the past, maybe only CPU? Or mostly CPU. Currently we have GPU, NPU or VPU
-Dialogue: 0,0:18:15.57,0:18:21.54,Default,,0,0,0,,Most of them have separate memory,
-Dialogue: 0,0:18:21.82,0:18:28.88,Default,,0,0,0,,Is it possible to design an universal Mat class which can handle different kind of memory?\N
-Dialogue: 0,0:18:30.88,0:18:34.60,Default,,0,0,0,,So, indeed nowadays
-Dialogue: 0,0:18:36.60,0:18:43.94,Default,,0,0,0,,Using GPU, or specialized accelerators to speed up computer vision is a very popular trend.\N
-Dialogue: 0,0:18:44.45,0:18:49.20,Default,,0,0,0,,Everybody goes in this direction,\N
-Dialogue: 0,0:18:49.62,0:18:56.88,Default,,0,0,0,,For example, Nvidia Xavier used in cars, it's indeed very popular.\N
-Dialogue: 0,0:18:59.48,0:19:04.48,Default,,0,0,0,,Unfortunately, from software site, there is no good standard
-Dialogue: 0,0:19:05.60,0:19:10.22,Default,,0,0,0,,to program those hardware in an universal way.\N
-Dialogue: 0,0:19:11.37,0:19:19.74,Default,,0,0,0,,About 10 years ago, when we had a project with AMD and Intel,\N
-Dialogue: 0,0:19:19.74,0:19:23.62,Default,,0,0,0,,to bring OpenCL support into OpenCV,\N
-Dialogue: 0,0:19:23.62,0:19:29.17,Default,,0,0,0,,I thought that OpenCL would soon become such a new universal standard.\N
-Dialogue: 0,0:19:29.17,0:19:32.45,Default,,0,0,0,,that everybody would use OpenCL to program that hardware.\N
-Dialogue: 0,0:19:32.45,0:19:38.97,Default,,0,0,0,,Hardware like GPU or specialized computer vision accelerators.\N
-Dialogue: 0,0:19:41.34,0:19:54.85,Default,,0,0,0,,So, for OpenCL in OpenCV we created special class called cv::UMat that people can use to access OpenCL functionality.\N
-Dialogue: 0,0:19:55.45,0:20:05.42,Default,,0,0,0,,And also OpenCV included several hundreds of OpenCL kernels to accelerate various algorithms from image processing to machine learning and so on.\N
-Dialogue: 0,0:20:06.57,0:20:12.91,Default,,0,0,0,,Unfortunately, now OpenCL is sort of semi-abandoned standard.\N
-Dialogue: 0,0:20:13.02,0:20:23.94,Default,,0,0,0,,It's still in the development, but it looks most manufacturers try to use something else.\N
-Dialogue: 0,0:20:23.94,0:20:34.91,Default,,0,0,0,,Like Apple uses Metal standard, then on Android, Vulkan is more popular for game, for example.\N
-Dialogue: 0,0:20:39.22,0:20:44.68,Default,,0,0,0,,Also there are some immature standards, for example,\N
-Dialogue: 0,0:20:44.68,0:20:49.91,Default,,0,0,0,,the standard called OACC (OpenACC), open accelerator.\N
-Dialogue: 0,0:20:50.88,0:20:58.88,Default,,0,0,0,,It aims at to bring some extensions to C++ standard to upload some loops to GPU.\N
-Dialogue: 0,0:21:00.91,0:21:11.97,Default,,0,0,0,,But it is not quite mature, so I would say we're still waiting for such a standard come out to conveniently program various hardware.\N
-Dialogue: 0,0:21:15.02,0:21:23.08,Default,,0,0,0,,Currently there are some positive trends for example,\N
-Dialogue: 0,0:21:23.17,0:21:31.97,Default,,0,0,0,,like Vulkan group in Khronos community and OpenCL group, they work together\N
-Dialogue: 0,0:21:31.97,0:21:38.48,Default,,0,0,0,,to provide OpenCL compatibility for Vulkan based hardware and such.\N
-Dialogue: 0,0:21:38.48,0:21:43.42,Default,,0,0,0,,So maybe OpenCL is not completely dead and it will maybe revised at some point.\N
-Dialogue: 0,0:21:45.00,0:21:46.65,Default,,0,0,0,,Yes, we are still waiting.\N
-Dialogue: 0,0:21:46.78,0:21:52.97,Default,,0,0,0,,Without that standard it is difficult to come up with such a universal class\N
-Dialogue: 0,0:21:52.97,0:21:58.85,Default,,0,0,0,,because you do not know which API should be added [TODO:VP], because everybody uses the different API.\N
-Dialogue: 0,0:22:01.17,0:22:04.34,Default,,0,0,0,,I still have another question.
-Dialogue: 0,0:22:04.85,0:22:07.20,Default,,0,0,0,,Actually it's two questions.\N
-Dialogue: 0,0:22:07.20,0:22:16.51,Default,,0,0,0,,The first question is does OpenCV have any plan to update Mat class to a newer one?
-Dialogue: 0,0:22:16.51,0:22:19.88,Default,,0,0,0,,Or we will continue to use the current one?
-Dialogue: 0,0:22:22.17,0:22:26.11,Default,,0,0,0,,Yes, so OpenCV is quite large library with many users,
-Dialogue: 0,0:22:26.94,0:22:35.17,Default,,0,0,0,,and so there are no plans to completely replace the cv::Mat with something else.\N
-Dialogue: 0,0:22:35.51,0:22:39.37,Default,,0,0,0,,And cv::Mat is quite flexible for example\N
-Dialogue: 0,0:22:39.37,0:22:45.28,Default,,0,0,0,,for Python bindings, users do not see this cv::Mat class.\N
-Dialogue: 0,0:22:45.51,0:22:50.71,Default,,0,0,0,,They operate on common ...\N
-Dialogue: 0,0:22:50.71,0:22:56.62,Default,,0,0,0,,on very popular in Python world, NumPy arrays.\N
-Dialogue: 0,0:22:56.62,0:23:04.65,Default,,0,0,0,,And internally, those Python arrays are converted to cv::Mat, usually it happens without copying any data.\N
-Dialogue: 0,0:23:04.65,0:23:06.65,Default,,0,0,0,,So it's very efficient.
-Dialogue: 0,0:23:06.65,0:23:11.74,Default,,0,0,0,,We try to use this zero copy techniques.\N
-Dialogue: 0,0:23:12.77,0:23:22.20,Default,,0,0,0,,Internally, as I said, we do not plan to completely replace cv::Mat with something completely new.\N
-Dialogue: 0,0:23:22.54,0:23:27.28,Default,,0,0,0,,But we want to make some upgrades to cv::Mat.\N
-Dialogue: 0,0:23:27.65,0:23:34.02,Default,,0,0,0,,First of all, we plan to extend the number of data types supported.
-Dialogue: 0,0:23:34.48,0:23:41.94,Default,,0,0,0,,So maybe it will be some new integer data types, also we plan to add BFloat16.\N
-Dialogue: 0,0:23:42.22,0:23:48.91,Default,,0,0,0,,Brain Floating 16, it's the relatively new 16 point format developed by Google. \N
-Dialogue: 0,0:23:49.74,0:23:57.11,Default,,0,0,0,,and use in their TPU accelerators, and also it is now supported by Intel hardware\N
-Dialogue: 0,0:23:57.60,0:24:04.25,Default,,0,0,0,,Upcoming ARM v9 and some other architectures.\N
-Dialogue: 0,0:24:04.94,0:24:08.42,Default,,0,0,0,,So it's quite popular and we want to add support for it.
-Dialogue: 0,0:24:09.31,0:24:13.31,Default,,0,0,0,,Another new feature is\N
-Dialogue: 0,0:24:14.37,0:24:19.31,Default,,0,0,0,,to support one dimensional arrays.\N
-Dialogue: 0,0:24:21.05,0:24:30.45,Default,,0,0,0,,As I said, we borrowed this cv::Mat class idea from Matlab,\N
-Dialogue: 0,0:24:30.45,0:24:35.82,Default,,0,0,0,,and in Matlab, there is no one dimensional array, as far as I know.\N
-Dialogue: 0,0:24:37.08,0:24:43.02,Default,,0,0,0,,One dimensional array is represented as two dimensional 1xN and Nx1 array.\N
-Dialogue: 0,0:24:43.02,0:24:53.28,Default,,0,0,0,,And in OpenCV we took the same convention, but it appears to be not quite convenient for Python bindings\N
-Dialogue: 0,0:24:53.28,0:24:56.54,Default,,0,0,0,,and for some deep learning areas that
-Dialogue: 0,0:24:56.54,0:25:01.91,Default,,0,0,0,,we are trying to add to OpenCV currently like speech recognition\N
-Dialogue: 0,0:25:01.91,0:25:05.00,Default,,0,0,0,,or whatever some areas on dimensional arrays are important\N
-Dialogue: 0,0:25:05.00,0:25:10.68,Default,,0,0,0,,We want to support for real one dimensional arrays to OpenCV.\N
-Dialogue: 0,0:25:11.91,0:25:14.40,Default,,0,0,0,,The third feature, we are still thinking of it.\N
-Dialogue: 0,0:25:14.40,0:25:27.51,Default,,0,0,0,,But, maybe we will add some tag into cv::Mat that will indicate, that will provide some indication to what is the data, that marks the source.\N
-Dialogue: 0,0:25:27.51,0:25:33.77,Default,,0,0,0,,For example, the tag can be RGB or BGR to indicate what is the order of channels.\N
-Dialogue: 0,0:25:33.77,0:25:40.51,Default,,0,0,0,,Maybe it will solve some old problems, when people just put,\N
-Dialogue: 0,0:25:41.42,0:25:49.37,Default,,0,0,0,,use some matrix with incorrect data channels, and sometimes they get wrong visualization.\N
-Dialogue: 0,0:25:49.60,0:25:55.31,Default,,0,0,0,,Instead of a red face, you will get blue faces. In some cases,\N
-Dialogue: 0,0:25:55.51,0:26:03.54,Default,,0,0,0,,You just get maybe slightly worse performance from some deep nets, object detection networks.\N
-Dialogue: 0,0:26:03.54,0:26:08.80,Default,,0,0,0,,so it still detects objects, but not as good as with proper order channels.\N
-Dialogue: 0,0:26:08.80,0:26:12.22,Default,,0,0,0,,So it's a very subtle bug to detect.\N
-Dialogue: 0,0:26:12.22,0:26:19.14,Default,,0,0,0,,And maybe with this tags, this problem will disappear.\N
-Dialogue: 0,0:26:19.14,0:26:21.42,Default,,0,0,0,,So we are still thinking of..
-Dialogue: 0,0:26:21.45,0:26:31.54,Default,,0,0,0,,Yeah, sure, yeah because in my course, the final project is to do some CNN
-Dialogue: 0,0:26:31.54,0:26:34.51,Default,,0,0,0,,They should implement CNN by themselves.\N
-Dialogue: 0,0:26:35.42,0:26:48.97,Default,,0,0,0,,So in the data reading from the image, the default channel is BGR, a lot of students were confused by that and made some errors.\N
-Dialogue: 0,0:26:50.25,0:27:00.20,Default,,0,0,0,,I know there will be some students from my class and also from maybe all over the world will watch this video.\N
-Dialogue: 0,0:27:00.31,0:27:07.85,Default,,0,0,0,,Do you have any suggestions for the students in computer science, especially the students who are learning C++
-Dialogue: 0,0:27:12.34,0:27:13.54,Default,,0,0,0,,Yeah, so
-Dialogue: 0,0:27:18.74,0:27:23.20,Default,,0,0,0,,I think that currently there are many sources of information,\N
-Dialogue: 0,0:27:23.31,0:27:27.40,Default,,0,0,0,,there are many good online courses on computer vision.
-Dialogue: 0,0:27:27.40,0:27:38.11,Default,,0,0,0,,I'm glad that you are teaching the C++ class, I saw some bits of it and I think it's very professional.
-Dialogue: 0,0:27:38.51,0:27:43.37,Default,,0,0,0,,I'm sure that students will learn a lot from it.
-Dialogue: 0,0:27:44.17,0:27:49.88,Default,,0,0,0,,So maybe I have just a few common words,
-Dialogue: 0,0:27:50.71,0:28:00.05,Default,,0,0,0,,feel free to ignore them completely, just from my experience of developing software quite a few years.\N
-Dialogue: 0,0:28:01.20,0:28:10.08,Default,,0,0,0,,I would suggest students to pay more attention to algorithms, concepts, technologies,\N
-Dialogue: 0,0:28:10.57,0:28:14.20,Default,,0,0,0,,rather than particular features, particular programming language.
-Dialogue: 0,0:28:18.22,0:28:24.14,Default,,0,0,0,,Many years ago, Fortran was the most language for computing,\N
-Dialogue: 0,0:28:24.97,0:28:29.74,Default,,0,0,0,,then C became the dominant language, then C++.\N
-Dialogue: 0,0:28:30.28,0:28:37.91,Default,,0,0,0,,I would say currently maybe Python is used more especially with special acceleration extensions, like NumPy [TODO:VP] whatever or Siphon[TODO:VP].\N
-Dialogue: 0,0:28:37.91,0:28:42.60,Default,,0,0,0,,Maybe Python is used more actively for computing than everything else.
-Dialogue: 0,0:28:42.60,0:28:51.88,Default,,0,0,0,,So do not pay too much attention to the particular feature, particular language,\N
-Dialogue: 0,0:28:52.08,0:28:58.11,Default,,0,0,0,,and do not try to use all those fancy features of the language that you just learned in your project\N
-Dialogue: 0,0:28:58.48,0:29:06.82,Default,,0,0,0,,Because those features just exist and you want to make your code look cool by using all those features\N
-Dialogue: 0,0:29:06.82,0:29:14.25,Default,,0,0,0,,because this's a good change that a couple of months later you won't be able to read your own code because it's too complex.\N
-Dialogue: 0,0:29:15.68,0:29:20.74,Default,,0,0,0,,I think this suggestion is especially for C++, right?
-Dialogue: 0,0:29:21.17,0:29:24.31,Default,,0,0,0,,Because there are too many features in C++.
-Dialogue: 0,0:29:24.31,0:29:36.42,Default,,0,0,0,,Yes, C++, I would say, in the recent standards, they made some small convenient to you like modules.
-Dialogue: 0,0:29:36.42,0:29:38.42,Default,,0,0,0,,It's important feature I believe.
-Dialogue: 0,0:29:38.42,0:29:42.68,Default,,0,0,0,,But on the other hands, languages becoming quite more and more complex.
-Dialogue: 0,0:29:43.57,0:29:52.45,Default,,0,0,0,,And so you need to develop proper style of using C++, not to shoot yourself on the foot.\N
-Dialogue: 0,0:29:52.45,0:29:57.57,Default,,0,0,0,,And try not to use manual memory allocation,\N
-Dialogue: 0,0:29:57.57,0:30:04.00,Default,,0,0,0,,To use exisiting containers like std::vector, or if you use OpenCV, use cv::Mat, etc.\N
-Dialogue: 0,0:30:05.60,0:30:12.88,Default,,0,0,0,,Like try to put some regression test before you do any refactoring or optimization.\N
-Dialogue: 0,0:30:12.88,0:30:16.22,Default,,0,0,0,,There should be some tests, of course.
-Dialogue: 0,0:30:16.77,0:30:23.97,Default,,0,0,0,,As I said, develop some methodology, a proper methodology how to\N
-Dialogue: 0,0:30:23.97,0:30:31.42,Default,,0,0,0,,create robust software that is easy to debug or doesn't need to be debugged at all, it works out of the box.\N
-Dialogue: 0,0:30:32.11,0:30:40.08,Default,,0,0,0,,Instead of just using very complex language constructions that you may not fully understand.
-Dialogue: 0,0:30:41.20,0:30:49.14,Default,,0,0,0,,Yeah, sure. I also found a lot of students, they spend a lot of time on debugging.
-Dialogue: 0,0:30:49.14,0:30:59.08,Default,,0,0,0,,It takes them a lot of time to find a very tiny bug, it's very difficult in C and C++,
-Dialogue: 0,0:30:59.42,0:31:09.34,Default,,0,0,0,,because there are memory leaks and maybe some pointers have invalid values,\N
-Dialogue: 0,0:31:09.85,0:31:11.34,Default,,0,0,0,,it's quite common, yeah.\N
-Dialogue: 0,0:31:11.91,0:31:19.08,Default,,0,0,0,,Yes, so like automatic class you mentioned, for example, shared pointers, it is another very good tool\N
-Dialogue: 0,0:31:19.08,0:31:28.82,Default,,0,0,0,,when people avoid using raw pointers in C++.\N
-Dialogue: 0,0:31:28.82,0:31:34.71,Default,,0,0,0,,But instead use containers like cv::Vec or cv::Mat or shared pointers.\N
-Dialogue: 0,0:31:35.94,0:31:43.11,Default,,0,0,0,,The number of memory leaks problems go almost to zero.\N
-Dialogue: 0,0:31:43.48,0:31:45.91,Default,,0,0,0,,Yeah, thank you, thank you for the suggestions!
-Dialogue: 0,0:31:46.37,0:31:47.91,Default,,0,0,0,,Yeah, you are welcome!
-Dialogue: 0,0:31:48.37,0:31:56.54,Default,,0,0,0,,I believe the students will be benefited from your suggestions and also your introduction to OpenCV, thank you!
-Dialogue: 0,0:31:56.54,0:31:58.54,Default,,0,0,0,,You are welcome!
+Dialogue: 0,0:00:00.00,0:00:02.46,Default,,0,0,0,,Hi, Vadim, nice to talk with you.\N你好，Vadim，很高兴能和你聊天.
+Dialogue: 0,0:00:02.46,0:00:06.84,Default,,0,0,0,,I’m teaching C and C++ in my university.\N我现在在我所在的大学教授C和C++课程。
+Dialogue: 0,0:00:06.84,0:00:12.44,Default,,0,0,0,,I took the source code in OpenCV as an example to the students.\N我把OpenCV的源码作为例子展示给学生。
+Dialogue: 0,0:00:12.44,0:00:19.16,Default,,0,0,0,,And I also suggested my students to learn C++ from OpenCV.\N并且我建议我的学生们也利用OpenCV学习C++。
+Dialogue: 0,0:00:19.16,0:00:24.12,Default,,0,0,0,,I found the class cv::Mat is an excellent example.\N我发现cv::Mat类是一个非常好的范例。
+Dialogue: 0,0:00:25.08,0:00:28.00,Default,,0,0,0,,And, I know you designed the class.\N我知道这个类是你设计的。
+Dialogue: 0,0:00:28.10,0:00:28.80,Default,,0,0,0,,So,\N所以，
+Dialogue: 0,0:00:29.04,0:00:33.44,Default,,0,0,0,,Could you tell me some history of the Mat class?\N能否告诉我一些有关Mat类的历史？
+Dialogue: 0,0:00:33.50,0:00:36.96,Default,,0,0,0,,And why to design a new C++ class?\N包括为什么要设计一个新的C++类？
+Dialogue: 0,0:00:36.96,0:00:41.00,Default,,0,0,0,,I remember at the beginning,\N因为我记得在最开始，
+Dialogue: 0,0:00:41.00,0:00:49.00,Default,,0,0,0,,OpenCV used the IplImage and CvMat structure for images.\NIplImage和CvMat被用作OpenCV中图像的数据结构。
+Dialogue: 0,0:00:49.00,0:00:51.16,Default,,0,0,0,,So, why you designed it?\N所以你为什么要设计它呢？
+Dialogue: 0,0:00:51.16,0:00:53.76,Default,,0,0,0,,Can you introduce a little bit to us?\N你能给我们稍微介绍一下吗？
+Dialogue: 0,0:00:54.50,0:00:55.76,Default,,0,0,0,,Yes, sure.\N好的。
+Dialogue: 0,0:00:56.12,0:00:58.76,Default,,0,0,0,,I'd like to talk to you again, Shiqi.\N我非常乐意和你分享这些，shiqi。
+Dialogue: 0,0:00:59.36,0:01:09.50,Default,,0,0,0,,First of all, I'm very pleased that, OpenCV is now taught in universities including your university\N首先，我非常高兴能看到OpenCV在包括你的大学在内的学校里被教授
+Dialogue: 0,0:01:09.70,0:01:13.48,Default,,0,0,0,,and you chose cv::Mat as an example of C++ design.\N并且你把cv::Mat作为学习C++的一个例子。
+Dialogue: 0,0:01:13.48,0:01:20.84,Default,,0,0,0,,Actually it's a big pleasure for me and for the whole OpenCV team that\N事实上对于我和整个OpenCV团队来说我们的设计被这样使用
+Dialogue: 0,0:01:20.84,0:01:25.48,Default,,0,0,0,,our pieces of OpenCV design are used in such a way.\N是非常值得高兴的。
+Dialogue: 0,0:01:25.48,0:01:35.72,Default,,0,0,0,,Indeed, it took several years for OpenCV team to come up with this C++ class.\N事实上，我们花了好几年时间设计出这个C++类。
+Dialogue: 0,0:01:35.72,0:01:36.92,Default,,0,0,0,,In the very beginning,\N在最开始的时候，
+Dialogue: 0,0:01:36.92,0:01:41.20,Default,,0,0,0,,the very first structure in OpenCV\NOpenCV的第一个数据结构
+Dialogue: 0,0:01:41.20,0:01:43.88,Default,,0,0,0,,as you correctly pointed out was IplImage.\N正如你所说的，是IplImage。
+Dialogue: 0,0:01:43.88,0:01:51.60,Default,,0,0,0,,This is because OpenCV was started at Intel in 1998\N这是因为在1998，OpenCV最开始是作为一个闭源代码库被设计出来，\\TODO
+Dialogue: 0,0:01:51.60,0:01:56.00,Default,,0,0,0,,as a close source library, and then released as open source.\N然后作为开源代码发布。
+Dialogue: 0,0:01:56.00,0:02:02.36,Default,,0,0,0,,At that time, at Intel, the family of performance libraries,\N在那时的Intel，(高)性能库，\\TODO
+Dialogue: 0,0:02:02.36,0:02:06.76,Default,,0,0,0,,like for signal processing acceleration, for image processing acceleration,\N包括信号处理加速（库），图像处理加速（库）等，
+Dialogue: 0,0:02:06.76,0:02:12.04,Default,,0,0,0,,and like one of the libraries was IPL,\N其中之一就是IPL，
+Dialogue: 0,0:02:12.04,0:02:14.80,Default,,0,0,0,,Image Processing Library by Intel.\N也就是Intel的图像处理库。
+Dialogue: 0,0:02:14.80,0:02:19.00,Default,,0,0,0,,And it uses IplImage as the main data structure.\N正是它使用IplImage作为主要的数据结构。
+Dialogue: 0,0:02:19.00,0:02:24.32,Default,,0,0,0,,The original OpenCV was planned as addition to IPL\N最初的OpenCV被计划作为IPL的补充
+Dialogue: 0,0:02:24.32,0:02:28.52,Default,,0,0,0,,or IPL concentrates on image processing,\N或者说是IPL负责图像处理，
+Dialogue: 0,0:02:28.52,0:02:32.32,Default,,0,0,0,,and OpenCV will concentrate on computer vision.\NOpenCV负责计算机视觉。
+Dialogue: 0,0:02:32.32,0:02:35.80,Default,,0,0,0,,In the begin, OpenCV was called CVL,\N在最开始，OpenCV被叫做CVL，
+Dialogue: 0,0:02:35.80,0:02:36.75,Default,,0,0,0,,Computer Vision Library.\N也就是计算机视觉库。
+Dialogue: 0,0:02:36.80,0:02:41.07,Default,,0,0,0,,So it even use the same name pattern as IPL.\N所以它甚至使用和IPL一样的命名规范\\TODO。
+Dialogue: 0,0:02:41.07,0:02:47.52,Default,,0,0,0,,It is\\TODO just a set of computer algorithms of image processing, computer vision.\N（在最开始），他只是用于图像处理和计算机视觉的一套算法。
+Dialogue: 0,0:02:47.52,0:02:52.52,Default,,0,0,0,,Soon, we realized the IplImage was not enough,\N但很快我们意识到IplImage是不够的，
+Dialogue: 0,0:02:52.52,0:02:55.04,Default,,0,0,0,,because in computer vision, if you do, for example,\N因为在计算机视觉中，
+Dialogue: 0,0:02:55.04,0:03:01.80,Default,,0,0,0,,camera preparations, some 3D vision, whatever you need, general matrix class.\N你做任何工作都需要通用的矩阵类，包括相机准备，3D视觉。\\TODO
+Dialogue: 0,0:03:01.80,0:03:04.80,Default,,0,0,0,,And sometimes, for example,\N并且有时，
+Dialogue: 0,0:03:04.80,0:03:06.84,Default,,0,0,0,,you need more than two dimensional arrays,\N你需要不止二维的数组，
+Dialogue: 0,0:03:06.84,0:03:08.12,Default,,0,0,0,,like 3 dimensional arrays.\N像三维数组。
+Dialogue: 0,0:03:08.12,0:03:11.94,Default,,0,0,0,,Sometimes you need sparse multi-dimensional arrays.\N有时你需要稀疏的多维数组。
+Dialogue: 0,0:03:12.02,0:03:14.26,Default,,0,0,0,,So in addition to IplImage,\N所以作为IplImage的补充，
+Dialogue: 0,0:03:14.26,0:03:18.96,Default,,0,0,0,,we also create CvMat, CvMatND indeed and CvSparseMat\N我们创建了CvMat，CvMatND和CvSparseMat。
+Dialogue: 0,0:03:18.96,0:03:23.46,Default,,0,0,0,,to like other those use cases.\N用以其他的用例。
+Dialogue: 0,0:03:25.28,0:03:32.91,Default,,0,0,0,,Then a time later, Intel abandoned IPL in favor of like library of low level primitives.\N一段时间后，Intel放弃了IPL转而使用类似的低级原语库，\\TODO
+Dialogue: 0,0:03:33.02,0:03:37.55,Default,,0,0,0,,It is called IPP and it is still used in OpenCV for acceleration.\N它被称为IPP，并且仍然在OpenCV中提供加速功能。
+Dialogue: 0,0:03:44.57,0:03:50.26,Default,,0,0,0,,We didn't have to maintain compatibility with IPL since then.\N从那时起，我们就不必维护和IPL的兼容性。
+Dialogue: 0,0:03:50.26,0:03:54.48,Default,,0,0,0,,Because like uh, the library was gone and replaced with IPP.\N因为这个库被IPP取而代之。
+Dialogue: 0,0:03:54.93,0:04:03.64,Default,,0,0,0,,So we mostly used CvMat C structure for most of use cases\N所以我们在绝大多数用例中使用CvMat作为C的数据结构，
+Dialogue: 0,0:04:04.17,0:04:06.88,Default,,0,0,0,,for point clouds, for mathesis, for images.\N用于点云，数学分析\\TODO，图像。
+Dialogue: 0,0:04:09.08,0:04:13.95,Default,,0,0,0,,But we constantly got requests from users\N但我们最近不断收到用户的请求
+Dialogue: 0,0:04:13.95,0:04:17.82,Default,,0,0,0,,to introduce C++ API.\N来引入C++的API。
+Dialogue: 0,0:04:17.82,0:04:25.37,Default,,0,0,0,,Because C++ was much more convenient to use, instead of C.\N因为相对于C来说C++使用起来更加方便。
+Dialogue: 0,0:04:26.84,0:04:34.88,Default,,0,0,0,,In the year 2008, when Willow Garage company started to found OpenCV,\N在2008年，Willow Garage公司开始建立OpenCV，
+Dialogue: 0,0:04:34.88,0:04:39.82,Default,,0,0,0,,by the way Willow Garage is the company also created ROS, Robot Operating System.\N顺便说一下，Willow Garage还创造了ROS，也就是机器人操作系统。
+Dialogue: 0,0:04:40.40,0:04:43.77,Default,,0,0,0,,So it was a quite big startup at \\TODO the certain point.\N所以在那时这是个相当大的初创公司。\\TODO
+Dialogue: 0,0:04:43.77,0:04:46.44,Default,,0,0,0,,It founded OpenCV development.\N它创造了OpenCV。
+Dialogue: 0,0:04:46.93,0:04:50.40,Default,,0,0,0,,They gave us resources and we started to think\N他们给我们提供资源，
+Dialogue: 0,0:04:50.40,0:04:54.75,Default,,0,0,0,,how to redesign OpenCV to use C++ API.\N我们开始思考如何重新设计OpenCV来使用C++的API。
+Dialogue: 0,0:04:54.75,0:04:57.86,Default,,0,0,0,,And definitely we need C++ data structure\N所以我们当然需要使用C++的数据结构
+Dialogue: 0,0:04:57.86,0:05:02.88,Default,,0,0,0,,instead of CvMat and IplImage C structures.\N而不是CvMat和IplImage这类C的数据结构。
+Dialogue: 0,0:05:04.26,0:05:05.77,Default,,0,0,0,,So we looked around,\N所以我们环顾四周，
+Dialogue: 0,0:05:07.60,0:05:09.11,Default,,0,0,0,,look for the source of inspiration,\N寻找灵感的源泉，
+Dialogue: 0,0:05:09.11,0:05:14.26,Default,,0,0,0,,and we found that Matlab is a very good example of good design.\N然后我们发现Matlab是一个很好的设计范例。
+Dialogue: 0,0:05:14.26,0:05:21.51,Default,,0,0,0,,That is Matlab is not an as flexible language as C or C++,\N（虽然）Matlab不像C或C++那样灵活，
+Dialogue: 0,0:05:22.00,0:05:24.35,Default,,0,0,0,,but it is super convenient.\N但它非常方便。
+Dialogue: 0,0:05:24.35,0:05:28.84,Default,,0,0,0,,It has this matrix, or array data type. \N它使用矩阵，也就是数组的数据结构。
+Dialogue: 0,0:05:28.84,0:05:34.75,Default,,0,0,0,,And all the toolboxes in Matlab use this data type.\N并且Matlab中所有的工具箱都使用这种数据类型。
+Dialogue: 0,0:05:34.75,0:05:38.62,Default,,0,0,0,,Therefore, there is no, absolutely not compatibility issues.\N所以兼容性问题当然不会存在。
+Dialogue: 0,0:05:40.40,0:05:42.31,Default,,0,0,0,,If you want to use those toolboxes,\N如果你需要使用这些工具箱，
+Dialogue: 0,0:05:42.31,0:05:45.05,Default,,0,0,0,,you just download them and use together\N你只需要下载并使用
+Dialogue: 0,0:05:45.05,0:05:51.73,Default,,0,0,0,,without any convert stage, structures from one type to another.\N而不需要任何的数据类型转换。
+Dialogue: 0,0:05:51.73,0:05:54.13,Default,,0,0,0,,You just use those toolboxes together.\N你只需要关心如何去用。
+Dialogue: 0,0:05:54.13,0:06:01.91,Default,,0,0,0,,And they, MathWorks, even use those arrayed data types for images.\NMathWorks甚至将这些数组用于图像。
+Dialogue: 0,0:06:01.91,0:06:04.35,Default,,0,0,0,,In Matlab, there is image processing toolbox,\N在Matlab中有图像处理工具箱，
+Dialogue: 0,0:06:04.35,0:06:07.68,Default,,0,0,0,,and it also uses matrix data type.\N它也使用矩阵的数据类型。
+Dialogue: 0,0:06:07.68,0:06:10.04,Default,,0,0,0,,I really like this idea that\N我非常喜欢这种
+Dialogue: 0,0:06:10.04,0:06:13.86,Default,,0,0,0,,one data type is used for any kind of array.\N将一种数据类型用于任何类型数组的主意。
+Dialogue: 0,0:06:14.26,0:06:22.04,Default,,0,0,0,,So we just tried to replicate Matlab API\N所以我们开始尽可能
+Dialogue: 0,0:06:22.04,0:06:24.17,Default,,0,0,0,,as goal as we could.\N尝试模仿Matlab的API。
+Dialogue: 0,0:06:24.17,0:06:29.20,Default,,0,0,0,,That is we wanted memory to be managed automatically,\N我们需要自动的内存管理机制，
+Dialogue: 0,0:06:29.20,0:06:35.77,Default,,0,0,0,,we wanted convenient element access operations, etc.\N和方便的元素访问操作等等。
+Dialogue: 0,0:06:35.77,0:06:39.77,Default,,0,0,0,,So we created this class, C++ structure, cv::Mat.\N所以我们创造了这个C++数据结构，cv::Mat。
+Dialogue: 0,0:06:39.77,0:06:43.33,Default,,0,0,0,,They replaced all of the structures,\N它替代了所有的数据结构，
+Dialogue: 0,0:06:43.33,0:06:46.82,Default,,0,0,0,,IplImage, CvMat, CvMatND\N包括IplImage，CvMat，CvMatND。
+Dialogue: 0,0:06:46.82,0:06:50.57,Default,,0,0,0,,Sparse model was a separate structure,\N稀疏模型\\TODO是一种独立的数据类型，
+Dialogue: 0,0:06:50.82,0:06:53.10,Default,,0,0,0,,but all the dense arrays were replaced with just a single structure.\N但是所有的稠密矩阵都被一种数据结构代替了。
+Dialogue: 0,0:06:53.98,0:07:02.77,Default,,0,0,0,,We know different Mat objects may share the same memory for matrix data to avoid memory leak.\N我们知道不同的Mat对象可能会共享内存来避免内存泄露。
+Dialogue: 0,0:07:02.77,0:07:07.20,Default,,0,0,0,,There is a complex mechanism in Mat class.\N在Mat类中有一种复杂的机制。
+Dialogue: 0,0:07:07.20,0:07:17.86,Default,,0,0,0,,If you redesign Mat class now, will you use smart pointers in the new C++ standards?\N如果现在你重新设计Mat类，你会在新的C++标准中使用智能指针吗？
+Dialogue: 0,0:07:22.78,0:07:26.91,Default,,0,0,0,,We did have a shared pointer\N我们确实在C++11中使用了智能指针，
+Dialogue: 0,0:07:27.33,0:07:30.35,Default,,0,0,0,,appeared in C++11 if I'm not mistaken.\N如果我没记错的话。
+Dialogue: 0,0:07:30.35,0:07:33.06,Default,,0,0,0,,In C++20,\N在C++20中，
+Dialogue: 0,0:07:33.06,0:07:38.53,Default,,0,0,0,,it was special version of this shared pointer that can use atomic operations.\N它是这个智能指针的特殊版本，可以使用原子操作。
+Dialogue: 0,0:07:39.60,0:07:43.82,Default,,0,0,0,,And we create cv::Mat in 2009,\N我们在2009年开发了cv::Mat，
+Dialogue: 0,0:07:43.82,0:07:46.84,Default,,0,0,0,,so even 2 years before C++11,\N甚至比C++11标准早了两年。
+Dialogue: 0,0:07:47.42,0:07:52.22,Default,,0,0,0,,so we couldn't wait for the new C++ standard to come out,\N所以我们等不及使用新的C++标准，
+Dialogue: 0,0:07:52.22,0:07:56.04,Default,,0,0,0,,so we used our own implementation of shared pointer.\N转而使用我们自己实现的智能指针。
+Dialogue: 0,0:07:56.04,0:07:58.04,Default,,0,0,0,,Of course it's not a new idea.\N这当然不是个新点子。
+Dialogue: 0,0:07:58.48,0:08:01.33,Default,,0,0,0,,It was well known for decades.\N几十年来它广为人知。
+Dialogue: 0,0:08:02.42,0:08:06.44,Default,,0,0,0,,Even Python created in 90s.\N甚至Python也在90年代开发了。
+Dialogue: 0,0:08:07.28,0:08:14.48,Default,,0,0,0,,It used shared pointers with a reference counter to manage memory.\N它使用带有引用计数器的智能指针来管理内存。
+Dialogue: 0,0:08:14.48,0:08:16.88,Default,,0,0,0,,And it still uses this technique.\N并且到现在还在使用这个技术。
+Dialogue: 0,0:08:17.24,0:08:22.66,Default,,0,0,0,,So we wanted memory to be managed automatically,\N所以我们希望自动管理内存，
+Dialogue: 0,0:08:22.66,0:08:30.80,Default,,0,0,0,,and we want memory to be managed in the thread safe manner.\N我们希望以线程安全的方式来管理内存。
+Dialogue: 0,0:08:30.97,0:08:35.40,Default,,0,0,0,,So we wanted to use atomic operations from the very beginning.\N所以我们希望在一开始就使用原子操作。
+Dialogue: 0,0:08:35.86,0:08:39.20,Default,,0,0,0,,We implemented this mechanism in cv::Mat.\N我们在cv::Mat中实现了这个机制。
+Dialogue: 0,0:08:39.77,0:08:44.44,Default,,0,0,0,,And I would say that overall cv::Mat implementation\N我会说，
+Dialogue: 0,0:08:44.44,0:08:48.40,Default,,0,0,0,,and architecture are quite complex.\Ncv::Mat的实现和架构相当复杂。
+Dialogue: 0,0:08:48.40,0:08:51.42,Default,,0,0,0,,If you look inside, you would notice that\N如果你仔细观察，你会注意到
+Dialogue: 0,0:08:51.42,0:08:54.48,Default,,0,0,0,,for example, there is not a signal reference counter\N每个矩阵中不是单独的引用计数器
+Dialogue: 0,0:08:54.48,0:08:59.20,Default,,0,0,0,,but instead there are two reference counters in each matrix.\N而是两个。
+Dialogue: 0,0:08:59.20,0:09:02.66,Default,,0,0,0,,So overall,\N所以总的来说，
+Dialogue: 0,0:09:02.66,0:09:03.64,Default,,0,0,0,,I would say,\N我会说，
+Dialogue: 0,0:09:03.64,0:09:12.04,Default,,0,0,0,,if we use this modern C++ standard to implement,\N如果我们以现代的C++标准来实现，
+Dialogue: 0,0:09:12.04,0:09:16.66,Default,,0,0,0,,those reference counter, shared memory,\N那些引用计数器，共享内存，
+Dialogue: 0,0:09:16.66,0:09:22.80,Default,,0,0,0,,I would say overall implementation would not become noticeable simple.\N在实现上不会更简单。
+Dialogue: 0,0:09:22.80,0:09:24.57,Default,,0,0,0,,In another words,\N换句话说，
+Dialogue: 0,0:09:24.57,0:09:27.91,Default,,0,0,0,,if we create cv::Mat now\N如果我们现在设计cv::Mat类，
+Dialogue: 0,0:09:27.91,0:09:34.53,Default,,0,0,0,,I would say the implementation will be almost the same as it was like many years ago.\N它的实现恐怕会和多年前几乎相同。
+Dialogue: 0,0:09:34.54,0:09:40.66,Default,,0,0,0,,Even though, C++ standard going in the right direction.\N尽管如此，C++标准是在朝着正确的方向发展。
+Dialogue: 0,0:09:40.66,0:09:46.25,Default,,0,0,0,,For CV Ptr class [TODO:vp] OpenCV, we used shared pointer.\N对于OpenCV中的CV Ptr类，我们使用智能指针。
+Dialogue: 0,0:09:47.42,0:09:52.65,Default,,0,0,0,,For matrix, I would say we would use the same implementation as before.\N对于矩阵，我们恐怕会使用和之前相同的实现。
+Dialogue: 0,0:09:52.65,0:09:56.05,Default,,0,0,0,,Mat class is not a template class.\NMat类不是一个模板类。
+Dialogue: 0,0:09:56.60,0:09:58.37,Default,,0,0,0,,In my class,\N在我的课上，
+Dialogue: 0,0:09:58.37,0:10:02.48,Default,,0,0,0,,I ask my student to implement a matrix class\N我要求同学们实现一个矩阵类
+Dialogue: 0,0:10:02.48,0:10:06.65,Default,,0,0,0,,to improve their programming skills.\N来提升他们的编程能力。
+Dialogue: 0,0:10:08.74,0:10:13.12,Default,,0,0,0,,I asked them that the matrix class they designed\N我要求他们设计的矩阵类
+Dialogue: 0,0:10:13.12,0:10:16.00,Default,,0,0,0,,should support many different data types,\N应提供多种数据类型的支持，
+Dialogue: 0,0:10:16.50,0:10:19.44,Default,,0,0,0,,including 8-bit integers,\N包括8位整数，
+Dialogue: 0,0:10:20.70,0:10:22.80,Default,,0,0,0,,16-bit integers\N16位整数
+Dialogue: 0,0:10:23.00,0:10:25.00,Default,,0,0,0,,and floating point, like that.\N和浮点数等等。
+Dialogue: 0,0:10:26.20,0:10:30.20,Default,,0,0,0,,Most student used class template.\N大多数学生都使用模板类。
+Dialogue: 0,0:10:30.20,0:10:36.42,Default,,0,0,0,,So I think it's a very straightforward idea to use a template for that.\N所以我认为使用模板类是一个非常直接的想法。
+Dialogue: 0,0:10:36.42,0:10:41.05,Default,,0,0,0,,Could you tell us why the Mat class you designed\N可以请你告诉我
+Dialogue: 0,0:10:41.42,0:10:43.48,Default,,0,0,0,,is not a template class?\N为什么你们的设计不是模板类吗？
+Dialogue: 0,0:10:44.77,0:10:51.28,Default,,0,0,0,,In OpenCV team, we had some discussions like how to implement the thing.\N在OpenCV团队中，我们有过如何实现的讨论。
+Dialogue: 0,0:10:51.85,0:10:55.12,Default,,0,0,0,,At some\\TODO same? point,\N并且某时\\TODO，
+Dialogue: 0,0:10:56.52,0:10:57.20,Default,,0,0,0,,at Intel,\N在Intel
+Dialogue: 0,0:10:58.40,0:11:02.44,Default,,0,0,0,,we had another project that implemented biasing networks [TODO:VP biasing?]\N我们有另一个关于边缘网络的项目。\\TODO
+Dialogue: 0,0:11:05.85,0:11:07.71,Default,,0,0,0,,That was quite a complex library,\N那是个相当复杂的库，
+Dialogue: 0,0:11:07.71,0:11:11.68,Default,,0,0,0,,they chose to go completely into that way.\N他们选择完全使用模板类的方法。\\TODO
+Dialogue: 0,0:11:11.68,0:11:15.31,Default,,0,0,0,,So they created everything in templates.\N所以他们在模板类中构建了所有东西。
+Dialogue: 0,0:11:16.88,0:11:19.80,Default,,0,0,0,,And I know that currently\N而且我知道
+Dialogue: 0,0:11:20.84,0:11:25.88,Default,,0,0,0,,heavy use of template is one of the trends in C++.\N大量使用模板类是现在C++的趋势之一。
+Dialogue: 0,0:11:26.25,0:11:28.85,Default,,0,0,0,,Many people prefer to use templates\N许多人喜欢使用模板类
+Dialogue: 0,0:11:28.85,0:11:31.05,Default,,0,0,0,,to get the best efficiency.\N来获得最佳的效率。
+Dialogue: 0,0:11:32.40,0:11:34.96,Default,,0,0,0,,In our case, we deliberately chose\N在我们的案例中，
+Dialogue: 0,0:11:35.50,0:11:39.64,Default,,0,0,0,,not to go completely in template way,\N我们故意不完全使用模板的方式，
+Dialogue: 0,0:11:40.45,0:11:43.72,Default,,0,0,0,,because we saw bad examples,\N因为我们见识过反例，
+Dialogue: 0,0:11:44.80,0:11:46.77,Default,,0,0,0,,a library becomes unusable\N整个库变得完全不可用
+Dialogue: 0,0:11:46.77,0:11:49.74,Default,,0,0,0,,because of its completely template\N原因正是它完全使用模板类，
+Dialogue: 0,0:11:49.74,0:11:55.85,Default,,0,0,0,,so we can take very long time to compile code that uses those libraries.\N所以我们可能需要很长时间来编译使用那些库的代码。
+Dialogue: 0,0:11:55.85,0:12:02.14,Default,,0,0,0,,So when we speak about like generic library of algorithms,\N所以当我们讨论通用算法库时，
+Dialogue: 0,0:12:02.20,0:12:11.31,Default,,0,0,0,,STL library with containers, basic algorithms like sort(),\N包括带有容器的STL库，像sort()的基础算法，
+Dialogue: 0,0:12:14.88,0:12:18.96,Default,,0,0,0,,it's not that much complex, but there is still some,\N它们并没有那么复杂，有一些，
+Dialogue: 0,0:12:18.96,0:12:20.40,Default,,0,0,0,,but it's not that much.\N但没有那么复杂。
+Dialogue: 0,0:12:20.44,0:12:22.08,Default,,0,0,0,,In the case of computer vision,\N在计算机视觉中，
+Dialogue: 0,0:12:22.08,0:12:27.97,Default,,0,0,0,,algorithms are quite, may become quite complex\N如果你使用模板类的话，
+Dialogue: 0,0:12:28.42,0:12:36.97,Default,,0,0,0,,and so if you make a matrix class as template.\N（有些）算法（则）可能会变得相当复杂。
+Dialogue: 0,0:12:37.99,0:12:46.85,Default,,0,0,0,,There is a strong motivation to put a lot of code into header files\N有很大的可能性你需要在头文件中放入大段代码
+Dialogue: 0,0:12:46.85,0:12:48.85,Default,,0,0,0,,to make everything templates.\N来保证所有类都是模板类。
+Dialogue: 0,0:12:52.25,0:12:55.88,Default,,0,0,0,,And for developers, it may become a simpler solution.\N对于开发者来说，这可能是一个更简单的解决方案。
+Dialogue: 0,0:12:55.88,0:13:00.80,Default,,0,0,0,,But for users, normally most of OpenCV users\N但对于用户来说，通常他们
+Dialogue: 0,0:13:00.80,0:13:03.32,Default,,0,0,0,, they use just a tiny part of OpenCV.\N只会使用OpenCV的一小部分。
+Dialogue: 0,0:13:04.31,0:13:12.71,Default,,0,0,0,,But for them, to wait those long minutes or even hours for their code to be compiled.\N但（使用模板类的话），他们可能需要几十分钟甚至几个小时等待他们的代码编译。
+Dialogue: 0,0:13:12.71,0:13:14.71,Default,,0,0,0,,It is a big problem.\N这是个大问题。
+Dialogue: 0,0:13:15.22,0:13:22.08,Default,,0,0,0,,Unfortunately, together with templates in C++, they didn't introduce modules.\N不幸的是，正如C++中的模板类一样，他们也没有引入模块。
+Dialogue: 0,0:13:22.08,0:13:25.40,Default,,0,0,0,,Modules are common to C++ only now,\N模块现在才对C++通用，
+Dialogue: 0,0:13:25.40,0:13:29.34,Default,,0,0,0,,and even now, the support for modules is immature.\N即使在现在，对于模块的支持也不甚成熟。
+Dialogue: 0,0:13:29.34,0:13:33.94,Default,,0,0,0,,Maybe several years later, when modules become widespread,\N也许几年后，当模块更普及时，
+Dialogue: 0,0:13:33.94,0:13:38.65,Default,,0,0,0,,when compiling complete code becomes much more efficient,\N当编译完整代码更有效率时，
+Dialogue: 0,0:13:38.80,0:13:43.14,Default,,0,0,0,,then maybe more libraries will come out and will use template.\N那时可能会出现更多使用模板类的库。
+Dialogue: 0,0:13:43.62,0:13:49.45,Default,,0,0,0,,Now, it's like not a good idea.\N现在，这似乎不是个好主意。
+Dialogue: 0,0:13:49.45,0:13:55.42,Default,,0,0,0,,So the first reason is we want to avoid long compile time.\N所以，（不使用模板类的）第一个原因是我们要避免编译时间过长。
+Dialogue: 0,0:13:57.11,0:13:59.68,Default,,0,0,0,,The second reason is Python.\N第二个原因来自Python。
+Dialogue: 0,0:14:00.42,0:14:08.51,Default,,0,0,0,,So even 10 years ago, we understood Python has a good, has a great potential. It is an excellent language.\N在十年前我们就发现Python是一门有很大潜力的优秀语言。
+Dialogue: 0,0:14:09.54,0:14:15.68,Default,,0,0,0,,Besides that has been Java that we also wanted to support\N除此之外我们还想支持Java，
+Dialogue: 0,0:14:16.08,0:14:20.14,Default,,0,0,0,,and also languages like Java has some support for templates.\N像Java这样的语言对模板也有一些支持。
+Dialogue: 0,0:14:20.14,0:14:24.60,Default,,0,0,0,,But it's not completely compatible with C++.\N但它与C++不完全兼容。
+Dialogue: 0,0:14:24.60,0:14:27.02,Default,,0,0,0,,Python, it doesn't have any template.\NPython则完全不支持模板。
+Dialogue: 0,0:14:27.11,0:14:30.02,Default,,0,0,0,,And we wanted OpenCV supported by Python [TODO:VP] as well.\N我们希望OpenCV也支持Python。
+Dialogue: 0,0:14:33.30,0:14:35.08,Default,,0,0,0,,So if you have template library,\N所以，
+Dialogue: 0,0:14:36.17,0:14:40.71,Default,,0,0,0,,creating code for Python is quite complex tasks.\N基于已有的模板库为Python创建代码是相当复杂的任务。
+Dialogue: 0,0:14:40.71,0:14:46.88,Default,,0,0,0,,Basically you need to implement [TODO:VP] all those functions in Python wrapper.\N基本上你需要在Python包装器中实现所有这些函数。
+Dialogue: 0,0:14:48.72,0:14:52.40,Default,,0,0,0,,And see what is the actual data type that the user called\N并查看用户在模板的实例中
+Dialogue: 0,0:14:52.40,0:14:55.80,Default,,0,0,0,,particular instance of template implementation.\N实际上使用了哪些数据类型。
+Dialogue: 0,0:14:56.34,0:14:58.57,Default,,0,0,0,,So it is not quite convenient.\N这并不非常方便。
+Dialogue: 0,0:14:58.57,0:15:03.22,Default,,0,0,0,,So I think we did it the right way\N所以我认为我们（不使用模板类）是对的，
+Dialogue: 0,0:15:03.22,0:15:10.54,Default,,0,0,0,,and we make right decision not to implement multiple OpenCV templates [TODO:VP].\N不在OpenCV的实现中使用多个\\TODO（很多）模板是明智的决定。
+Dialogue: 0,0:15:11.91,0:15:13.71,Default,,0,0,0,,OK, thank you.\N好的，谢谢。
+Dialogue: 0,0:15:13.80,0:15:20.48,Default,,0,0,0,,Yeah, I also learned a lot from it.\N我也从中学到了很多。
+Dialogue: 0,0:15:20.48,0:15:25.22,Default,,0,0,0,,Because we always balance between many factors.\N因为我们总是需要平衡很多因素。
+Dialogue: 0,0:15:25.25,0:15:29.85,Default,,0,0,0,,So you introduced the factors in designing OpenCV,\N你介绍了那些在设计OpenCV时需要考虑的因素,
+Dialogue: 0,0:15:29.85,0:15:38.77,Default,,0,0,0,,but I also found there is a class template which is very similar to Mat in OpenCV, its name is Mat_.\N但我发现了OpenCV中有一个类似Mat的模板类Mat_。
+Dialogue: 0,0:15:39.82,0:15:46.60,Default,,0,0,0,,Since we have Mat class, why to design Mat_, the template.\N既然我们已经有了Mat类，为什么还要设计Mat_模板类。
+Dialogue: 0,0:15:47.77,0:15:54.68,Default,,0,0,0,,You just explain the template maybe have some shortcomings,\N你刚刚解释了模板类的潜在缺点，
+Dialogue: 0,0:15:54.94,0:15:58.40,Default,,0,0,0,,but we find there's a template for Mat.\N我们却发现有个Mat的模板类。
+Dialogue: 0,0:15:59.11,0:16:01.11,Default,,0,0,0,,Yes, yes.\N对对对。
+Dialogue: 0,0:16:03.11,0:16:08.62,Default,,0,0,0,,Indeed there's another class that is\N确实有这么一个
+Dialogue: 0,0:16:08.62,0:16:12.97,Default,,0,0,0,,has this underline in the end of the name\N名字后带下划线的类。
+Dialogue: 0,0:16:13.08,0:16:17.54,Default,,0,0,0,,and it doesn't introducing new members.\N而且它不会引入新的成员（变量）。\\TODO
+Dialogue: 0,0:16:17.54,0:16:22.37,Default,,0,0,0,,So it's finally compatible with normal cv::Mat in both ways.\N所以它最终在两种方式上都与普通的cv::Mat兼容。
+Dialogue: 0,0:16:22.37,0:16:27.91,Default,,0,0,0,,So if we use, and it derives from Mat,\N如果我们使用这个源自Mat的类，
+Dialogue: 0,0:16:27.91,0:16:32.91,Default,,0,0,0,,you can basically use it instead of Mat.\N基本上可以代替Mat。
+Dialogue: 0,0:16:33.54,0:16:38.74,Default,,0,0,0,,The only reason was to provide convenient element access operations.\N唯一的原因是提供方便的元素访问操作。
+Dialogue: 0,0:16:39.51,0:16:42.74,Default,,0,0,0,,If you have, for example,\N举个例子，
+Dialogue: 0,0:16:43.25,0:16:47.08,Default,,0,0,0,,some matrix algorithm that appears [TODO:VP] floats,\N如果你有一些出现浮点数的矩阵算法，
+Dialogue: 0,0:16:49.08,0:16:53.85,Default,,0,0,0,,first option to access the element, you use to play at<>() method\N你需要使用<>()的方法来访问元素
+Dialogue: 0,0:16:54.11,0:16:58.71,Default,,0,0,0,,with angle brackets<>, you just say that\N带尖括号<>，比如
+Dialogue: 0,0:16:58.85,0:17:02.80,Default,,0,0,0,,myMatrix.add<float>(10, 20), in angle brackets<>,\NmyMatrix.add<float>(10, 20)，在尖括号<>中，
+Dialogue: 0,0:17:02.80,0:17:07.77,Default,,0,0,0,,you put data type like float, then you put indices in the parenthesis.\N你需要输入浮点数之类的数据类型，然后把索引放在括号中。
+Dialogue: 0,0:17:08.68,0:17:14.20,Default,,0,0,0,,And with Mat_, you just use parentheses myMatrix(10,20)\N但有了Mat_，你只需要圆括号myMatrix(10,20)。
+Dialogue: 0,0:17:14.20,0:17:17.82,Default,,0,0,0,,You don't need add<>() with angle brackets. So it's another notation.\N你不需要带尖括号的<>() ，所以这是另一种表示方法。
+Dialogue: 0,0:17:18.20,0:17:25.48,Default,,0,0,0,,But I would say that the number of such algorithms that access elements directly in this way [not many].\N但我会说以这种方式直接访问元素的算法的数量不多。
+Dialogue: 0,0:17:28.14,0:17:34.77,Default,,0,0,0,,Some, savings that you type less symbols\N（只是）\\TODO让你少键入一些符号。
+Dialogue: 0,0:17:34.77,0:17:42.57,Default,,0,0,0,,it is so small, I could say that if we design matrix class today again,\N（这个改进）太小了，如果今天让我们再次设计矩阵类，
+Dialogue: 0,0:17:42.88,0:17:45.80,Default,,0,0,0,,I would not create this extra template class\N我不会再创建这个额外的模板类了。
+Dialogue: 0,0:17:45.80,0:17:49.82,Default,,0,0,0,,Because most people just use normal cv::Mat.\N因为大多数人只是使用普通的cv::Mat。
+Dialogue: 0,0:17:50.42,0:17:51.82,Default,,0,0,0,,Yeah, yeah.\N是的。
+Dialogue: 0,0:17:52.60,0:17:56.40,Default,,0,0,0,,OK, I have another question.\N我还有一个问题。
+Dialogue: 0,0:17:56.68,0:18:00.00,Default,,0,0,0,,The question, it's about hardware, \N这个问题是关于硬件的，
+Dialogue: 0,0:18:01.00,0:18:08.08,Default,,0,0,0,,because currently there are many kinds of hardware than in the past, \N因为比起过去，现在有更多种类的硬件，
+Dialogue: 0,0:18:08.08,0:18:12.00,Default,,0,0,0,,in the past, maybe only CPU? Or mostly CPU. \N过去我们只有CPU？或者说大部分都是CPU。
+Dialogue: 0,0:18:12.00,0:18:15.20,Default,,0,0,0,,Currently we have GPU, NPU or VPU,\N现在我们有GPU，NPU和VPU，
+Dialogue: 0,0:18:18.20,0:18:21.54,Default,,0,0,0,,Most of them have separate memory,\N它们中的大部分都有单独的内存。
+Dialogue: 0,0:18:21.82,0:18:28.88,Default,,0,0,0,,Is it possible to design an universal Mat class which can handle different kind of memory?\N是否可能可以设计一个处理不同类型内存的通用Mat类？
+Dialogue: 0,0:18:32.20,0:18:34.60,Default,,0,0,0,,So, indeed nowadays\N确实，在如今，
+Dialogue: 0,0:18:36.60,0:18:43.94,Default,,0,0,0,,Using GPU, or specialized accelerators to speed up computer vision is a very popular trend.\N使用GPU或者其他的专用加速器来加速计算机视觉（算法）是一种趋势。
+Dialogue: 0,0:18:44.45,0:18:49.20,Default,,0,0,0,,Everybody goes in this direction.\N大家都在朝这个方向前进。
+Dialogue: 0,0:18:49.62,0:18:56.88,Default,,0,0,0,,For example, Nvidia Xavier used in cars, it's indeed very popular.\N比如汽车用的Nvidia Xavier，确实非常受欢迎。
+Dialogue: 0,0:19:00.10,0:19:04.48,Default,,0,0,0,,Unfortunately, from software site, there is no good standard\N但不幸的是，从软件的层面看，没有很好的标准
+Dialogue: 0,0:19:05.60,0:19:10.22,Default,,0,0,0,,to program those hardware in an universal way.\N来以通用的方式对硬件进行编程。
+Dialogue: 0,0:19:11.37,0:19:13.12,Default,,0,0,0,,About 10 years ago,\N大约十年前，
+Dialogue: 0,0:19:14.20,0:19:19.60,Default,,0,0,0,,when we had a project with AMD and Intel,\N我们与AMD和Intel有一个项目，
+Dialogue: 0,0:19:19.74,0:19:23.62,Default,,0,0,0,,to bring OpenCL support into OpenCV.\N是关于将OpenCL支持引入OpenCV。
+Dialogue: 0,0:19:23.62,0:19:29.17,Default,,0,0,0,,I thought that OpenCL will soon become such a new universal standard.\N我原以为OpenCL很快就会成为一个通用标准，
+Dialogue: 0,0:19:29.17,0:19:32.45,Default,,0,0,0,,that everybody would use OpenCL to program that hardware,\N这样每个人都会使用OpenCL来对硬件进行编程，
+Dialogue: 0,0:19:32.45,0:19:38.97,Default,,0,0,0,,such hardware like GPU or specialized computer vision accelerators.\N比如像GPU或专用计算机视觉加速器等硬件。
+Dialogue: 0,0:19:41.34,0:19:47.63,Default,,0,0,0,,So, for OpenCL in OpenCV we created special class called cv::UMat\N所以在OpenCV中我们为OpenCL创建了名为cv::UMat的特殊类，
+Dialogue: 0,0:19:47.63,0:19:54.90,Default,,0,0,0,,that people can use to access OpenCL functionality.\N这样人们可以通过它来使用OpenCL的功能。
+Dialogue: 0,0:19:55.45,0:19:59.84,Default,,0,0,0,,And also OpenCV included several hundreds of OpenCL kernels\N并且OpenCV还包含数百种OpenCL内核
+Dialogue: 0,0:19:59.84,0:20:06.40,Default,,0,0,0,,to accelerate various algorithms from image processing to machine learning and so on.\N来加速从图像处理到机器学习等各种算法。
+Dialogue: 0,0:20:06.57,0:20:12.91,Default,,0,0,0,,Unfortunately, now OpenCL is sort of semi-abandoned standard.\N不幸的是，现在OpenCL是一种半废弃的标准。
+Dialogue: 0,0:20:13.02,0:20:16.56,Default,,0,0,0,,It's still in the development,\N它仍在开发中，
+Dialogue: 0,0:20:17.00,0:20:24.08,Default,,0,0,0,,but it looks most manufacturers try to use something else.\N但看起来大多数厂家都在尝试其他东西。
+Dialogue: 0,0:20:24.10,0:20:34.91,Default,,0,0,0,,Like Apple uses Metal standard, then on Android, Vulkan is more popular for game, for example.\N比如Apple使用Metal标准，在Android上，Vulkan在游戏中更受欢迎。
+Dialogue: 0,0:20:39.22,0:20:44.68,Default,,0,0,0,,Also there are some immature standards, for example,\N还有一些不成熟的标准，比如，
+Dialogue: 0,0:20:44.68,0:20:49.91,Default,,0,0,0,,the standard called OACC (OpenACC), open accelerator.\N被称为OACC（OpenACC）的标准，也就是"开源加速器"。
+Dialogue: 0,0:20:50.88,0:20:58.88,Default,,0,0,0,,It aims at to bring some extensions to C++ standard to upload some loops to GPU.\N它旨在为C++标准带来一些扩展，以及将一些loop指令传给GPU。\\TODO
+Dialogue: 0,0:21:00.91,0:21:03.60,Default,,0,0,0,,But it is not quite mature,\N但它还不是非常成熟，
+Dialogue: 0,0:21:05.00,0:21:15.02,Default,,0,0,0,,so I would say we're still waiting for such a standard come out to conveniently program various hardware.\N所以恐怕我们还需要等待类似的标准来对不同的而硬件进行方便的编程。
+Dialogue: 0,0:21:15.02,0:21:23.08,Default,,0,0,0,,Currently there are some positive trends for example,\N目前有一些积极的趋势，比如
+Dialogue: 0,0:21:23.17,0:21:31.97,Default,,0,0,0,,like Vulkan group in Khronos community and OpenCL group, they work together\N像Khronos社区的Vulkan小组和OpenCL小组，他们一起工作，
+Dialogue: 0,0:21:31.97,0:21:38.48,Default,,0,0,0,,to provide OpenCL compatibility for Vulkan based hardware and such.\N来为基于Vulkan的硬件提供OpenCL兼容性。
+Dialogue: 0,0:21:38.48,0:21:43.42,Default,,0,0,0,,So maybe OpenCL is not completely dead and it will maybe revive at some point.\N所以也许OpenCL没有完全死掉，它可能会在某天复苏。
+Dialogue: 0,0:21:45.00,0:21:46.65,Default,,0,0,0,,Yes, we are still waiting.\N是的，我们还在等待。
+Dialogue: 0,0:21:46.78,0:21:52.97,Default,,0,0,0,,Without that standard it is difficult to come up with such a universal class,\N没有这样的标准，很难设计出一个通用的类，
+Dialogue: 0,0:21:52.97,0:21:58.85,Default,,0,0,0,,because you do not know which API should be added [TODO:VP], because everybody uses the different API.\N因为你不知道该添加哪个，每个人都在用不同的API
+Dialogue: 0,0:22:02.50,0:22:04.34,Default,,0,0,0,,I still have another question.\N我还有一个问题。
+Dialogue: 0,0:22:04.85,0:22:07.20,Default,,0,0,0,,Actually it's two questions.\N其实是两个问题。
+Dialogue: 0,0:22:07.20,0:22:16.51,Default,,0,0,0,,The first question is does OpenCV have any plan to update Mat class to a newer one?\N第一个问题是OpenCV是否有更新Mat类的计划？
+Dialogue: 0,0:22:16.51,0:22:19.88,Default,,0,0,0,,Or we will continue to use the current one?\N还是会继续使用已有的类？
+Dialogue: 0,0:22:22.17,0:22:26.11,Default,,0,0,0,,Yes, so OpenCV is quite large library with many users,\N嗯，OpenCV是一个很大的库，拥有很多用户，
+Dialogue: 0,0:22:26.94,0:22:35.17,Default,,0,0,0,,and so there are no plans to completely replace the cv::Mat with something else.\N所以没有用其他东西完全替代cv::Mat的计划。
+Dialogue: 0,0:22:35.51,0:22:39.37,Default,,0,0,0,,And cv::Mat is quite flexible for example\N并且cv::Mat非常灵活，
+Dialogue: 0,0:22:39.37,0:22:45.28,Default,,0,0,0,,for Python bindings, users do not see this cv::Mat class.\N比如对于从Python调用C/C++\\TODO，用户看不到cv::Mat类。
+Dialogue: 0,0:22:45.51,0:22:50.71,Default,,0,0,0,,They operate on common ...\N他们使用常见的...
+Dialogue: 0,0:22:50.71,0:22:56.62,Default,,0,0,0,,on very popular in Python world, NumPy arrays.\N在Python中非常流行的NumPy数组。
+Dialogue: 0,0:22:56.62,0:23:04.65,Default,,0,0,0,,And internally, those Python arrays are converted to cv::Mat, usually it happens without copying any data.\N在内部，这些Python数组被转换为cv::Mat而不进行任何数据拷贝。
+Dialogue: 0,0:23:04.65,0:23:06.65,Default,,0,0,0,,So it's very efficient.\N所以非常高效。
+Dialogue: 0,0:23:06.65,0:23:11.74,Default,,0,0,0,,We try to use this zero copy techniques.\N我们尝试使用这种零拷贝技术。
+Dialogue: 0,0:23:12.77,0:23:22.20,Default,,0,0,0,,Internally, as I said, we do not plan to completely replace cv::Mat with something completely new.\N正如我所说的，我们不打算在内部用某些东西完全替换cv::Mat。
+Dialogue: 0,0:23:22.54,0:23:27.28,Default,,0,0,0,,But we want to make some upgrades to cv::Mat.\N但我们想对cv::Mat做一些改进。
+Dialogue: 0,0:23:27.65,0:23:34.02,Default,,0,0,0,,First of all, we plan to extend the number of data types supported.\N首先我们计划扩展支持的数据类型的数量。
+Dialogue: 0,0:23:34.48,0:23:41.94,Default,,0,0,0,,So maybe it will be some new integer data types, also we plan to add BFloat16.\N所以会有一些新的整数数据类型，我们还计划加入BFloat16。
+Dialogue: 0,0:23:42.22,0:23:48.91,Default,,0,0,0,,Brain Floating 16, it's the relatively new 16 point format developed by Google. \NBrain Float 16是Google开发的一种比较新的16位格式。
+Dialogue: 0,0:23:49.74,0:23:57.11,Default,,0,0,0,,and use in their TPU accelerators, and also it is now supported by Intel hardware\N被用在他们的TPU加速器中，现在Intel的硬件也支持它。
+Dialogue: 0,0:23:57.60,0:24:04.25,Default,,0,0,0,,Upcoming ARM v9 and some other architectures.\N还有即将推出的ARM v9和其他的一些架构。
+Dialogue: 0,0:24:04.94,0:24:08.42,Default,,0,0,0,,So it's quite popular and we want to add support for it.\N它非常受欢迎，我们希望增加对它的支持。
+Dialogue: 0,0:24:09.31,0:24:13.31,Default,,0,0,0,,Another new feature is\N另一个新特性是
+Dialogue: 0,0:24:14.37,0:24:19.31,Default,,0,0,0,,to support one dimensional arrays.\N支持一维数组。
+Dialogue: 0,0:24:21.05,0:24:30.45,Default,,0,0,0,,As I said, we borrowed this cv::Mat class idea from Matlab,\N正如我所说的，我们从Matlab借鉴了cv::Mat类的想法。
+Dialogue: 0,0:24:30.45,0:24:35.82,Default,,0,0,0,,and in Matlab, there is no one dimensional array, as far as I know.\N据我所知，在Matlab中没有一维数组。
+Dialogue: 0,0:24:37.08,0:24:43.02,Default,,0,0,0,,One dimensional array is represented as two dimensional array.\N一维数组被表示为二维的1xN和Nx1的数组。
+Dialogue: 0,0:24:43.02,0:24:47.40,Default,,0,0,0,,And in OpenCV we took the same convention,\N在OpenCV中我们使用了相同的约定，
+Dialogue: 0,0:24:47.40,0:24:53.20,Default,,0,0,0,,but it appears to be not quite convenient for Python bindings.\N但对于从Python调用C/C++似乎不太方便。
+Dialogue: 0,0:24:53.28,0:24:56.54,Default,,0,0,0,,And for some deep learning areas that\N对于一些深度学习领域
+Dialogue: 0,0:24:56.54,0:25:01.91,Default,,0,0,0,,we are trying to add to OpenCV currently like speech recognition\N我们尝试把语音识别加入到OpenCV
+Dialogue: 0,0:25:01.91,0:25:05.00,Default,,0,0,0,,or whatever some areas on dimensional arrays are important\N或者是其他非常需要一维数组的领域。
+Dialogue: 0,0:25:05.00,0:25:10.68,Default,,0,0,0,,We want to support for real one dimensional arrays to OpenCV.\N我们希望在OpenCV中支持真正的一维数组。
+Dialogue: 0,0:25:11.91,0:25:14.40,Default,,0,0,0,,The third feature, we are still thinking of it.\N第三个特性我们还在考虑。
+Dialogue: 0,0:25:14.40,0:25:21.60,Default,,0,0,0,,But, maybe we will add some tag into cv::Mat that will indicate,\N我们可能会在cv::Mat中加入一些标签
+Dialogue: 0,0:25:21.60,0:25:27.36,Default,,0,0,0,,that will provide some indication to what is the data, that marks the source.\N用以指示什么是数据，标记来源。
+Dialogue: 0,0:25:27.51,0:25:33.77,Default,,0,0,0,,For example, the tag can be RGB or BGR to indicate what is the order of channels.\N例如标签可以是RGB或BGR来指示通道的顺序。
+Dialogue: 0,0:25:33.77,0:25:40.51,Default,,0,0,0,,Maybe it will solve some old problems, when people just put,\N也许它可以解决一些老问题，
+Dialogue: 0,0:25:41.42,0:25:49.37,Default,,0,0,0,,use some matrix with incorrect data channels, and sometimes they get wrong visualization.\N当人们使用具有不正确的数据通道的矩阵时，会得到错误的可视化结果。
+Dialogue: 0,0:25:49.60,0:25:55.31,Default,,0,0,0,,Instead of a red face, you will get blue faces. In some cases,\N在某些情况下你会得到一张蓝色的脸而不是红色的。
+Dialogue: 0,0:25:55.51,0:26:03.54,Default,,0,0,0,,You just get maybe slightly worse performance from some deep nets, object detection networks.\N你可能会从一些目标检测网络，深度神经网络\\TODO中获得稍差的性能。
+Dialogue: 0,0:26:03.54,0:26:08.80,Default,,0,0,0,,It still detects objects, but not as good as with proper order channels.\N它依然可以检测到目标，但是结果不如正确的通道好。
+Dialogue: 0,0:26:08.80,0:26:12.22,Default,,0,0,0,,So it's a very subtle bug to detect.\N所以这是一个潜在的\\TODO（微妙？）的问题。
+Dialogue: 0,0:26:12.22,0:26:19.14,Default,,0,0,0,,And maybe with this tags, this problem will disappear.\N但是有了这些标签，这个问题就得到了解决。
+Dialogue: 0,0:26:19.14,0:26:21.42,Default,,0,0,0,,So we are still thinking of..\N所以我们还在考虑...
+Dialogue: 0,0:26:21.45,0:26:31.54,Default,,0,0,0,,Yeah, sure, yeah because in my course, the final project is to do some CNN.\N对对对，因为在我的课堂中，最后一个项目是做一些CNN。
+Dialogue: 0,0:26:31.54,0:26:34.51,Default,,0,0,0,,They should implement CNN by themselves.\N他们要自己实现CNN。
+Dialogue: 0,0:26:35.42,0:26:40.04,Default,,0,0,0,,So in the data reading from the image,\N所以从图像中读取数据时，
+Dialogue: 0,0:26:40.04,0:26:42.52,Default,,0,0,0,,the default channel is BGR, \N默认的通道顺序是BGR，
+Dialogue: 0,0:26:44.00,0:26:49.20,Default,,0,0,0,,a lot of students were confused by that and made some errors.\N迷惑了很多同学并让他们犯了错误。
+Dialogue: 0,0:26:50.25,0:26:55.32,Default,,0,0,0,,I know there will be some students from my class\N我知道可能我的班上的
+Dialogue: 0,0:26:55.32,0:27:00.12,Default,,0,0,0,,and also from maybe all over the world will watch this video.\N甚至全世界各地的学生会看这个视频。
+Dialogue: 0,0:27:00.31,0:27:04.36,Default,,0,0,0,,Do you have any suggestions for the students in computer science,\N你对计算机专业
+Dialogue: 0,0:27:04.36,0:27:07.92,Default,,0,0,0,,especially the students who are learning C++?\N特别是那些在学习C++的学生有什么建议吗？
+Dialogue: 0,0:27:12.34,0:27:13.54,Default,,0,0,0,,Yeah, so\N当然
+Dialogue: 0,0:27:18.74,0:27:23.20,Default,,0,0,0,,I think that currently there are many sources of information,\N我认为现在信息的来源非常多，
+Dialogue: 0,0:27:23.31,0:27:27.40,Default,,0,0,0,,there are many good online courses on computer vision.\N现在有很多优秀的计算机视觉的在线课程。
+Dialogue: 0,0:27:27.40,0:27:38.11,Default,,0,0,0,,I'm glad that you are teaching the C++ class, I saw some bits of it and I think it's very professional.\N我很开心看到你在教C++，我看过一点，我认为它们非常专业。
+Dialogue: 0,0:27:38.51,0:27:43.37,Default,,0,0,0,,I'm sure that students will learn a lot from it.\N我相信学生们可以从中学到很多。
+Dialogue: 0,0:27:44.17,0:27:49.88,Default,,0,0,0,,So maybe I have just a few common words,\N我可能是在老调重弹，
+Dialogue: 0,0:27:50.71,0:27:53.84,Default,,0,0,0,,feel free to ignore them completely,\N大可以无视它们，
+Dialogue: 0,0:27:53.84,0:27:59.84,Default,,0,0,0,,just from my experience of developing software quite a few years.\N只是出于我多年的软件开发经验。
+Dialogue: 0,0:28:01.20,0:28:10.08,Default,,0,0,0,,I would suggest students to pay more attention to algorithms, concepts, technologies,\N我会建议同学们多关注算法，概念，技术，
+Dialogue: 0,0:28:10.57,0:28:14.20,Default,,0,0,0,,rather than particular features, particular programming language.\N而不是特定的特性或者编程语言。
+Dialogue: 0,0:28:18.22,0:28:24.14,Default,,0,0,0,,Many years ago, Fortran was the most language for computing,\N许多年前，Fortran曾是最流行的计算机语言，
+Dialogue: 0,0:28:24.97,0:28:29.74,Default,,0,0,0,,then C became the dominant language, then C++.\N然后是C，然后是C++。
+Dialogue: 0,0:28:30.28,0:28:37.91,Default,,0,0,0,,I would say currently maybe Python is used more especially with special acceleration extensions, like NumPy [TODO:VP] whatever or Siphon[TODO:VP].\N我想说的是，现在Python可能更多的用于特殊的加速扩展，比如NumPy或Siphon。
+Dialogue: 0,0:28:37.91,0:28:42.60,Default,,0,0,0,,Maybe Python is used more actively for computing than everything else.\N或许Python比其他所有都更适合用于计算。
+Dialogue: 0,0:28:42.60,0:28:51.88,Default,,0,0,0,,So do not pay too much attention to the particular feature, particular language,\N所以不要过多关注特定的特性，语言，
+Dialogue: 0,0:28:52.28,0:28:59.36,Default,,0,0,0,,and do not try to use all those fancy features of the language that you just learned in your project\N不要尝试把你学到的花哨的功能全用上
+Dialogue: 0,0:28:59.36,0:29:06.82,Default,,0,0,0,,because those features just exist and you want to make your code look cool by using all those features\N因为你只是希望用这些功能让你的代码看起来很酷。
+Dialogue: 0,0:29:06.82,0:29:15.56,Default,,0,0,0,,because this's a good change that a couple of months later you won't be able to read your own code because it's too complex.\N因为有可能几个月之后你可能会读不懂你的代码，因为它太复杂了。
+Dialogue: 0,0:29:15.68,0:29:20.74,Default,,0,0,0,,I think this suggestion is especially for C++, right?\N对于C++来说更是这样，对吧？
+Dialogue: 0,0:29:21.17,0:29:24.31,Default,,0,0,0,,Because there are too many features in C++.\N因为C++中的特性太多。
+Dialogue: 0,0:29:24.31,0:29:36.42,Default,,0,0,0,,Yes, C++, I would say, in the recent standards, they made some small convenient to you like modules.\N是的，在C++最新的标准中为你提供了一些方便，比如模块。
+Dialogue: 0,0:29:36.42,0:29:38.42,Default,,0,0,0,,It's important feature I believe.\N我相信这是重要的一个特性。
+Dialogue: 0,0:29:38.42,0:29:42.68,Default,,0,0,0,,But on the other hands, languages' becoming quite more and more complex.\N但另一方面，语言变得越来越复杂。
+Dialogue: 0,0:29:43.57,0:29:52.45,Default,,0,0,0,,And so you need to develop proper style of using C++, not to shoot yourself on the foot.\N所以你需要培养正确的使用C++的习惯\\TODO（风格），而不是自找麻烦。
+Dialogue: 0,0:29:52.45,0:29:57.57,Default,,0,0,0,,And try not to use manual memory allocation,\N并且尽量不要手动分配内存，
+Dialogue: 0,0:29:57.57,0:30:00.40,Default,,0,0,0,,use exisiting containers like std::vector,\N使用已有的容器，比如std::vector，
+Dialogue: 0,0:30:00.40,0:30:05.60,Default,,0,0,0,,or if you use OpenCV, use cv::Mat, etc.\N或者如果你使用OpenCV，要使用cv::Mat等等。
+Dialogue: 0,0:30:05.60,0:30:12.88,Default,,0,0,0,,Try to put some regression test before you do any refactoring or optimization.\N在重构和优化前要进行回归测试。
+Dialogue: 0,0:30:12.88,0:30:16.22,Default,,0,0,0,,There should be some tests, of course.\N对，当然应该有一些测试。
+Dialogue: 0,0:30:18.00,0:30:21.00,Default,,0,0,0,,As I said, develop some methodology,\N正如我所说的，形成一些方法论，
+Dialogue: 0,0:30:21.10,0:30:25.48,Default,,0,0,0,,a proper methodology how to create robust software\N一些有关如何构建高鲁棒性的软件的方法论
+Dialogue: 0,0:30:25.80,0:30:32.11,Default,,0,0,0,,that is easy to debug or doesn't need to be debugged at all, it works out of the box.\N让它更易于debug甚至不需要debug，？？？\\TODO
+Dialogue: 0,0:30:32.11,0:30:40.08,Default,,0,0,0,,Instead of just using very complex language constructions that you may not fully understand.\N而不是去用那些你可能没有完全搞明白的复杂的语言结构。
+Dialogue: 0,0:30:41.20,0:30:49.14,Default,,0,0,0,,Yeah, sure. I also found a lot of students, they spend a lot of time on debugging.\N是的，是的。我有一些学生，他们把大量时间花在了debug上。
+Dialogue: 0,0:30:49.14,0:30:59.08,Default,,0,0,0,,It takes them a lot of time to find a very tiny bug, it's very difficult in C and C++,\N他们花了很多时间来找一个非常小的bug，这在C和C++中非常困难。
+Dialogue: 0,0:30:59.42,0:31:09.34,Default,,0,0,0,,because there are memory leaks and maybe some pointers have invalid values,\N因为有内存泄露并且可能某些指针具有无效的值。
+Dialogue: 0,0:31:09.85,0:31:11.34,Default,,0,0,0,,it's quite common, yeah.\N是的，这很常见。
+Dialogue: 0,0:31:11.91,0:31:19.08,Default,,0,0,0,,Yes, so like automatic class you mentioned, for example, shared pointers, it is another very good tool\N就像你提到的智能指针，它是另一个非常好的工具。
+Dialogue: 0,0:31:19.08,0:31:28.82,Default,,0,0,0,,When people avoid using raw pointers in C++,\N当人们避免使用C++中原始的指针，
+Dialogue: 0,0:31:28.82,0:31:34.71,Default,,0,0,0,,but instead use containers like cv::Vec or cv::Mat or shared pointers\N而是用cv::Vec，cv::Mat或者智能指针时
+Dialogue: 0,0:31:35.94,0:31:43.11,Default,,0,0,0,,the number of memory leaks problems go almost to zero.\N内存泄露的问题就降到几乎为零。
+Dialogue: 0,0:31:43.48,0:31:45.91,Default,,0,0,0,,Yeah, thank you, thank you for the suggestions!\N对的，谢谢你的建议！
+Dialogue: 0,0:31:46.37,0:31:47.91,Default,,0,0,0,,Yeah, you are welcome!\N不客气！
+Dialogue: 0,0:31:48.37,0:31:56.54,Default,,0,0,0,,I believe the students will be benefited from your suggestions and also your introduction to OpenCV, thank you!\N我相信学生们会从你的建议和介绍中学到很多，谢谢你！
+Dialogue: 0,0:31:56.54,0:31:58.54,Default,,0,0,0,,You are welcome!\N不客气！
